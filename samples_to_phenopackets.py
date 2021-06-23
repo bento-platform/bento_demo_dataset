@@ -11,7 +11,7 @@ from divide_samples import datasets
 
 fake = Faker()
 
-fake.seed(108643)
+Faker.seed(108643)
 random.seed(19618)
 
 
@@ -39,6 +39,7 @@ def main():
                 "subject": {
                     "id": individual_id,
                     "date_of_birth": individual_dob.isoformat(),
+                    "age": age_string,
                     "sex": sample_sexes[s],
                     "karyotypic_sex": "XX" if sample_sexes[s] == "FEMALE" else "XY",  # TODO: Spice it up a bit
                     "taxonomy": {
