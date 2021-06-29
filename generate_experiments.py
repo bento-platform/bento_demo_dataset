@@ -84,7 +84,7 @@ def main():
                     }
                 },
                 "extra_properties": {
-                    "comment": "This randomly generated data for the test purposes only."
+                    "comment": "This is randomly generated data for the test purposes only."
                 }
             }
             experiments["experiments"].append(experiment)
