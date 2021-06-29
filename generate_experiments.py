@@ -32,7 +32,7 @@ def main():
         ]
     }
     with open("./samples.tsv", "r") as sf:
-        for s in sf.readlines()[:100]:
+        for s in sf.readlines():
             sample = s.split("\t")[0]
             experiment = {
                 "id": str(uuid.uuid4()),
