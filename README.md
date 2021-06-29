@@ -4,7 +4,15 @@ Partially synthetic demo dataset for CHORD.
 
 Portions are courtesy of the 1000 Genomes project, &copy; EMBL-EBI.
 
-## Instructions
+#### Requirements:
+
+To install dependencies run:
+
+```
+pip install -r requirements.txt
+```
+
+#### Usage:
 
 Generate phenopackets metadata:
 
