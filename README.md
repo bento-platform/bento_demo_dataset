@@ -6,6 +6,13 @@ Portions are courtesy of the 1000 Genomes project, &copy; EMBL-EBI.
 
 #### Requirements:
 
+Create virtual environment, e.g.:
+
+```
+virtualenv -p python3 ./env
+source env/bin/activate
+```
+
 To install dependencies run:
 
 ```
