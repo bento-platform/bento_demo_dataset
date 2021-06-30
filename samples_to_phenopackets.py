@@ -2,11 +2,11 @@
 
 import json
 import random
-
 from datetime import date
 from faker import Faker
 
 from divide_samples import datasets
+from ontologies import PHENOTYPIC_FEATURES
 
 
 fake = Faker()
@@ -47,7 +47,7 @@ def main():
                         "label": "Homo sapiens",
                     },
                 },
-                "phenotypic_features": [],
+                "phenotypic_features": [{"type": random.choice(PHENOTYPIC_FEATURES)}],
                 "diseases": [],
                 "meta_data": {
                     "created_by": "David Lougheed",
