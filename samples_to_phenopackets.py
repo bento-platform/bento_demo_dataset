@@ -39,7 +39,9 @@ def main():
                 "subject": {
                     "id": individual_id,
                     "date_of_birth": individual_dob.isoformat(),
-                    "age": age_string,
+                    "age": {
+                        "age": age_string
+                    },
                     "sex": sample_sexes[s],
                     "karyotypic_sex": "XX" if sample_sexes[s] == "FEMALE" else "XY",  # TODO: Spice it up a bit
                     "taxonomy": {
@@ -94,8 +96,6 @@ def main():
                         "individual_age_at_collection": {
                             "age": age_string
                         },  # TODO: Calculate from DOB
-                        "histological_diagnosis": None,  # TODO
-                        "tumor_progression": None,  # TODO
                         "diagnostic_markers": [],  # TODO
                         "procedure": {
                             "code": {
