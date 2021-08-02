@@ -39,7 +39,7 @@ def main():
                 "study_type": random.choice(STUDY_TYPE),
                 "experiment_type": random.choice(EXPERIMENT_TYPE),
                 "molecule": random.choice(MOLECULE),
-                "molecule_ontology": random.choice(MOLECULE_ONTOLOGY),
+                "molecule_ontology": [random.choice(MOLECULE_ONTOLOGY)],
                 "library_strategy": random.choice(LIBRARY_STRATEGY),
                 "library_source": random.choice(LIBRARY_SOURCE),
                 "library_selection": random.choice(LIBRARY_SELECTION),
