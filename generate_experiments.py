@@ -3,18 +3,64 @@
 import json
 import random
 import uuid
+import numpy as np
+
+from controlled_vocabularies import *
 
 
-STUDY_TYPE = ["Epigenomics", "Proteomics", "Metagenomics", "Transcriptomics", "Metabolomics", "Other"]
-EXPERIMENT_TYPE = ["DNA Methylation", "RNA-Seq", "mRNA-Seq", "smRNA-Seq", "Histone H3K4me1"]
-MOLECULE = ["total RNA", "polyA RNA", "cytoplasmic RNA", "nuclear RNA", "small RNA", "genomic DNA", "protein", "other"]
-MOLECULE_ONTOLOGY = [{"id": "SO:0000991", "label": "genomic DNA"}, {"id": "EFO:0004964", "label": "total RNA"}]
-LIBRARY_STRATEGY = ["RNA-Seq", "ChIP-Seq", "Bisulfite-Seq"]
-LIBRARY_SOURCE = ["Genomic", "Genomic Single Cell", "Transcriptomic", "Transcriptomic Single Cell", "Metagenomic",
-                  "Metatranscriptomic", "Synthetic", "Viral RNA", "Other"]
-LIBRARY_SELECTION = ["Random", "PCR", "Random PCR", "RT-PCR", "MF", "Other"]
-LIBRARY_LAYOUT = ["Single", "Paired"]
-EXTRACTION_PROTOCOL = ["NGS", "GBS"]
+def random_weights(controlled_vocabulary):
+    # generate random weights for random distribution of values
+    np_random_weights = np.random.dirichlet(np.ones(len(controlled_vocabulary)), size=1)
+    weights = [round(i, 2) for i in np_random_weights.tolist()[0]]
+    return weights
+
+
+def generic_random_choices(controlled_vocabulary):
+    return random.choices(controlled_vocabulary, random_weights(controlled_vocabulary), k=1)[0]
+
+
+def single_experiment_result(sample_id, file_format):
+    # generate a single experiment result: VCF or CRAM
+    experiment_result = {
+        "identifier": f"{sample_id}_{uuid.uuid4()}",
+        "creation_date": "01-09-2021",
+        "created_by": "Admin",
+        "extra_properties": {
+            "target": "Unknown"
+        }
+    }
+    if file_format == "VCF":
+        experiment_result_vcf = {
+            "description": "VCF file",
+            "filename": f"{sample_id}_{uuid.uuid4()}.vcf.gz",
+            "file_format": "VCF",
+            "data_output_type": "Derived data",
+            "usage": "download",
+        }
+        experiment_result.update(experiment_result_vcf)
+    elif file_format == "CRAM":
+        experiment_result_cram = {
+            "description": "CRAM file",
+            "filename": f"{sample_id}_{uuid.uuid4()}.sorted.dup.recal.cram",
+            "file_format": "CRAM",
+            "data_output_type": "Raw data",
+            "usage": "visualized",
+        }
+        experiment_result.update(experiment_result_cram)
+    else:
+        raise Exception("Specify file format.")
+
+    return experiment_result
+
+
+def attach_experiment_results(sample_id):
+    # generate a random list of random experiment results
+    range_numbers = [0, 1, 2, 3, 4]
+    experiments_results = []
+    for i in range(random.choices(range_numbers, [0.1, 0.3, 0.4, 0.1, 0.1], k=1)[0]):
+        exp_result = single_experiment_result(sample_id, random.choices(["VCF", "CRAM"], [0.6, 0.4], k=1)[0])
+        experiments_results.append(exp_result)
+    return experiments_results
 
 
 def main():
@@ -34,60 +80,36 @@ def main():
     with open("./samples.tsv", "r") as sf:
         for s in sf.readlines():
             sample = s.split("\t")[0]
-            experiment = {
-                "id": str(uuid.uuid4()),
-                "study_type": random.choice(STUDY_TYPE),
-                "experiment_type": random.choice(EXPERIMENT_TYPE),
-                "molecule": random.choice(MOLECULE),
-                "molecule_ontology": [random.choice(MOLECULE_ONTOLOGY)],
-                "library_strategy": random.choice(LIBRARY_STRATEGY),
-                "library_source": random.choice(LIBRARY_SOURCE),
-                "library_selection": random.choice(LIBRARY_SELECTION),
-                "library_layout": random.choice(LIBRARY_LAYOUT),
-                "extraction_protocol": random.choice(EXTRACTION_PROTOCOL),
-                "biosample": f"{sample}",
-                "experiment_results": [
-                    {
-                        "identifier": f"{sample}_01",
-                        "description": "VCF file",
-                        "filename": f"{sample}_01.vcf.gz",
-                        "file_format": "VCF",
-                        "data_output_type": "Derived data",
-                        "usage": "download",
-                        "creation_date": "01-09-2021",
-                        "created_by": "Admin",
+            # attach biosamples with many experiments
+            for i in range(random.choices([0, 1, 2, 3], [0.3, 0.5, 0.1, 0.1], k=1)[0]):
+                experiment = {
+                    "id": str(uuid.uuid4()),
+                    "study_type": generic_random_choices(STUDY_TYPE),
+                    "experiment_type": generic_random_choices(EXPERIMENT_TYPE),
+                    "experiment_ontology": [generic_random_choices(EXPERIMENT_ONTOLOGY)],
+                    "molecule": generic_random_choices(MOLECULE),
+                    "molecule_ontology": [generic_random_choices(MOLECULE_ONTOLOGY)],
+                    "library_strategy": generic_random_choices(LIBRARY_STRATEGY),
+                    "library_source": generic_random_choices(LIBRARY_SOURCE),
+                    "library_selection": generic_random_choices(LIBRARY_SELECTION),
+                    "library_layout": generic_random_choices(LIBRARY_LAYOUT),
+                    "extraction_protocol": generic_random_choices(EXTRACTION_PROTOCOL),
+                    "biosample": f"{sample}",
+                    "experiment_results": attach_experiment_results(str(sample)),
+                    "instrument": {
+                        "identifier": "instrument:01",
+                        "platform": "Illumina",
+                        "description": "Illumina",
+                        "model": "Illumina HiSeq 4000",
                         "extra_properties": {
-                            "target": "Unknown"
+                            "date": "2021-06-21"
                         }
                     },
-                    {
-                        "identifier": f"{sample}_02",
-                        "description": "CRAM file",
-                        "filename": f"{sample}_02.sorted.dup.recal.cram",
-                        "file_format": "CRAM",
-                        "data_output_type": "Raw data",
-                        "usage": "visualized",
-                        "creation_date": "01-09-2021",
-                        "created_by": "Admin",
-                        "extra_properties": {
-                            "target": "Unknown"
-                        }
-                    }
-                ],
-                "instrument": {
-                    "identifier": "instrument:01",
-                    "platform": "Illumina",
-                    "description": "Illumina",
-                    "model": "Illumina HiSeq 4000",
                     "extra_properties": {
-                        "date": "2021-06-21"
+                        "comment": "This is randomly generated data for the test purposes only."
                     }
-                },
-                "extra_properties": {
-                    "comment": "This is randomly generated data for the test purposes only."
                 }
-            }
-            experiments["experiments"].append(experiment)
+                experiments["experiments"].append(experiment)
 
     # save experiments to the file
     with open(f"experiments.json", "w") as output:
