@@ -7,6 +7,7 @@ from faker import Faker
 
 from divide_samples import datasets
 from ontology_terms import PHENOTYPIC_FEATURES
+from utils import generic_random_choices
 
 
 fake = Faker()
@@ -49,7 +50,7 @@ def main():
                         "label": "Homo sapiens",
                     },
                 },
-                "phenotypic_features": [{"type": random.choice(PHENOTYPIC_FEATURES)}],
+                "phenotypic_features": [{"type": generic_random_choices(PHENOTYPIC_FEATURES)}],
                 "diseases": [],
                 "meta_data": {
                     "created_by": "David Lougheed",
