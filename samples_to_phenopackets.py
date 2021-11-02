@@ -6,7 +6,7 @@ from datetime import date
 from faker import Faker
 
 from divide_samples import datasets
-from ontologies import PHENOTYPIC_FEATURES
+from ontology_terms import PHENOTYPIC_FEATURES
 
 
 fake = Faker()
