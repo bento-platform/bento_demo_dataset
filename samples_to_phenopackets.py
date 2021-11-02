@@ -108,6 +108,28 @@ def main():
                 ]
             }
 
+            for i in range(random.choices([0, 1, 2], [0.8, 0.1, 0.1], k=1)[0]):
+                next_biosample = {
+                        "id": f"{s}_{i}",
+                        "individual_id": individual_id,
+                        "description": f"Biosample for patient {s}",
+                        "sampled_tissue": {
+                            "id": "UBERON:0000178",
+                            "label": "blood"
+                        },
+                        "individual_age_at_collection": {
+                            "age": age_string
+                        },
+                        "procedure": {
+                            "code": {
+                                "id": "NCIT:C15189",
+                                "label": "Biopsy"
+                            }
+                        },
+                        "is_control_sample": False
+                    }
+                ind_phenopacket["biosamples"].append(next_biosample)
+
             if s == "NA19648":
                 ind_phenopacket["diseases"] = [
                     {
