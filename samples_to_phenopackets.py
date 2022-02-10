@@ -6,7 +6,8 @@ from datetime import date
 from faker import Faker
 
 from divide_samples import datasets
-from ontologies import PHENOTYPIC_FEATURES
+from ontology_terms import PHENOTYPIC_FEATURES
+from utils import generic_random_choices
 
 
 fake = Faker()
@@ -49,7 +50,7 @@ def main():
                         "label": "Homo sapiens",
                     },
                 },
-                "phenotypic_features": [{"type": random.choice(PHENOTYPIC_FEATURES)}],
+                "phenotypic_features": [{"type": generic_random_choices(PHENOTYPIC_FEATURES)}],
                 "diseases": [],
                 "meta_data": {
                     "created_by": "David Lougheed",
@@ -107,6 +108,28 @@ def main():
                     }
                 ]
             }
+
+            for i in range(random.choices([0, 1, 2], [0.8, 0.1, 0.1], k=1)[0]):
+                next_biosample = {
+                        "id": f"{s}_{i}",
+                        "individual_id": individual_id,
+                        "description": f"Biosample for patient {s}",
+                        "sampled_tissue": {
+                            "id": "UBERON:0000178",
+                            "label": "blood"
+                        },
+                        "individual_age_at_collection": {
+                            "age": age_string
+                        },
+                        "procedure": {
+                            "code": {
+                                "id": "NCIT:C15189",
+                                "label": "Biopsy"
+                            }
+                        },
+                        "is_control_sample": False
+                    }
+                ind_phenopacket["biosamples"].append(next_biosample)
 
             if s == "NA19648":
                 ind_phenopacket["diseases"] = [
