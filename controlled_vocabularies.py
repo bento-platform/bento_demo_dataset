@@ -73,3 +73,32 @@ EXTRACTION_PROTOCOL = [
     "NGS",
     "GBS",
 ]
+
+# Controlled vocabularies for extra_properties field
+
+SMOKING = [
+    "Non-smoker",
+    "Smoker",
+    "Former smoker",
+    "Passive smoker",
+    "Not specified",
+]
+
+COVIDSTATUS = [
+    "Positive",
+    "Negative",
+    "Indeterminate",
+]
+
+VITAL_STATUS = [
+    "Alive",
+    "Deceased",
+]
+
+MOBILITY = [
+    "I have no problems in walking about",
+    "I have slight problems in walking about",
+    "I have moderate problems in walking about",
+    "I have severe problems in walking about",
+    "I am unable to walk about",
+]
