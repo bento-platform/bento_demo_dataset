@@ -19,6 +19,9 @@ random.seed(19618)
 
 SECONDS_IN_YEAR = 60 * 60 * 24 * 365
 
+# start date for consent date
+start_date = date(year=2020, month=3, day=1)
+
 
 def main():
     # Each phenopacket corresponds to one patient encounter.
@@ -54,7 +57,9 @@ def main():
                         "smoking": generic_random_choices(SMOKING),
                         "covidstatus": generic_random_choices(COVIDSTATUS),
                         "death_dc": generic_random_choices(VITAL_STATUS),
-                        "mobility": generic_random_choices(MOBILITY)
+                        "mobility": generic_random_choices(MOBILITY),
+                        "date_of_consent": str(fake.date_between(start_date=start_date)),
+                        "lab_test_result_value": round(random.uniform(0, 999.99), 2)
                     }
                 },
                 "phenotypic_features": [{"type": generic_random_choices(PHENOTYPIC_FEATURES)}],
