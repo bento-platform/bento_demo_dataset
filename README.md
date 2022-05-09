@@ -1,6 +1,6 @@
-# CHORD Demo Dataset
+# Bento Demo Dataset
 
-Partially synthetic demo dataset for CHORD.
+Partially synthetic demo dataset for the Bento platform.
 
 Portions are courtesy of the 1000 Genomes project, &copy; EMBL-EBI.
 
