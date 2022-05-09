@@ -3,9 +3,13 @@
 import json
 import random
 import uuid
+from glob import glob
+from os.path import basename
 
 from utils import generic_random_choices
 from controlled_vocabularies import *
+
+DATA_DIR = "./data"
 
 
 def single_experiment_result(sample_id, file_format):
@@ -19,9 +23,15 @@ def single_experiment_result(sample_id, file_format):
         }
     }
     if file_format == "VCF":
+        filename = f"{sample_id}_{uuid.uuid4()}.vcf.gz"
+        # Replace the random filename with a genuine one if it exists
+        file_in_data = glob(f"{DATA_DIR}/{sample_id}-*")
+        if len(file_in_data):
+            filename = basename(file_in_data[0])
+
         experiment_result_vcf = {
             "description": "VCF file",
-            "filename": f"{sample_id}_{uuid.uuid4()}.vcf.gz",
+            "filename": filename,
             "file_format": "VCF",
             "data_output_type": "Derived data",
             "usage": "download",
@@ -101,7 +111,7 @@ def main():
                 experiments["experiments"].append(experiment)
 
     # save experiments to the file
-    with open(f"experiments.json", "w") as output:
+    with open("experiments.json", "w") as output:
         json.dump(experiments, output, indent=4)
 
     print(f"Created {len(experiments['experiments'])} experiments")
