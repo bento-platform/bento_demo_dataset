@@ -18,8 +18,9 @@ To install dependencies run:
 ```
 pip install -r requirements.txt
 ```
-The `bcftools` executable must be in the PATH for generating the VCF files.
-Please refer to the [Samtools web page](http://www.htslib.org/download/) for installation instruction.
+The generation of VCF files is optional and conditional to having the `bcftools` executable in the PATH. **This does not work on Windows systems**.
+Please refer to the [Samtools web page](http://www.htslib.org/download/) for installation instructions. Note that on MacOS, bcftools can also be installed
+using the `brew` package manager.
 
 
 #### Usage:
@@ -30,7 +31,7 @@ Generate phenopackets metadata:
 python samples_to_phenopackets.py
 ```
 
-Generate VCF files from 1000 genomes chromosome 22.
+Generate VCF files from 1000 genomes chromosome 22 (requires `bcftools`)
 ```
 sh sample.vcf.sh
 ```
