@@ -7,6 +7,7 @@ from faker import Faker
 
 from divide_samples import datasets
 from ontology_terms import PHENOTYPIC_FEATURES
+from extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY, date_of_consent
 from utils import generic_random_choices
 
 
@@ -48,6 +49,12 @@ def main():
                     "taxonomy": {
                         "id": "NCBITaxon:9606",
                         "label": "Homo sapiens",
+                    },
+                    "extra_properties": {
+                        "smoking": random.choice(SMOKING_STATUS),
+                        "mobility": random.choice(MOBILITY),
+                        "covid_severity": random.choice(COVID_SEVERITY),
+                        "date_of_consent": date_of_consent()
                     },
                 },
                 "phenotypic_features": [{"type": generic_random_choices(PHENOTYPIC_FEATURES)}],
