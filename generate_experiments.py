@@ -34,7 +34,7 @@ def single_experiment_result(sample_id, file_format):
             "filename": filename,
             "file_format": "VCF",
             "data_output_type": "Derived data",
-            "usage": "download",
+            "usage": "Downloaded",
         }
         experiment_result.update(experiment_result_vcf)
     elif file_format == "CRAM":
@@ -43,7 +43,7 @@ def single_experiment_result(sample_id, file_format):
             "filename": f"{sample_id}_{uuid.uuid4()}.sorted.dup.recal.cram",
             "file_format": "CRAM",
             "data_output_type": "Raw data",
-            "usage": "visualized",
+            "usage": "Visualized",
         }
         experiment_result.update(experiment_result_cram)
     else:
