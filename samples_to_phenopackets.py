@@ -8,7 +8,7 @@ from faker import Faker
 from divide_samples import datasets
 from ontology_terms import PHENOTYPIC_FEATURES
 from extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY, date_of_consent
-from utils import generic_random_choices
+from utils import generic_random_choices, random_skewed_gen
 
 
 fake = Faker()
@@ -24,6 +24,7 @@ def main():
     # Each phenopacket corresponds to one patient encounter.
 
     dataset_phenopackets = ([], [], [])
+    lab_result_gen = random_skewed_gen(max=1000)
 
     with open("./samples.tsv", "r") as sf:
         sample_sexes = {s.split("\t")[0]: s.split("\t")[1].strip() for s in sf.readlines()}
@@ -54,7 +55,8 @@ def main():
                         "smoking": random.choice(SMOKING_STATUS),
                         "mobility": random.choice(MOBILITY),
                         "covid_severity": random.choice(COVID_SEVERITY),
-                        "date_of_consent": date_of_consent()
+                        "date_of_consent": date_of_consent(),
+                        "lab_test_result_value": int(next(lab_result_gen))
                     },
                 },
                 "phenotypic_features": [{"type": generic_random_choices(PHENOTYPIC_FEATURES)}],
