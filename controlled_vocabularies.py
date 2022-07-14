@@ -1,11 +1,10 @@
 # Controlled vocabularies for Experiments
 
 STUDY_TYPE = [
+    "Genomics",
     "Epigenomics",
-    "Proteomics",
     "Metagenomics",
     "Transcriptomics",
-    "Metabolomics",
     "Other",
 ]
 
@@ -14,7 +13,8 @@ EXPERIMENT_TYPE = [
     "RNA-Seq",
     "mRNA-Seq",
     "smRNA-Seq",
-    "Histone H3K4me1",
+    "WES",
+    "Other"
 ]
 
 EXPERIMENT_ONTOLOGY = [
@@ -30,7 +30,7 @@ MOLECULE = [
     "small RNA",
     "genomic DNA",
     "protein",
-    "other", ]
+    "Other", ]
 
 MOLECULE_ONTOLOGY = [
     {"id": "SO:0000991", "label": "genomic DNA"},
@@ -61,6 +61,7 @@ LIBRARY_SELECTION = [
     "Random PCR",
     "RT-PCR",
     "MF",
+    "Exome capture",
     "Other",
 ]
 
