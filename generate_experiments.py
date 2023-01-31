@@ -14,8 +14,9 @@ DATA_DIR = "./data"
 
 def single_experiment_result(sample_id, file_format):
     # generate a single experiment result: VCF or CRAM
+    sample_name=f"{sample_id}_{uuid.uuid4()}" # TODO: remove uuid?
     experiment_result = {
-        "identifier": f"{sample_id}_{uuid.uuid4()}",
+        "identifier": sample_name,
         "creation_date": "01-09-2021",
         "created_by": "Admin",
         "extra_properties": {
@@ -23,7 +24,7 @@ def single_experiment_result(sample_id, file_format):
         }
     }
     if file_format == "VCF":
-        filename = f"{sample_id}_{uuid.uuid4()}.vcf.gz"
+        filename = f"{sample_name}.vcf.gz"
         # Replace the random filename with a genuine one if it exists
         file_in_data = glob(f"{DATA_DIR}/{sample_id}-*")
         if len(file_in_data):
@@ -40,7 +41,7 @@ def single_experiment_result(sample_id, file_format):
     elif file_format == "CRAM":
         experiment_result_cram = {
             "description": "CRAM file",
-            "filename": f"{sample_id}_{uuid.uuid4()}.sorted.dup.recal.cram",
+            "filename": f"{sample_name}.sorted.dup.recal.cram",
             "file_format": "CRAM",
             "data_output_type": "Raw data",
             "usage": "Visualized",
