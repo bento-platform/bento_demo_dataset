@@ -16,7 +16,7 @@ check_prerequisites()
     # bcftools
     if ! command -v bcftools &> /dev/null
     then
-        echo "Error: bctools could not be found"
+        echo "Error: bcftools could not be found"
         exit 1
     fi
 
