@@ -51,17 +51,19 @@ def single_experiment_result(sample_id, file_format):
 
     return experiment_result
 
+def flipACoinIsHeads():
+    return random.choices([True, False], [0.5, 0.5], k=1)[0]
 
 def attach_experiment_results(sample_id):
     # generate a random list of random experiment results
     experiments_results = []
 
     # randomly decide whether or not to include a VCF in this experiment
-    if random.choices([True, False], [0.5, 0.5], k=1)[0]:
+    if flipACoinIsHeads():
         exp_result = single_experiment_result(sample_id, "VCF")
         experiments_results.append(exp_result)
         # if a VCF was included, randomly decide whether or not to also include a CRAM
-        if random.choices([True, False], [0.5, 0.5], k=1)[0]:
+        if flipACoinIsHeads():
             exp_result = single_experiment_result(sample_id, "CRAM")
             experiments_results.append(exp_result)
 
