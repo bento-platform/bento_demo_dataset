@@ -15,7 +15,7 @@ DATA_DIR = "./data"
 def single_experiment_result(sample_id, file_format):
     # generate a single experiment result: VCF or CRAM
     experiment_result = {
-        "identifier": f"{sample_id}_{uuid.uuid4()}",
+        "identifier": sample_id,
         "creation_date": "01-09-2021",
         "created_by": "Admin",
         "extra_properties": {
@@ -23,7 +23,7 @@ def single_experiment_result(sample_id, file_format):
         }
     }
     if file_format == "VCF":
-        filename = f"{sample_id}_{uuid.uuid4()}.vcf.gz"
+        filename = f"{sample_id}.vcf.gz"
         # Replace the random filename with a genuine one if it exists
         file_in_data = glob(f"{DATA_DIR}/{sample_id}-*")
         if len(file_in_data):
@@ -40,7 +40,7 @@ def single_experiment_result(sample_id, file_format):
     elif file_format == "CRAM":
         experiment_result_cram = {
             "description": "CRAM file",
-            "filename": f"{sample_id}_{uuid.uuid4()}.sorted.dup.recal.cram",
+            "filename": f"{sample_id}.sorted.dup.recal.cram",
             "file_format": "CRAM",
             "data_output_type": "Raw data",
             "usage": "Visualized",
@@ -51,14 +51,22 @@ def single_experiment_result(sample_id, file_format):
 
     return experiment_result
 
+def flipACoinIsHeads():
+    return random.choices([True, False], [0.5, 0.5], k=1)[0]
 
 def attach_experiment_results(sample_id):
     # generate a random list of random experiment results
-    range_numbers = [0, 1, 2, 3, 4]
     experiments_results = []
-    for i in range(random.choices(range_numbers, [0.1, 0.3, 0.4, 0.1, 0.1], k=1)[0]):
-        exp_result = single_experiment_result(sample_id, random.choices(["VCF", "CRAM"], [0.6, 0.4], k=1)[0])
+
+    # randomly decide whether or not to include a VCF in this experiment
+    if flipACoinIsHeads():
+        exp_result = single_experiment_result(sample_id, "VCF")
         experiments_results.append(exp_result)
+        # if a VCF was included, randomly decide whether or not to also include a CRAM
+        if flipACoinIsHeads():
+            exp_result = single_experiment_result(sample_id, "CRAM")
+            experiments_results.append(exp_result)
+
     return experiments_results
 
 

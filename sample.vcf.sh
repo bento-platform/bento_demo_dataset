@@ -16,7 +16,7 @@ check_prerequisites()
     # bcftools
     if ! command -v bcftools &> /dev/null
     then
-        echo "Error: bctools could not be found"
+        echo "Error: bcftools could not be found"
         exit 1
     fi
 
@@ -81,10 +81,7 @@ for sample in $SAMPLE_LIST; do
         echo "VCF for ${sample} already exists."
         continue
     fi
+    
     bcftools view -c1 -Oz -s $sample -o $SAMPLE_FILE $FILE
-
-    # Rename file using hash from check sum
-    SHA=$(shasum $SAMPLE_FILE | head -c 40)
-    mv "${SAMPLE_FILE}" "${DATA_DIR}/${sample}-${SHA}.vcf.gz"
 done
 echo "${SAMPLE_NB} sample VCF files generated."
