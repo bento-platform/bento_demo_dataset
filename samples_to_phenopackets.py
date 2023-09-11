@@ -85,9 +85,9 @@ def main():
                             "id": "NCIT:2015-09-01",
                             "name": "NCI Thesaurus",
                             "namespace_prefix": "NCIT",
-                            "url": "https://ncit.nci.nih.gov",
+                            "url": "https://purl.obolibrary.org/obo/ncit.owl",
                             "version": "2015-09-01",
-                            "iri_prefix": "https://ncit.nci.nih.gov"
+                            "iri_prefix": "https://ncithesaurus.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code="
                         }
                     ],
                     "updates": [],
