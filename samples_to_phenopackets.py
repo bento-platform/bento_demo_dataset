@@ -79,7 +79,7 @@ def main():
                             "namespace_prefix": "UBERON",
                             "url": "http://purl.obolibrary.org/obo/uberon.owl",
                             "version": "2019-06-27",
-                            "iri_prefix": "http://purl.obolibrary.org/obo/UBERON"
+                            "iri_prefix": "http://purl.obolibrary.org/obo/UBERON_"
                         },
                         {
                             "id": "NCIT:2015-09-01",
