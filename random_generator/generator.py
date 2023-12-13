@@ -28,16 +28,16 @@ class RandomGenerator:
     def biased_die_roll(self, weights: list[float]) -> int:
         return self.rng.choice(range(len(weights)), p=weights, shuffle=False)
 
-    def int_from_truncated_gaussian(self, min: float, max: float, mean: float, sd: float) -> int:
-        return floor(truncnorm.rvs((min-mean)/sd, (max-mean)/sd, loc=mean, scale=sd, random_state=self.rng))
+    def int_from_truncated_gaussian(self, low: float, hi: float, mean: float, sd: float) -> int:
+        return floor(truncnorm.rvs((low-mean)/sd, (hi-mean)/sd, loc=mean, scale=sd, random_state=self.rng))
 
     # integers drawn from normal distribution between min and max
-    def ints_from_truncated_gaussian(self, min: float, max: float, mean: float, sd: float, size: int) -> list[int]:
-        vals = truncnorm.rvs((min-mean)/sd, (max-mean)/sd, loc=mean, scale=sd, size=size, random_state=self.rng)
+    def ints_from_truncated_gaussian(self, low: float, hi: float, mean: float, sd: float, size: int) -> list[int]:
+        vals = truncnorm.rvs((low-mean)/sd, (hi-mean)/sd, loc=mean, scale=sd, size=size, random_state=self.rng)
         return [floor(val) for val in vals]
 
-    def int_from_truncated_exponential(self, min: float, max: float, mean: float) -> int:
-        return floor(truncexpon.rvs((max - min)/mean, loc=min, scale=mean, random_state=self.rng))
+    def int_from_truncated_exponential(self, low: float, hi: float, mean: float) -> int:
+        return floor(truncexpon.rvs((hi - low)/mean, loc=low, scale=mean, random_state=self.rng))
 
     def normalized_quasi_gaussian_weights(self, size: int) -> list[float]:
         g = self.rng.normal(size=size)
