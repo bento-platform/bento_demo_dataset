@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime
-from typing import TypeVar
+from typing import TypeVar, Literal
 from math import floor
 import numpy as np
 from scipy.stats import truncnorm, truncexpon
@@ -37,6 +37,9 @@ class RandomGenerator():
         """
         return self.rng.choice(len(weights), p=weights, shuffle=False)
 
+    def biased_coin_toss(self, p_win_toss: float) -> Literal[0, 1]:
+        return self.biased_die_roll([1-p_win_toss, p_win_toss])
+
     def float_from_gaussian_range(self, low: float, high: float, mean: float, sd: float) -> float:
         return float(truncnorm.rvs((low-mean)/sd, (high-mean)/sd, loc=mean, scale=sd, random_state=self.rng))
 
@@ -56,8 +59,8 @@ class RandomGenerator():
         return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
     
     def random_recent_date(self) -> str:
-        year = f"202{self.rng.int_from_exponential_range(low=0, high=4, mean=3)}"
-        d = self.rng.int_from_gaussian_range(low=1, high=366, mean=366/2, sd=366/6)
+        year = f"202{self.int_from_exponential_range(low=0, high=4, mean=3)}"
+        d = self.int_from_gaussian_range(low=1, high=366, mean=366/2, sd=366/6)
         month_day = datetime.strptime(f"{d}", "%j").strftime("%m-%d")
         return year + "-" + month_day
 
