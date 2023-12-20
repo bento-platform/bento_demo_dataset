@@ -49,13 +49,13 @@ class RandomGenerator():
     def int_from_exponential_range(self, low: float, high: float, mean: float) -> int:
         return floor(self.float_from_exponential_range(low, high, mean))
 
-    def int_from_uniform_range(self, low, high) -> int:
+    def int_from_uniform_range(self, low: float, high: float) -> int:
         return int(self.rng.integers(low, high))
 
-    def random_uuid4(self):
+    def random_uuid4(self) -> str:
         return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
     
-    def random_recent_date(self):
+    def random_recent_date(self) -> str:
         year = f"202{self.rng.int_from_exponential_range(low=0, high=4, mean=3)}"
         d = self.rng.int_from_gaussian_range(low=1, high=366, mean=366/2, sd=366/6)
         month_day = datetime.strptime(f"{d}", "%j").strftime("%m-%d")
