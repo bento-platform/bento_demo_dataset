@@ -1,3 +1,5 @@
+import uuid
+from datetime import datetime
 from typing import TypeVar
 from math import floor
 import numpy as np
@@ -50,6 +52,15 @@ class RandomGenerator():
     def int_from_uniform_range(self, low, high) -> int:
         return int(self.rng.integers(low, high))
 
+    def random_uuid4(self):
+        return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
+    
+    def random_recent_date(self):
+        year = f"202{self.rng.int_from_exponential_range(low=0, high=4, mean=3)}"
+        d = self.rng.int_from_gaussian_range(low=1, high=366, mean=366/2, sd=366/6)
+        month_day = datetime.strptime(f"{d}", "%j").strftime("%m-%d")
+        return year + "-" + month_day
+
     def gaussian_weights(self, size: int) -> list[np.float64]:
         """
         weights for choice methods
@@ -59,14 +70,3 @@ class RandomGenerator():
         g_pos = abs(g)
         g_sum = sum(g_pos)
         return [n / g_sum for n in g_pos]
-    
-    def random_bytes(self, n: int) -> bytes:
-        return self.rng.bytes(n)
-
-
-    # TODO
-    # def random_weights(self, controlled_vocabulary):
-    # # generate random weights for random distribution of values
-    # np_random_weights = np.random.dirichlet(np.ones(len(controlled_vocabulary)), size=1)
-    # weights = [round(i, 2) for i in np_random_weights.tolist()[0]]
-    # return weights
