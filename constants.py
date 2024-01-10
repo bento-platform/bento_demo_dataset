@@ -49,4 +49,4 @@ BP_SD = 20
 
 
 # use default that matches our current 1000 genomes data
-DEFAULT_ASSEMBLY = "GRCh37"
+DEFAULT_ASSEMBLY = "GRCh38"
