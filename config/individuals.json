@@ -1,0 +1,10132 @@
+[
+    {
+        "id": "BW100",
+        "sex": "MALE",
+        "biosamples": [
+            {
+                "id": "MS002001",
+                "sampled_tissue": {
+                    "id": "UB:0000955",
+                    "label": "Brodmann (1909) area 11"
+                },
+                "procedure": {
+                    "code": {
+                        "id": "NCIT:C15189",
+                        "label": "Biopsy"
+                    }
+                }
+            }
+        ],
+        "experiments": [
+            {
+                "id": "MS002001-01",
+                "study_type": "Transcriptomics",
+                "experiment_type": "RNA-Seq",
+                "experiment_ontology": [
+                    {
+                        "id": "OBI:0001177",
+                        "label": "RNA sequencing assay"
+                    }
+                ],
+                "library_strategy": "RNA-Seq",
+                "biosample": "MS002001",
+                "experiment_results": [
+                    {
+                        "identifier": "MS002001-01-00",
+                        "description": "RNAseq alignment, forward signal",
+                        "filename": "51570.CEEHRC.MS002001.RNA-Seq.signal_forward.bigWig",
+                        "file_format": "BigWig",
+                        "genome_assembly_id": "GRCh37",
+                        "data_output_type": "Derived data",
+                        "creation_date": "2022-02-08 00:00:00"
+                    },
+                    {
+                        "identifier": "MS002001-01-01",
+                        "description": "RNAseq alignment, reverse signal",
+                        "filename": "51571.CEEHRC.MS002001.RNA-Seq.signal_reverse.bigWig",
+                        "file_format": "BigWig",
+                        "genome_assembly_id": "GRCh37",
+                        "data_output_type": "Derived data",
+                        "creation_date": "2022-02-08 00:00:00"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "BW200",
+        "sex": "FEMALE",
+        "biosamples": [
+            {
+                "id": "MS002201",
+                "sampled_tissue": {
+                    "id": "NCIT:C12415",
+                    "label": "Kidney"
+                },
+                "histological_diagnosis": {
+                    "id": "NCIT:C9384",
+                    "label": "Renal Carcinoma"
+                },
+                "procedure": {
+                    "code": {
+                        "id": "NCIT:C15189",
+                        "label": "Biopsy"
+                    }
+                }
+            }
+        ],
+        "experiments": [
+            {
+                "id": "MS002201-01",
+                "study_type": "Transcriptomics",
+                "experiment_type": "RNA-Seq",
+                "experiment_ontology": [
+                    {
+                        "id": "OBI:0001177",
+                        "label": "RNA sequencing assay"
+                    }
+                ],
+                "library_strategy": "RNA-Seq",
+                "biosample": "MS002201",
+                "experiment_results": [
+                    {
+                        "identifier": "MS002201-01-00",
+                        "description": "RNAseq alignment, forward signal",
+                        "filename": "51598.CEEHRC.MS002201.RNA-Seq.signal_forward.bigWig",
+                        "file_format": "BigWig",
+                        "genome_assembly_id": "GRCh37",
+                        "data_output_type": "Derived data",
+                        "creation_date": "2022-02-08 00:00:00"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "HG00096",
+        "sex": "MALE",
+        "files": {
+            "cram": {
+                "filename": "my_cram.cram",
+                "assembly_id": "GRCh37"
+            },
+            "bigwig": {
+                "filename": "my_bw.bigwig",
+                "assembly_id": "GRCh37"
+            },
+            "other_files": []
+        }
+    },
+    {
+        "id": "HG00097",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00099",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00100",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00101",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00102",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00103",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00105",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00106",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00107",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00108",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00109",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00110",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00111",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00112",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00113",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00114",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00115",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00116",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00117",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00118",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00119",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00120",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00121",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00122",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00123",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00125",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00126",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00127",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00128",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00129",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00130",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00131",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00132",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00133",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00136",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00137",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00138",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00139",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00140",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00141",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00142",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00143",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00145",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00146",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00148",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00149",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00150",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00151",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00154",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00155",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00157",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00158",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00159",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00160",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00171",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00173",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00174",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00176",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00177",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00178",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00179",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00180",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00181",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00182",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00183",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00185",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00186",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00187",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00188",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00189",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00190",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00231",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00232",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00233",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00234",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00235",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00236",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00237",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00238",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00239",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00240",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00242",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00243",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00244",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00245",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00246",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00250",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00251",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00252",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00253",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00254",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00255",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00256",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00257",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00258",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00259",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00260",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00261",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00262",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00263",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00264",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00265",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00266",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00267",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00268",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00269",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00271",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00272",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00273",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00274",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00275",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00276",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00277",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00278",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00280",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00281",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00282",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00284",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00285",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00288",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00290",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00304",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00306",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00308",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00309",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00310",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00311",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00313",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00315",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00318",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00319",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00320",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00321",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00323",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00324",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00325",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00326",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00327",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00328",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00329",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00330",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00331",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00332",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00334",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00335",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00336",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00337",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00338",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00339",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00341",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00342",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00343",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00344",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00345",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00346",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00349",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00350",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00351",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00353",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00355",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00356",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00357",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00358",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00360",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00361",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00362",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00364",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00365",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00366",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00367",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00368",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00369",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00371",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00372",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00373",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00375",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00376",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00378",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00379",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00380",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00381",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00382",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00383",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00384",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00403",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00404",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00406",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00407",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00409",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00410",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00419",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00421",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00422",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00428",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00436",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00437",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00442",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00443",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00445",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00446",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00448",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00449",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00451",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00452",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00457",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00458",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00463",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00464",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00472",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00473",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00475",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00476",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00478",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00479",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00500",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00513",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00524",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00525",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00530",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00531",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00533",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00534",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00536",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00537",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00542",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00543",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00551",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00553",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00554",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00556",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00557",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00559",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00560",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00565",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00566",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00580",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00581",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00583",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00584",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00589",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00590",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00592",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00593",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00595",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00596",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00598",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00599",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00607",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00608",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00610",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00611",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00613",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00614",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00619",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00620",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00622",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00623",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00625",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00626",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00628",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00629",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00631",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00632",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00634",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00637",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00638",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00640",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00641",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00650",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00651",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00653",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00654",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00656",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00657",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00662",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00663",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00671",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00672",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00674",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00675",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00683",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00684",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00689",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00690",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00692",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00693",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00698",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00699",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00701",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00704",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00705",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00707",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00708",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00717",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00728",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00729",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00731",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00732",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00734",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00736",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00737",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00739",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00740",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00742",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00743",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00759",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00766",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00844",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00851",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00864",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00867",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00879",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00881",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG00956",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00978",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG00982",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01028",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01029",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01031",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01046",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01047",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01048",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01049",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01051",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01052",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01054",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01055",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01058",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01060",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01061",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01063",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01064",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01066",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01067",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01069",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01070",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01072",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01073",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01075",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01077",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01079",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01080",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01082",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01083",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01085",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01086",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01088",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01089",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01092",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01094",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01095",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01097",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01098",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01101",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01102",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01104",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01105",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01107",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01108",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01110",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01111",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01112",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01113",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01119",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01121",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01122",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01124",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01125",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01130",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01131",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01133",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01134",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01136",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01137",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01139",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01140",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01142",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01148",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01149",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01161",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01162",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01164",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01167",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01168",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01170",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01171",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01173",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01174",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01176",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01177",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01182",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01183",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01187",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01188",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01190",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01191",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01197",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01198",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01200",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01204",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01205",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01241",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01242",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01247",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01248",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01250",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01251",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01253",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01254",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01256",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01257",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01259",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01260",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01269",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01271",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01272",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01275",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01277",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01280",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01281",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01284",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01286",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01302",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01303",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01305",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01308",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01311",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01312",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01323",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01325",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01326",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01334",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01341",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01342",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01344",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01345",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01348",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01350",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01351",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01353",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01354",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01356",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01357",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01359",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01360",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01362",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01363",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01365",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01366",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01369",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01372",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01374",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01375",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01377",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01378",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01383",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01384",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01389",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01390",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01392",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01393",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01395",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01396",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01398",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01402",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01403",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01405",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01412",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01413",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01414",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01431",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01432",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01435",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01437",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01438",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01440",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01441",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01443",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01444",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01447",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01455",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01456",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01459",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01461",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01462",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01464",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01465",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01468",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01474",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01479",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01485",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01486",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01488",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01489",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01491",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01492",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01494",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01495",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01497",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01498",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01500",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01501",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01503",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01504",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01506",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01507",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01509",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01510",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01512",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01513",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01515",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01516",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01518",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01519",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01521",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01522",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01524",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01525",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01527",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01528",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01530",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01531",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01536",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01537",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01550",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01551",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01556",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01565",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01566",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01571",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01572",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01577",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01578",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01583",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01586",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01589",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01593",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01595",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01596",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01597",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01598",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01599",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01600",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01602",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01603",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01605",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01606",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01607",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01608",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01610",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01612",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01613",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01615",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01617",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01618",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01619",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01620",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01623",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01624",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01625",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01626",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01628",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01630",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01631",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01632",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01668",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01669",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01670",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01672",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01673",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01675",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01676",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01678",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01679",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01680",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01682",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01684",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01685",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01686",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01694",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01695",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01697",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01699",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01700",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01702",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01704",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01705",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01707",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01708",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01709",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01710",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01746",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01747",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01756",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01757",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01761",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01762",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01765",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01766",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01767",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01768",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01770",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01771",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01773",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01775",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01776",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01777",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01779",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01781",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01783",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01784",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01785",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01786",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01789",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01790",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01791",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01794",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01795",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01796",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01797",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01798",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01799",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01800",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01801",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01802",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01804",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01805",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01806",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01807",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01808",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01809",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01810",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01811",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01812",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01813",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01815",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01816",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01817",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01840",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01841",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01842",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01843",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01844",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01845",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01846",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01847",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01848",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01849",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01850",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01851",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01852",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01853",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01855",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01857",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01858",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01859",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01860",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01861",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01862",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01863",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01864",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01865",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01866",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01867",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01868",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01869",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01870",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01871",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01872",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01873",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01874",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01878",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01879",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01880",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01882",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01883",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01885",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01886",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01889",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01890",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01892",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01893",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01894",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01896",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01912",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01914",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01915",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01917",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01918",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01920",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01921",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01923",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01924",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01926",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01927",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01932",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01933",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01935",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01936",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01938",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01939",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01941",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01942",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01944",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01945",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01947",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01948",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01950",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01951",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01953",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01954",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01956",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01958",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01961",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01965",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01967",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01968",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01970",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01971",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01973",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01974",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01976",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01977",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01979",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01980",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01982",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01985",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01986",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01988",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01989",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01990",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01991",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG01992",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG01997",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02002",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02003",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02006",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02008",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02009",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02010",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02012",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02013",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02014",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02016",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02017",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02019",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02020",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02023",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02025",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02026",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02028",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02029",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02031",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02032",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02035",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02040",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02047",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02048",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02049",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02050",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02051",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02052",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02053",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02054",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02057",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02058",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02060",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02061",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02064",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02067",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02069",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02070",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02072",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02073",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02075",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02076",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02078",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02079",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02081",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02082",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02084",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02085",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02086",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02087",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02088",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02089",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02090",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02095",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02102",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02104",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02105",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02107",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02108",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02111",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02113",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02116",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02121",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02122",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02127",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02128",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02130",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02131",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02133",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02134",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02136",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02137",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02138",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02139",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02140",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02141",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02142",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02143",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02144",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02146",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02147",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02150",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02151",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02152",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02153",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02154",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02155",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02156",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02164",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02165",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02166",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02178",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02179",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02180",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02181",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02182",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02184",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02185",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02186",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02187",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02188",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02190",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02215",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02219",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02220",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02221",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02223",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02224",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02230",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02231",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02232",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02233",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02235",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02236",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02238",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02239",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02250",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02252",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02253",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02255",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02256",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02259",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02260",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02262",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02265",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02266",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02271",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02272",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02274",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02275",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02277",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02278",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02281",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02282",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02283",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02284",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02285",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02286",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02291",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02292",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02298",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02299",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02301",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02304",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02307",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02308",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02309",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02312",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02314",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02315",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02317",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02318",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02322",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02323",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02325",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02330",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02332",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02334",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02337",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02339",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02343",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02345",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02348",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02351",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02353",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02355",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02356",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02360",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02364",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02367",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02371",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02373",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02374",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02375",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02379",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02380",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02382",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02383",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02384",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02385",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02386",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02389",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02390",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02391",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02392",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02394",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02395",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02396",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02397",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02398",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02399",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02401",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02402",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02406",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02407",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02408",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02409",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02410",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02419",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02420",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02425",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02427",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02429",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02433",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02439",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02442",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02445",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02449",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02450",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02455",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02461",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02462",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02464",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02465",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02470",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02471",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02476",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02477",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02479",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02481",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02484",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02485",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02489",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02490",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02491",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02493",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02494",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02496",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02497",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02501",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02502",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02505",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02508",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02511",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02512",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02513",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02521",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02522",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02536",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02537",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02541",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02545",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02546",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02549",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02554",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02555",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02557",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02558",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02561",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02562",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02568",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02570",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02571",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02573",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02574",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02577",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02580",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02582",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02583",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02585",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02586",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02588",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02589",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02594",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02595",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02597",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02600",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02601",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02603",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02604",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02610",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02611",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02613",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02614",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02620",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02621",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02623",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02624",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02628",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02629",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02634",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02635",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02642",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02643",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02645",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02646",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02648",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02649",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02651",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02652",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02654",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02655",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02657",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02658",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02660",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02661",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02666",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02667",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02675",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02676",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02678",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02679",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02681",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02682",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02684",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02685",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02687",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02688",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02690",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02691",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02694",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02696",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02697",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02699",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02700",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02702",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02703",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02715",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02716",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02721",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02722",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02724",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02725",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02727",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02728",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02731",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02733",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02734",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02736",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02737",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02756",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02757",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02759",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02760",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02763",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02768",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02769",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02771",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02772",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02774",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02775",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02778",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02780",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02783",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02784",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02786",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02787",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02789",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02790",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02792",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02793",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02798",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02799",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02804",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02805",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02807",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02808",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02810",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02811",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02813",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02814",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02816",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02817",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02819",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02820",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02836",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02837",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02839",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02840",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02851",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02852",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02854",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02855",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02860",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02861",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02870",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02878",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02879",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02881",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02882",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02884",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02885",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02887",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02888",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02890",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02891",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02895",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02896",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02922",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02923",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02938",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02941",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02943",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02944",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02946",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02947",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02952",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02953",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02968",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02970",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02971",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02973",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02974",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02976",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02977",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02979",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG02981",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02982",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG02983",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03006",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03007",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03009",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03012",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03015",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03016",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03018",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03019",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03021",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03022",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03024",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03025",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03027",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03028",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03039",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03040",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03045",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03046",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03048",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03049",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03052",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03054",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03055",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03057",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03058",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03060",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03061",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03063",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03064",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03066",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03069",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03072",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03073",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03074",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03077",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03078",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03079",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03081",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03082",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03084",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03085",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03086",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03088",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03091",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03095",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03096",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03097",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03099",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03100",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03103",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03105",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03108",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03109",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03111",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03112",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03114",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03115",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03117",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03118",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03120",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03121",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03123",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03124",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03126",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03127",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03129",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03130",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03132",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03133",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03135",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03136",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03139",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03157",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03159",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03160",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03162",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03163",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03166",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03168",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03169",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03172",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03175",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03189",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03190",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03193",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03195",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03196",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03198",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03199",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03202",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03209",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03212",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03224",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03225",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03228",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03229",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03234",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03235",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03237",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03238",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03240",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03241",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03246",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03247",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03258",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03259",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03265",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03267",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03268",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03270",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03271",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03279",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03280",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03291",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03294",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03295",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03297",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03298",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03300",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03301",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03303",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03304",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03311",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03313",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03342",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03343",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03351",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03352",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03354",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03363",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03366",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03367",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03369",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03370",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03372",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03376",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03378",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03380",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03382",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03385",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03388",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03391",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03394",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03397",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03401",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03410",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03419",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03428",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03432",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03433",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03436",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03437",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03439",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03442",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03445",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03446",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03449",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03451",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03452",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03455",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03457",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03458",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03460",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03461",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03464",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03469",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03470",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03472",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03473",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03476",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03478",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03479",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03484",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03485",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03488",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03490",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03491",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03499",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03511",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03514",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03515",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03517",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03518",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03520",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03521",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03538",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03539",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03547",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03548",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03556",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03557",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03558",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03559",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03563",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03565",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03567",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03571",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03572",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03575",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03577",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03578",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03583",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03585",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03589",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03593",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03594",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03595",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03598",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03600",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03603",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03604",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03607",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03611",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03615",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03616",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03619",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03624",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03625",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03629",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03631",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03634",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03636",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03640",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03642",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03643",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03644",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03645",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03646",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03649",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03652",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03653",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03660",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03663",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03667",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03668",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03672",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03673",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03679",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03680",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03681",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03684",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03685",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03686",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03687",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03689",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03690",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03691",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03692",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03693",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03694",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03695",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03696",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03697",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03698",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03702",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03703",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03705",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03706",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03708",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03709",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03711",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03713",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03714",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03716",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03717",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03718",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03720",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03722",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03727",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03729",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03730",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03731",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03733",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03736",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03738",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03740",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03741",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03742",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03743",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03744",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03745",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03746",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03750",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03752",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03753",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03754",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03755",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03756",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03757",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03760",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03762",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03765",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03767",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03770",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03771",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03772",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03773",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03774",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03775",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03777",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03778",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03779",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03780",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03781",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03782",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03784",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03785",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03786",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03787",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03788",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03789",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03790",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03792",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03793",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03796",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03800",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03802",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03803",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03805",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03808",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03809",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03812",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03814",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03815",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03817",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03821",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03823",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03824",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03826",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03829",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03830",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03832",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03833",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03836",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03837",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03838",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03844",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03846",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03848",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03849",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03850",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03851",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03854",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03856",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03857",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03858",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03861",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03862",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03863",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03864",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03866",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03867",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03868",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03869",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03870",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03871",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03872",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03873",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03874",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03875",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03882",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03884",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03885",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03886",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03887",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03888",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03890",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03894",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03895",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03896",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03897",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03898",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03899",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03900",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03902",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03905",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03907",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03908",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03910",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03911",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03913",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03914",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03916",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03917",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03919",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03920",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03922",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03925",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03926",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03928",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03931",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03934",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03937",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03940",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03941",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03943",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03944",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03945",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03947",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03949",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03950",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03951",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03953",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03955",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03960",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03963",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03965",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03967",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03968",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03969",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03971",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03973",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03974",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03976",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03977",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03978",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03985",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03986",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03989",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03990",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03991",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03995",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG03998",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG03999",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04001",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04002",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04003",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04006",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04014",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04015",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04017",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04018",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04019",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04020",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04022",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04023",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04025",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04026",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04029",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04033",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04035",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04038",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04039",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04042",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04047",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04054",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04056",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04059",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04060",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04061",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04062",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04063",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04070",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04075",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04076",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04080",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04090",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04093",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04094",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04096",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04098",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04099",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04100",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04106",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04107",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04118",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04131",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04134",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04140",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04141",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04144",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04146",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04152",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04153",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04155",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04156",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04158",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04159",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04161",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04162",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04164",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04171",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04173",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04176",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04177",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04180",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04182",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04183",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04185",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04186",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04188",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04189",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04194",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04195",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04198",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04200",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04202",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04206",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04209",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04210",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04211",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04212",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04214",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04216",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04219",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04222",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04225",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04227",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "HG04229",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04235",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04238",
+        "sex": "MALE"
+    },
+    {
+        "id": "HG04239",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA06984",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA06985",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA06986",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA06989",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA06994",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA07000",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA07037",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA07048",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA07051",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA07056",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA07347",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA07357",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA10847",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA10851",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11829",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11830",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11831",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11832",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11840",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11843",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11881",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11892",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11893",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11894",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11918",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11919",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11920",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11930",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11931",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11932",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11933",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA11992",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11994",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA11995",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12003",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12004",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12005",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12006",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12043",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12044",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12045",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12046",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12058",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12144",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12154",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12155",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12156",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12234",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12249",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12272",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12273",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12275",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12282",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12283",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12286",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12287",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12340",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12341",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12342",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12347",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12348",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12383",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12399",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12400",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12413",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12414",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12489",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12546",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12716",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12717",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12718",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12748",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12749",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12750",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12751",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12760",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12761",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12762",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12763",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12775",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12776",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12777",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12778",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12812",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12813",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12814",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12815",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12827",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12828",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12829",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12830",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12842",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12843",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12872",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12873",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12874",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12878",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA12889",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA12890",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18486",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18488",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18489",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18498",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18499",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18501",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18502",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18504",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18505",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18507",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18508",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18510",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18511",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18516",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18517",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18519",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18520",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18522",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18523",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18525",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18526",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18528",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18530",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18531",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18532",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18533",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18534",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18535",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18536",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18537",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18538",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18539",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18541",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18542",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18543",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18544",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18545",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18546",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18547",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18548",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18549",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18550",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18552",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18553",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18555",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18557",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18558",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18559",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18560",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18561",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18562",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18563",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18564",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18565",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18566",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18567",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18570",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18571",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18572",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18573",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18574",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18577",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18579",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18582",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18591",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18592",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18593",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18595",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18596",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18597",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18599",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18602",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18603",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18605",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18606",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18608",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18609",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18610",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18611",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18612",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18613",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18614",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18615",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18616",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18617",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18618",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18619",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18620",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18621",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18622",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18623",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18624",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18625",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18626",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18627",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18628",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18629",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18630",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18631",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18632",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18633",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18634",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18635",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18636",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18637",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18638",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18639",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18640",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18641",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18642",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18643",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18644",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18645",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18646",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18647",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18648",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18740",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18745",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18747",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18748",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18749",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18757",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18853",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18856",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18858",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18861",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18864",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18865",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18867",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18868",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18870",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18871",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18873",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18874",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18876",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18877",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18878",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18879",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18881",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18907",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18908",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18909",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18910",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18912",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18915",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18916",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18917",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18923",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18924",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18933",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18934",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18939",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18940",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18941",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18942",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18943",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18944",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18945",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18946",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18947",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18948",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18949",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18950",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18951",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18952",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18953",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18954",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18956",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18957",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18959",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18960",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18961",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18962",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18963",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18964",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18965",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18966",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18967",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18968",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18969",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18970",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18971",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18972",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18973",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18974",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18975",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18976",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18977",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18978",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18979",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18980",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18981",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18982",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18983",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18984",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18985",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18986",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18987",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18988",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18989",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18990",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18991",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18992",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18993",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18994",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18995",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA18997",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18998",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA18999",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19000",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19001",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19002",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19003",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19004",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19005",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19006",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19007",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19009",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19010",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19011",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19012",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19017",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19019",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19020",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19023",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19024",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19025",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19026",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19027",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19028",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19030",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19031",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19035",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19036",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19037",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19038",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19041",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19042",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19043",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19054",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19055",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19056",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19057",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19058",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19059",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19060",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19062",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19063",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19064",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19065",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19066",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19067",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19068",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19070",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19072",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19074",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19075",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19076",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19077",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19078",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19079",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19080",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19081",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19082",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19083",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19084",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19085",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19086",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19087",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19088",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19089",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19090",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19091",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19092",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19093",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19095",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19096",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19098",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19099",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19102",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19107",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19108",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19113",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19114",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19116",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19117",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19118",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19119",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19121",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19129",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19130",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19131",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19137",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19138",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19141",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19143",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19144",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19146",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19147",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19149",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19152",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19153",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19159",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19160",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19171",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19172",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19175",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19184",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19185",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19189",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19190",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19197",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19198",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19200",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19201",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19204",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19206",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19207",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19209",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19210",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19213",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19214",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19222",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19223",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19225",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19235",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19236",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19238",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19239",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19247",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19248",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19256",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19257",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19307",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19308",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19309",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19310",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19312",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19314",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19315",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19316",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19317",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19318",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19319",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19320",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19321",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19323",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19324",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19327",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19328",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19331",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19332",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19334",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19338",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19346",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19347",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19350",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19351",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19355",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19360",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19372",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19374",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19375",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19376",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19377",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19378",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19379",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19380",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19383",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19384",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19385",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19390",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19391",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19393",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19394",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19395",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19397",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19399",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19401",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19403",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19404",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19428",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19429",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19430",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19431",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19434",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19435",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19436",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19437",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19438",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19439",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19440",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19443",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19445",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19446",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19448",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19449",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19451",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19452",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19454",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19455",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19456",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19457",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19461",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19462",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19463",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19466",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19467",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19468",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19471",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19472",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19473",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19474",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19475",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19625",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19648",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19649",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19651",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19652",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19654",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19655",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19657",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19658",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19661",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19663",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19664",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19669",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19670",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19676",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19678",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19679",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19681",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19682",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19684",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19700",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19701",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19703",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19704",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19707",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19711",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19712",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19713",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19716",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19717",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19719",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19720",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19722",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19723",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19725",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19726",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19728",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19729",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19731",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19732",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19734",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19735",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19740",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19741",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19746",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19747",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19749",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19750",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19752",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19755",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19756",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19758",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19759",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19761",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19762",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19764",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19770",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19771",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19773",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19774",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19776",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19777",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19779",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19780",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19782",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19783",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19785",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19786",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19788",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19789",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19792",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19794",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19795",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19818",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19819",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19834",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19835",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19900",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19901",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19904",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19908",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19909",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19913",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19914",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19916",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19917",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19920",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19921",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19922",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19923",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA19982",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA19984",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20126",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20127",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20274",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20276",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20278",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20281",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20282",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20287",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20289",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20291",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20294",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20296",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20298",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20299",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20314",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20317",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20318",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20320",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20321",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20332",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20334",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20339",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20340",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20342",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20346",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20348",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20351",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20355",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20356",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20357",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20359",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20362",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20412",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20502",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20503",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20504",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20505",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20506",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20507",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20508",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20509",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20510",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20511",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20512",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20513",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20514",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20515",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20516",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20517",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20518",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20519",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20520",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20521",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20522",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20524",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20525",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20527",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20528",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20529",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20530",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20531",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20532",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20533",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20534",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20535",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20536",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20538",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20539",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20540",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20541",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20542",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20543",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20544",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20581",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20582",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20585",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20586",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20587",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20588",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20589",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20752",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20753",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20754",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20755",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20756",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20757",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20758",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20759",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20760",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20761",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20762",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20763",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20764",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20765",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20766",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20767",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20768",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20769",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20770",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20771",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20772",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20773",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20774",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20775",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20778",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20783",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20785",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20786",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20787",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20790",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20792",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20795",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20796",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20797",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20798",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20799",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20800",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20801",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20802",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20803",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20804",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20805",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20806",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20807",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20808",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20809",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20810",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20811",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20812",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20813",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20814",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20815",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20818",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20819",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20821",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20822",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20826",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20827",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20828",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20832",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20845",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20846",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20847",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20849",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20850",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20851",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20852",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20853",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20854",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20856",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20858",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20859",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20861",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20862",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20863",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20864",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20866",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20867",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20868",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20869",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20870",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20872",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20874",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20875",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20876",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20877",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20878",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20881",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20882",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20884",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20885",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20886",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20887",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20888",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20889",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20890",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20891",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20892",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20894",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20895",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20896",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20897",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20899",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20900",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20901",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20902",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20903",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20904",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20905",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA20906",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20908",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20910",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA20911",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21086",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21087",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21088",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21089",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21090",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21091",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21092",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21093",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21094",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21095",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21097",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21098",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21099",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21100",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21101",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21102",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21103",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21104",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21105",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21106",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21107",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21108",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21109",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21110",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21111",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21112",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21113",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21114",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21115",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21116",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21117",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21118",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21119",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21120",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21122",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21123",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21124",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21125",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21126",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21127",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21128",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21129",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21130",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21133",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21135",
+        "sex": "MALE"
+    },
+    {
+        "id": "NA21137",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21141",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21142",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21143",
+        "sex": "FEMALE"
+    },
+    {
+        "id": "NA21144",
+        "sex": "FEMALE"
+    }
+]
