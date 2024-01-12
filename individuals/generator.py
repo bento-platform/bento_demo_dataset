@@ -1,5 +1,3 @@
-import uuid
-from datetime import datetime
 import numpy as np
 from constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
@@ -36,14 +34,8 @@ class Individual:
     def __init__(self, rng, individual):
         self.rng: RandomGenerator = rng
         self.individual: dict = individual
-        self.experiments = []  # filled in as we go
+        self.experiments = individual.get("experiments", [])
         self.phenopacket = self.generate_phenopacket()
-        # append "real" experiments
-
-        # biosamples
-        # interpretations
-        # medical_actions
-        # meta_data
 
     def generate_phenopacket(self):
         p = {
@@ -58,7 +50,8 @@ class Individual:
         if measurements:
             p["measurements"] = measurements
 
-        # medical actions / interpretations
+        # TODO: medical actions
+        # TODO: interpretations
 
         return p
 
@@ -97,7 +90,7 @@ class Individual:
         return s
 
     def biosamples(self):
-        # return any real stuff
+        # return any real stuff from config
         if bs := self.individual.get("biosamples"):
             return bs
 
@@ -113,21 +106,6 @@ class Individual:
                 },
             })
             self.add_experiment(one_thousand_genomes_experiment(self.rng, self.individual["id"]))
-
-        # TODO: finish
-        real_cram = self.individual.get("files", {}).get("cram")
-        if real_cram:
-            # handle cram
-            ...
-
-        real_bigwig = self.individual.get("files", {}).get("bigwig")
-        if real_bigwig:
-            # handle real bigwig
-            ...
-
-        # append experiment & result for any 1k genomes vcf
-        # have a hardcoded file of experiments to append (they can be appended in one step)
-        # do some random stuff
 
         # chose zero or more fake biosamples
         # either with zero_or_more_choices on a list of biosamples fns
@@ -154,6 +132,10 @@ class Individual:
         return b
 
     def diseases(self):
+        # return anything in config
+        if ds := self.individual.get("diseases"):
+            return ds
+
         # randomly choose between zero and n diseases
         ds = self.rng.zero_or_more_choices(DISEASE_TERMS, DISEASE_MASS_DISTRIBUTION)
 
@@ -199,20 +181,20 @@ class Individual:
 
 # utils ------------------------
 
-    def has_1000_genomes_sample(self):
+    def has_1000_genomes_sample(self) -> bool:
         return self.individual["id"].startswith(("HG", "NA"))
 
     def lab_value(self) -> int:
         return self.rng.int_from_exponential_range(LAB_MIN, LAB_MAX, LAB_MEAN)
 
-    def has_smoking_status(self):
-        return self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT)
+    def has_smoking_status(self) -> bool:
+        return bool(self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT))
 
     def smoking_status(self) -> list[str]:
         return self.rng.gaussian_choice(SMOKING_STATUS)
 
-    def has_bmi(self):
-        return self.rng.biased_coin_toss(P_BMI_PRESENT)
+    def has_bmi(self) -> bool:
+        return bool(self.rng.biased_coin_toss(P_BMI_PRESENT))
 
     def bmi(self):
         return {
@@ -223,8 +205,8 @@ class Individual:
             }
         }
 
-    def has_blood_pressure(self):
-        return self.rng.biased_coin_toss(P_BP_PRESENT)
+    def has_blood_pressure(self) -> bool:
+        return bool(self.rng.biased_coin_toss(P_BP_PRESENT))
 
     def blood_pressure(self):
         random_offset_range = 10, 20
