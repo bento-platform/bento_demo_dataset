@@ -1,3 +1,40 @@
+PROCEDURES = [
+    {
+        "code": {
+            "id": "NCIT:C28743",
+            "label": "Punch Biopsy"
+        }
+    },
+    {
+        "code": {
+            "id": "NCIT:C16809",
+            "label": "Magnetic Resonance Imaging"
+        }
+    },
+    {
+        "code": {
+            "id": "NCIT:C38101",
+            "label": "X-Ray Imaging"
+        }
+    },
+    {
+        "code": {
+            "id": "NCIT:C17007",
+            "label": "Positron Emission Tomography"
+        }
+    },
+    {
+        "code": {
+            "id": "NCIT:C51677",
+            "label": "Liver Biopsy"
+        },
+        "body_site": {
+            "id": "UBERON:0001115",
+            "label": "left lobe of liver"
+        }
+    }
+]
+
 TREATMENTS = [
     {
         "agent": {
