@@ -1,9 +1,10 @@
 import uuid
-from datetime import datetime
+import datetime
 from typing import TypeVar, Literal
 from math import floor
 import numpy as np
 from scipy.stats import truncnorm, truncexpon
+from faker import Faker
 from constants import RANDOM_SEED
 T = TypeVar('T')
 
@@ -11,6 +12,8 @@ T = TypeVar('T')
 class RandomGenerator():
     def __init__(self):
         self.rng = np.random.default_rng(seed=RANDOM_SEED)
+        self.fake = Faker()
+        Faker.seed(RANDOM_SEED)
 
     def zero_or_more_choices(self, elements: list[T], mass_distribution: list[float]) -> list[T]:
         """
@@ -55,14 +58,22 @@ class RandomGenerator():
     def int_from_uniform_range(self, low: float, high: float) -> int:
         return int(self.rng.integers(low, high))
 
-    def random_uuid4(self) -> str:
+    def uuid4(self) -> str:
         return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
-    
-    def random_recent_date(self) -> str:
-        year = f"202{self.int_from_exponential_range(low=0, high=4, mean=3)}"
-        d = self.int_from_gaussian_range(low=1, high=366, mean=366/2, sd=366/6)
-        month_day = datetime.strptime(f"{d}", "%j").strftime("%m-%d")
-        return year + "-" + month_day
+
+    def recent_datetime(self) -> datetime.time:
+        twenty_twenty = datetime.date(2020, 1, 1)
+        twenty_twenty_four = datetime.date(2024, 1, 1)
+        return self.fake.date_time_between(twenty_twenty, twenty_twenty_four)
+
+    def recent_date_string(self) -> str:
+        return self.recent_datetime().date().isoformat()
+
+    def recent_interval_start_and_end_datetime_strings(self, max_days) -> dict[str, str]:
+        start = self.recent_datetime()
+        delta = datetime.timedelta(days=self.int_from_uniform_range(1, max_days+1))
+        end = start + delta
+        return {"start": start.isoformat(timespec="seconds"), "end": end.isoformat(timespec="seconds")}
 
     def gaussian_weights(self, size: int) -> list[np.float64]:
         """
