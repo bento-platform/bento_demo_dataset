@@ -100,6 +100,17 @@
                     }
                 ]
             }
+        ],
+        "diseases": [
+            {
+                "term": {
+                    "id": "NCIT:C9384",
+                    "label": "Renal Carcinoma"
+                },
+                "onset": {
+                    "timestamp": "2020-03-17T00:00:00Z"
+                }
+            }
         ]
     },
     {
