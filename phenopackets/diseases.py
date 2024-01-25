@@ -72,3 +72,10 @@ DISEASES = [
         },
     },
 ]
+
+COVID_19 = {
+    "term": {
+        "id": "SNOMED:840539006",
+        "label": "COVID-19"
+    }
+}
