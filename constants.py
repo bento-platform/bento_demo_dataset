@@ -9,20 +9,18 @@ AGE_MAX = 105
 DISEASE_MASS_DISTRIBUTION = [
     0.4,    # probability of having no disease
     0.35,   # probability of having one disease
-    0.25,   # probability of having two diseases
-    0       # probability of having three diseases
+    0.24,   # probability of having two diseases
+    0.01    # probability of having three diseases
 ]
 
-# must sum to one
-PHENOTYPIC_FEATURE_MASS_DISTRIBUTION = [
-    0.1,    # probability of zero phenotypic features
-    0.5,    # probability of one phenotypic feature
-    0.3,    # probability of two phenotypic features
-    0.1     # probability of three phenotypic features
-]
+# all as above: P(0 items), P(1 item), etc and must sum to one
+PHENOTYPIC_FEATURE_MASS_DISTRIBUTION = [0.1, 0.5, 0.3, 0.1]
+MEDICAL_ACTION_MASS_DISTRIBUTION = [0.5, 0.3, 0.15, 0.05]
+INTERPRETATION_MASS_DISTRIBUTION = [0.8, 0.15, 0.05]
+EXTRA_BIOSAMPLES_MASS_DISTRIBUTION = [0.4, 0.4, 0.1, 0.1]
 
 # very rarely, make a disease or phenotypic feature have the "excluded" property
-P_EXCLUDED = 0.001
+P_EXCLUDED = 0.002
 
 # have an extra property that doesn't appear for every user
 P_SMOKING_STATUS_PRESENT = 0.9
@@ -32,7 +30,6 @@ LAB_MIN = 0
 LAB_MAX = 1000
 LAB_MEAN = 100
 
-
 # only some individuals have BMI measurements
 P_BMI_PRESENT = 0.9
 BMI_MIN = 14
@@ -41,12 +38,15 @@ BMI_MEAN = 21
 BMI_SD = 8
 
 # only some individuals have blood pressure measurements
-P_BP_PRESENT = 0.5
+P_BP_PRESENT = 0.4
 BP_MIN = 80
 BP_MAX = 180
 BP_MEAN = 110
 BP_SD = 20
 
-
-# use default that matches our current 1000 genomes data
+# expected assembly for 1000 genomes vcfs
 DEFAULT_ASSEMBLY = "GRCh38"
+
+P_ADD_FAKE_CRAM_TO_1K_VCF = 0.5
+P_ADD_EXPERIMENT_TO_BIOSAMPLE = 0.9
+P_ADD_EXAMPLE_FILE_TO_EXPERIMENT = 0.3
