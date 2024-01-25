@@ -53,6 +53,7 @@ SYNTHETIC_EXPERIMENT_TYPES = [
 ]
 
 # references to files in "dataset_files/example_experiments" directory
+# TODO: add mp3, mp4
 GENERIC_EXPERIMENT_FILES = [
     {
         "filename": "example.csv",
