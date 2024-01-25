@@ -2,12 +2,16 @@
 # copied from phenopackets docs, although with a few corrections
 # https://phenopacket-schema.readthedocs.io/en/latest/interpretation.html
 # note that these are chosen at random, so may not match what's actually in a vcf
-# TODO? drop any diseases appearing here into diseases field
 
 def interpretations(id):
     return [
         {
-            "id": "interpretation:001",
+            "id": f"{id}-interpretation:000",
+            "progressStatus": "UNKNOWN_PROGRESS",
+            "summary": "diagnosis in progress"
+        },
+        {
+            "id": f"{id}-interpretation:001",
             "progressStatus": "SOLVED",
             "diagnosis": {
                 "disease": {
@@ -27,7 +31,7 @@ def interpretations(id):
             }
         },
         {
-            "id": "interpretation:002",
+            "id": f"{id}-interpretation:002",
             "progressStatus": "SOLVED",
             "diagnosis": {
                 "disease": {
@@ -58,11 +62,11 @@ def interpretations(id):
             }
         },
         {
-            "id": "interpretation:003",
+            "id": f"{id}-interpretation:003",
             "progressStatus": "SOLVED",
             "diagnosis": {
                 "disease": {
-                    "id": "OMIM: 219700",
+                    "id": "OMIM:219700",
                     "label": "Cystic fibrosis"
                 },
                 "genomicInterpretations": [
@@ -108,7 +112,7 @@ def interpretations(id):
             }
         },
         {
-            "id": "interpretation:004",
+            "id": f"{id}-interpretation:004",
             "progressStatus": "COMPLETED",
             "diagnosis": {
                 "disease": {
