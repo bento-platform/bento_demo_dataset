@@ -1,4 +1,4 @@
-from constants import BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD, BP_MIN, BP_MAX, BP_MEAN, BP_SD, P_BMI_PRESENT, P_BP_PRESENT
+from config.constants import BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD, BP_MIN, BP_MAX, BP_MEAN, BP_SD, P_BMI_PRESENT, P_BP_PRESENT
 
 
 def has_bmi(rng) -> bool:

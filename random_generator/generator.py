@@ -5,7 +5,7 @@ from math import floor
 import numpy as np
 from scipy.stats import truncnorm, truncexpon
 from faker import Faker
-from constants import RANDOM_SEED
+from config.constants import RANDOM_SEED
 T = TypeVar('T')
 
 
