@@ -1,5 +1,8 @@
 RANDOM_SEED = 123456
 
+# expected assembly for 1000 genomes vcfs
+DEFAULT_ASSEMBLY = "GRCh38"
+
 AGE_MEAN = 45
 AGE_SD = 25
 AGE_MIN = 0
@@ -25,7 +28,7 @@ P_EXCLUDED = 0.002
 # have an extra property that doesn't appear for every user
 P_SMOKING_STATUS_PRESENT = 0.9
 
-# extra properties "Lab Result"
+# extra properties "Lab Result" values
 LAB_MIN = 0
 LAB_MAX = 1000
 LAB_MEAN = 100
@@ -43,9 +46,6 @@ BP_MIN = 80
 BP_MAX = 180
 BP_MEAN = 110
 BP_SD = 20
-
-# expected assembly for 1000 genomes vcfs
-DEFAULT_ASSEMBLY = "GRCh38"
 
 P_ADD_FAKE_CRAM_TO_1K_VCF = 0.5
 P_ADD_EXPERIMENT_TO_BIOSAMPLE = 0.9

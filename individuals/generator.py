@@ -2,8 +2,7 @@ import numpy as np
 from constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
-    INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE,
-    P_ADD_EXAMPLE_FILE_TO_EXPERIMENT)
+    INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE)
 from experiments.experiment_metadata import one_thousand_genomes_experiment, random_synthetic_experiment
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
@@ -24,14 +23,15 @@ from random_generator.generator import RandomGenerator
 # - biosample_id = individual_id
 # - vcf file name is <individual_id>.vcf.gz
 #
-# for any ids, copy over the value of these fields where they exist:
+# for entries in individuals.json, copy over the value of these fields where they exist:
 # - biosamples
 # - experiments
 # - diseases
 #
 # ... this allows us to have sensible values associated with any real data files we use,
-# eg: we can make sure that biosample ids match between a real file and imaginary metadata
-# or cancer data can have cancer mentioned in the metadata
+# eg:
+# - we can make sure that biosample ids match between a real file and fake metadata
+# - real cancer data can have cancer mentioned in the metadata
 
 
 class Individual:
@@ -44,7 +44,7 @@ class Individual:
     def generate_phenopacket(self):
         p = {
             "id": self.rng.uuid4(),
-            # "alternate_ids": []  # why are alternate ids CURIEs?
+            # "alternate_ids": []  # ...why are alternate subject ids CURIEs?
             "subject": self.subject(),
             "biosamples": self.biosamples(),
             "phenotypic_features": self.phenotypic_features()
@@ -60,7 +60,7 @@ class Individual:
         if intp := self.interpretations():
             p["interpretations"] = intp
         # --------------------------------------------
-            
+
         # random diseases, plus diseases mentioned elsewhere in this phenopacket
         p["diseases"] = self.diseases(intp, p["subject"]["extra_properties"]["covid_severity"])
 
@@ -97,7 +97,7 @@ class Individual:
 
         # conditionally add smoking status extra property
         if self.has_smoking_status():
-            s["extra_properties"]["smoking_status"] = self.smoking_status()
+            s["extra_properties"]["smoking_status"] = self.rng.gaussian_choice(SMOKING_STATUS)
 
         return s
 
@@ -130,7 +130,6 @@ class Individual:
             if self.should_add_experiment_to_biosample():
                 self.add_experiment(random_synthetic_experiment(self.rng, eb_id))
 
-        
         # TODO?
         # could have more top-level biosample properties (procedure, etc)
         # but some properties only make sense with particular experiments
@@ -138,13 +137,13 @@ class Individual:
         return b
 
     def diseases(self, intp, covid_severity):
-        # randomly choose between zero and n diseases
+        # randomly choose some diseases
         ds = self.rng.zero_or_more_choices(DISEASES, DISEASE_MASS_DISTRIBUTION)
 
         # very rarely, mark a disease as excluded
         ds_ex = [
             {**d, "excluded": True}
-            if self.rng.biased_coin_toss(P_EXCLUDED) and "disease_stage" not in d else d for d in ds]
+            if self.should_exclude() and "disease_stage" not in d else d for d in ds]
 
         # add anything in config
         if config_ds := self.individual.get("diseases"):
@@ -160,11 +159,11 @@ class Individual:
         return ds_ex
 
     def phenotypic_features(self):
-        # randomly choose between zero and n phenotypic features
+        # randomly choose some phenotypic features
         pfs = self.rng.zero_or_more_choices(phenotypic_features(), PHENOTYPIC_FEATURE_MASS_DISTRIBUTION)
 
         # very rarely, mark as excluded
-        pfs_ex = [{**p, "excluded": True} if self.rng.biased_coin_toss(P_EXCLUDED) else p for p in pfs]
+        pfs_ex = [{**p, "excluded": True} if self.should_exclude() else p for p in pfs]
         return pfs_ex
 
     def measurements(self):
@@ -187,8 +186,8 @@ class Individual:
         return action_procedures + action_treatments
 
     # possible later TODO, currently we only attach files to experiments, not to phenopackets
-    def files(self):
-        pass
+    # def files(self):
+    #     pass
 
     def metadata(self):
         return metadata()
@@ -203,9 +202,9 @@ class Individual:
 
     def has_smoking_status(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT))
-
-    def smoking_status(self) -> list[str]:
-        return self.rng.gaussian_choice(SMOKING_STATUS)
     
-    def should_add_experiment_to_biosample(self):
+    def should_add_experiment_to_biosample(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_ADD_EXPERIMENT_TO_BIOSAMPLE))
+    
+    def should_exclude(self) -> bool:
+        return bool(self.rng.biased_coin_toss(P_EXCLUDED))
