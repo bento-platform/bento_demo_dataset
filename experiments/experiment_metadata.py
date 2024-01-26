@@ -1,5 +1,5 @@
 from constants import DEFAULT_ASSEMBLY, P_ADD_FAKE_CRAM_TO_1K_VCF, P_ADD_EXAMPLE_FILE_TO_EXPERIMENT
-from experiments.experiment_constants import SYNTHETIC_EXPERIMENT_TYPES, GENERIC_EXPERIMENT_FILES
+from experiments.experiment_details import SYNTHETIC_EXPERIMENT_TYPES, GENERIC_EXPERIMENT_FILES
 
 
 def one_thousand_genomes_experiment(rng, biosample_id):

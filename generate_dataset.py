@@ -1,7 +1,7 @@
 import json
 from random_generator.generator import RandomGenerator
 from individuals.generator import Individual
-from experiments.experiment_metadata import EXPERIMENT_RESOURCES
+from experiments.experiment_details import EXPERIMENT_RESOURCES
 
 
 def main():
@@ -29,11 +29,8 @@ def main():
     with open("./synthetic_experiments.json", "w") as e:
         json.dump(experiments, e, indent=4)
 
+    print(f"Created {len(phenopackets)} phenopackets and {len(experiments_flattened)} experiments")
+
 
 if __name__ == "__main__":
     main()
-
-
-# TODO: katsu config
-# TODO: DATS
-# these just need to be available, they don't need random generation
