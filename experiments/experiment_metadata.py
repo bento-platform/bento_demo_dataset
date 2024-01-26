@@ -38,6 +38,14 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
                 "label": "whole genome sequencing assay"
             }
         ],
+        "instrument": {
+            "platform": "Illumina",
+            "model": "Illumina Genome Analyzer II",
+            "identifier": "Illumina Genome Analyzer II"
+        },
+        "library_source": "Genomic",
+        "library_strategy": "WGS",
+        "library_selection": "PCR",
         "experiment_results": [vcf_file_metadata(rng, filename, assembly_id)]
     }
 
@@ -118,39 +126,3 @@ def generic_file_metadata(rng, filename, file_type):
         "filename": filename,
         "file_format": file_type,
     }
-
-
-# add some library strategy, etc stuff
-
-# "study_type": {
-#     "type": "string",
-#     "enum": ["Genomics", "Epigenomics", "Metagenomics", "Transcriptomics",
-#              "Serology", "Metabolomics", "Proteomics", "Other"]
-# },
-# "experiment_type": {
-#     "type": "string",
-#     "enum": ["DNA Methylation", "mRNA-Seq", "smRNA-Seq", "RNA-Seq", "WES",
-#              "WGS", "Genotyping", "Proteomic profiling",
-#              "Neutralizing antibody titers", "Metabolite profiling",
-#              "Antibody measurement", "Viral WGS", "Other"]
-# },
-# "experiment_ontology": ONTOLOGY_CLASS_LIST,
-# "molecule": {
-#     "type": "string",
-#     "enum": ["total RNA", "polyA RNA", "cytoplasmic RNA", "nuclear RNA",
-#              "small RNA", "genomic DNA", "protein", "Other"]
-# },
-# "molecule_ontology": ONTOLOGY_CLASS_LIST,
-# "library_strategy": {
-#     "type": "string",
-#     "enum": ["Bisulfite-Seq", "RNA-Seq", "ChIP-Seq", "WES", "WGS", "RAD-Seq", "AMPLICON", "Other"]
-# },
-# "library_source": {
-#     "type": "string",
-#     "enum": ["Genomic", "Genomic Single Cell", "Transcriptomic", "Transcriptomic Single Cell",
-#              "Metagenomic", "Metatranscriptomic", "Synthetic", "Viral RNA", "Other"]
-# },
-# "library_selection": {
-#     "type": "string",
-#     "enum": ["Random", "PCR", "Random PCR", "RT-PCR", "MF", "Exome capture", "Other"]
-# },

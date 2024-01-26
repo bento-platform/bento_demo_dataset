@@ -29,6 +29,15 @@
                     }
                 ],
                 "library_strategy": "RNA-Seq",
+                "library_source": "Transcriptomic",
+                "library_selection": "Random PCR",
+                "molecule": "total RNA",
+                "molecule_ontology": [
+                  {
+                    "id": "EFO:0004964",
+                    "label": "total RNA"
+                  }
+                ],
                 "biosample": "MS002001",
                 "experiment_results": [
                     {
@@ -86,7 +95,16 @@
                         "label": "RNA sequencing assay"
                     }
                 ],
+                "library_source": "Transcriptomic",
                 "library_strategy": "RNA-Seq",
+                "library_selection": "Random PCR",
+                "molecule": "total RNA",
+                "molecule_ontology": [
+                  {
+                    "id": "EFO:0004964",
+                    "label": "total RNA"
+                  }
+                ],
                 "biosample": "MS002201",
                 "experiment_results": [
                     {
@@ -115,18 +133,7 @@
     },
     {
         "id": "HG00096",
-        "sex": "MALE",
-        "files": {
-            "cram": {
-                "filename": "my_cram.cram",
-                "assembly_id": "GRCh37"
-            },
-            "bigwig": {
-                "filename": "my_bw.bigwig",
-                "assembly_id": "GRCh37"
-            },
-            "other_files": []
-        }
+        "sex": "MALE"
     },
     {
         "id": "HG00097",
