@@ -1,5 +1,5 @@
 def phenotypic_features():
-    return [{"type": p for p in PHENOTYPIC_FEATURES}]
+    return [{"type": p} for p in PHENOTYPIC_FEATURES]
 
 
 PHENOTYPIC_FEATURES = [
