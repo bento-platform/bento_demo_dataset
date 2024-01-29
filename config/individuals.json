@@ -1,6 +1,6 @@
 [
     {
-        "id": "BW100",
+        "id": "McGill0020",
         "sex": "MALE",
         "biosamples": [
             {
@@ -44,6 +44,7 @@
                         "identifier": "MS002001-01-00",
                         "description": "RNAseq alignment, forward signal",
                         "filename": "51570.CEEHRC.MS002001.RNA-Seq.signal_forward.bigWig",
+                        "url": "https://epigenomesportal.ca/tracks/CEEHRC/hg19/51598.CEEHRC.MS002201.RNA-Seq.signal_forward.bigWig",
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
@@ -53,6 +54,7 @@
                         "identifier": "MS002001-01-01",
                         "description": "RNAseq alignment, reverse signal",
                         "filename": "51571.CEEHRC.MS002001.RNA-Seq.signal_reverse.bigWig",
+                        "url": "https://epigenomesportal.ca/tracks/CEEHRC/hg19/51599.CEEHRC.MS002201.RNA-Seq.signal_reverse.bigWig",
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
@@ -63,7 +65,7 @@
         ]
     },
     {
-        "id": "BW200",
+        "id": "McGill0022",
         "sex": "FEMALE",
         "biosamples": [
             {
@@ -111,6 +113,7 @@
                         "identifier": "MS002201-01-00",
                         "description": "RNAseq alignment, forward signal",
                         "filename": "51598.CEEHRC.MS002201.RNA-Seq.signal_forward.bigWig",
+                        "url": "https://epigenomesportal.ca/tracks/CEEHRC/hg19/51598.CEEHRC.MS002201.RNA-Seq.signal_forward.bigWig",
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
