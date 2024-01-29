@@ -52,24 +52,24 @@ DISEASES = [
             "id": "NCIT:C3058",
             "label": "Glioblastoma"
         },
-        "disease_stage": {
+        "disease_stage": [{
             "id": "NCIT:C27971",
             "label": "Stage IV"
-        },
-        "clinical_tnm_finding": {
+        }],
+        "clinical_tnm_finding": [{
             "id": "NCIT:C161009",
             "label": "Clinical Primary Tumor TNM Finding"
-        }
+        }]
     },
     {
         "term": {
             "id": "NCIT:C3211",
             "label": "Non-Hodgkin Lymphoma"
         },
-        "disease_stage": {
+        "disease_stage": [{
             "id": "NCIT:C141199",
             "label": "Stage IE"
-        },
+        }],
     },
 ]
 
