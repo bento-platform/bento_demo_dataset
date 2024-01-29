@@ -44,6 +44,7 @@ def interpretations(rng, id):
                         "interpretation_status": "CONTRIBUTORY",
                         "variant_interpretation": {
                             "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
                                 "expressions": [
@@ -76,6 +77,7 @@ def interpretations(rng, id):
                         "interpretation_status": "CONTRIBUTORY",
                         "variant_interpretation": {
                             "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
                                 "expressions": [
@@ -96,6 +98,7 @@ def interpretations(rng, id):
                         "interpretation_status": "CONTRIBUTORY",
                         "variant_interpretation": {
                             "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
                                 "expressions": [
