@@ -47,6 +47,7 @@ def interpretations(rng, id):
                             "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
+                                "molecule_context": "genomic",
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
@@ -80,6 +81,7 @@ def interpretations(rng, id):
                             "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
+                                "molecule_context": "genomic",
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
@@ -101,6 +103,7 @@ def interpretations(rng, id):
                             "therapeutic_actionability": "UNKNOWN_ACTIONABILITY",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
+                                "molecule_context": "genomic",
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
@@ -134,6 +137,7 @@ def interpretations(rng, id):
                             "therapeutic_actionability": "ACTIONABLE",
                             "variation_descriptor": {
                                 "id": rng.uuid4(),
+                                "molecule_context": "genomic",
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
