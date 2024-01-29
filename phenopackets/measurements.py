@@ -12,9 +12,11 @@ def has_blood_pressure(rng) -> bool:
 def bmi(rng) -> dict:
     return {
         "assay": {"id": "NCIT:C16358", "label": "Body Mass Index"},
-        "measurement_value": {
-            "unit": {"id": "NCIT:C49671", "label": "Kilogram per Square Meter"},
-            "value": round(rng.float_from_gaussian_range(BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD), 2)
+        "value": {
+            "quantity": {
+                "unit": {"id": "NCIT:C49671", "label": "Kilogram per Square Meter"},
+                "value": round(rng.float_from_gaussian_range(BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD), 2)
+            }
         }
     }
 
@@ -26,8 +28,8 @@ def blood_pressure(rng) -> dict:
     diastolic, systolic = mean_bp - offset, mean_bp + offset
     return {
         "assay": {"id": "NCIT:C167233", "label": "Blood Pressure Measurement"},
-        "complexValue": {
-            "typedQuantities": [
+        "complex_value": {
+            "typed_quantities": [
                 {
                     "type": {
                         "id": "NCIT:C25298", "label": "Systolic Blood Pressure"
