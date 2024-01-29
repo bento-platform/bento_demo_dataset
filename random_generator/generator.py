@@ -64,7 +64,7 @@ class RandomGenerator():
     def recent_datetime(self) -> datetime.time:
         twenty_twenty = datetime.date(2020, 1, 1)
         twenty_twenty_four = datetime.date(2024, 1, 1)
-        return self.fake.date_time_between(twenty_twenty, twenty_twenty_four)
+        return self.fake.date_time_between(twenty_twenty, twenty_twenty_four, tzinfo=datetime.timezone.utc)
 
     def recent_date_string(self) -> str:
         return self.recent_datetime().date().isoformat()
