@@ -3,27 +3,27 @@
 # https://phenopacket-schema.readthedocs.io/en/latest/interpretation.html
 # note that these are chosen at random, so may not match what's actually in a vcf
 
-def interpretations(id):
+def interpretations(rng, id):
     return [
         {
-            "id": f"{id}-interpretation:000",
-            "progressStatus": "UNKNOWN_PROGRESS",
+            "id": f"{id}-interpretation-000",
+            "progress_status": "UNKNOWN_PROGRESS",
             "summary": "diagnosis in progress"
         },
         {
             "id": f"{id}-interpretation:001",
-            "progressStatus": "SOLVED",
+            "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
                     "id": "OMIM:263750",
                     "label": "Miller syndrome"
                 },
-                "genomicInterpretations": [
+                "genomic_interpretations": [
                     {
                         "subject_or_biosample_id": id,
-                        "interpretationStatus": "CONTRIBUTORY",
-                        "geneDescriptor": {
-                            "valueId": "HGNC:2867",
+                        "interpretation_status": "CONTRIBUTORY",
+                        "gene_descriptor": {
+                            "value_id": "HGNC:2867",
                             "symbol": "DHODH"
                         }
                     }
@@ -31,27 +31,28 @@ def interpretations(id):
             }
         },
         {
-            "id": f"{id}-interpretation:002",
-            "progressStatus": "SOLVED",
+            "id": f"{id}-interpretation-002",
+            "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
                     "id": "OMIM:154700",
                     "label": "Marfan syndrome"
                 },
-                "genomicInterpretations": [
+                "genomic_interpretations": [
                     {
-                        "subjectOrBiosampleId": id,
-                        "interpretationStatus": "CONTRIBUTORY",
-                        "variantInterpretation": {
-                            "acmgPathogenicityClassification": "PATHOGENIC",
-                            "variationDescriptor": {
+                        "subject_or_biosample_id": id,
+                        "interpretation_status": "CONTRIBUTORY",
+                        "variant_interpretation": {
+                            "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "variation_descriptor": {
+                                "id": rng.uuid4(),
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
                                         "value": "NM_000138.4(FBN1):c.6751T>A"
                                     }
                                 ],
-                                "allelicState": {
+                                "allelic_state": {
                                     "id": "GENO:0000135",
                                     "label": "heterozygous"
                                 }
@@ -62,27 +63,28 @@ def interpretations(id):
             }
         },
         {
-            "id": f"{id}-interpretation:003",
-            "progressStatus": "SOLVED",
+            "id": f"{id}-interpretation-003",
+            "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
                     "id": "OMIM:219700",
                     "label": "Cystic fibrosis"
                 },
-                "genomicInterpretations": [
+                "genomic_interpretations": [
                     {
-                        "subjectOrBiosampleId": id,
-                        "interpretationStatus": "CONTRIBUTORY",
-                        "variantInterpretation": {
-                            "acmgPathogenicityClassification": "PATHOGENIC",
-                            "variationDescriptor": {
+                        "subject_or_biosample_id": id,
+                        "interpretation_status": "CONTRIBUTORY",
+                        "variant_interpretation": {
+                            "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "variation_descriptor": {
+                                "id": rng.uuid4(),
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
                                         "value": "NM_000492.3(CFTR):c.1477C>T (p.Gln493Ter)"
                                     }
                                 ],
-                                "allelicState": {
+                                "allelic_state": {
                                     "id": "GENO:0000135",
                                     "label": "heterozygous"
                                 }
@@ -90,18 +92,19 @@ def interpretations(id):
                         }
                     },
                     {
-                        "subjectOrBiosampleId": id,
-                        "interpretationStatus": "CONTRIBUTORY",
-                        "variantInterpretation": {
-                            "acmgPathogenicityClassification": "PATHOGENIC",
-                            "variationDescriptor": {
+                        "subject_or_biosample_id": id,
+                        "interpretation_status": "CONTRIBUTORY",
+                        "variant_interpretation": {
+                            "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "variation_descriptor": {
+                                "id": rng.uuid4(),
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
                                         "value": "NM_000492.3(CFTR):c.1521_1523delCTT (p.Phe508delPhe)"
                                     }
                                 ],
-                                "allelicState": {
+                                "allelic_state": {
                                     "id": "GENO:0000135",
                                     "label": "heterozygous"
                                 }
@@ -112,28 +115,29 @@ def interpretations(id):
             }
         },
         {
-            "id": f"{id}-interpretation:004",
-            "progressStatus": "COMPLETED",
+            "id": f"{id}-interpretation-004",
+            "progress_status": "COMPLETED",
             "diagnosis": {
                 "disease": {
                     "id": "NCIT:C3224",
                     "label": "Melanoma"
                 },
-                "genomicInterpretations": [
+                "genomic_interpretations": [
                     {
-                        "subjectOrBiosampleId": id,
-                        "interpretationStatus": "CONTRIBUTORY",
-                        "variantInterpretation": {
-                            "acmgPathogenicityClassification": "PATHOGENIC",
-                            "therapeuticActionability": "ACTIONABLE",
-                            "variationDescriptor": {
+                        "subject_or_biosample_id": id,
+                        "interpretation_status": "CONTRIBUTORY",
+                        "variant_interpretation": {
+                            "acmg_pathogenicity_classification": "PATHOGENIC",
+                            "therapeutic_actionability": "ACTIONABLE",
+                            "variation_descriptor": {
+                                "id": rng.uuid4(),
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
                                         "value": "NM_001374258.1(BRAF):c.1919T>A (p.Val640Glu)"
                                     }
                                 ],
-                                "allelicState": {
+                                "allelic_state": {
                                     "id": "GENO:0000135",
                                     "label": "heterozygous"
                                 }
