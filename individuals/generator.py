@@ -20,16 +20,15 @@ from random_generator.generator import RandomGenerator
 #
 # for 1000 genomes ids only:
 # - create a biosample and experiment with reference to a vcf file (file may or may not exist)
-# - biosample_id = individual_id
-# - vcf file name is <individual_id>.vcf.gz
+# - individual id = "ind-" + biosample id
+# - vcf file name is <biosample id>.vcf.gz
 #
 # for entries in individuals.json, copy over the value of these fields where they exist:
 # - biosamples
 # - experiments
 # - diseases
 #
-# ... this allows us to have sensible values associated with any real data files we use,
-# eg:
+# ... this allows us to have sensible values associated with any real data files we use, eg:
 # - we can make sure that biosample ids match between a real file and fake metadata
 # - real cancer data can have cancer mentioned in the metadata
 
@@ -77,7 +76,7 @@ class Individual:
         s = {
             "id": self.individual["id"],
             "sex": self.individual["sex"],
-            "timeAtLastEncounter": {
+            "time_at_last_encounter": {
                 "age": {
                     "iso8601duration": age_iso
                 }
@@ -86,7 +85,7 @@ class Individual:
                 "id": "NCBITaxon:9606",
                 "label": "Homo sapiens"
             },
-            "karyotypicSex": {"MALE": "XY", "FEMALE": "XX"}[self.individual["sex"]],
+            "karyotypic_sex": {"MALE": "XY", "FEMALE": "XX"}[self.individual["sex"]],
             "extra_properties": {
                 "mobility": self.rng.gaussian_choice(MOBILITY),
                 "covid_severity": self.rng.gaussian_choice(COVID_SEVERITY),
@@ -103,6 +102,8 @@ class Individual:
 
     # creates experiments associated with a biosample as a side effect
     def biosamples(self):
+        indiv_id = self.individual["id"]
+
         # return any real stuff from config
         if bs := self.individual.get("biosamples"):
             return bs
@@ -111,18 +112,19 @@ class Individual:
 
         # add an experiment with vcf for all 1000 genomes ids, whether vcf exists or not
         if self.has_1000_genomes_sample():
+            one_k_biosample_id = indiv_id[len("ind-"):]
             b.append({
-                "id": self.individual["id"],  # convention for 1k genomes biosample ids
+                "id": one_k_biosample_id,
                 "sampled_tissue": {
                     "id": "UBERON:0000178",
                     "label": "blood"
                 },
             })
-            self.add_experiment(one_thousand_genomes_experiment(self.rng, self.individual["id"]))
+            self.add_experiment(one_thousand_genomes_experiment(self.rng, one_k_biosample_id))
 
         # randomly add more biosamples...
         extra_biosamples = self.rng.zero_or_more_choices(
-            [f"{self.individual['id']}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
+            [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION)
 
         # ... then typically give them experiments
@@ -133,7 +135,7 @@ class Individual:
         # TODO?
         # could have more top-level biosample properties (procedure, etc)
         # but some properties only make sense with particular experiments
-        
+
         return b
 
     def diseases(self, intp, covid_severity):
@@ -177,7 +179,9 @@ class Individual:
         return ms
 
     def interpretations(self):
-        return self.rng.zero_or_more_choices(interpretations(self.individual["id"]), INTERPRETATION_MASS_DISTRIBUTION)
+        return self.rng.zero_or_more_choices(
+            interpretations(self.rng, self.individual["id"]),
+            INTERPRETATION_MASS_DISTRIBUTION)
 
     def medical_actions(self):
         action_procedures = self.rng.zero_or_more_choices(PROCEDURES, MEDICAL_ACTION_MASS_DISTRIBUTION)
@@ -195,7 +199,7 @@ class Individual:
 # utils ------------------------
 
     def has_1000_genomes_sample(self) -> bool:
-        return self.individual["id"].startswith(("HG", "NA"))
+        return self.individual["id"].startswith(("ind-HG", "ind-NA"))
 
     def lab_value(self) -> int:
         return self.rng.int_from_exponential_range(LAB_MIN, LAB_MAX, LAB_MEAN)
