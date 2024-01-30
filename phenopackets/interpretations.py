@@ -1,4 +1,3 @@
-
 # copied from phenopackets docs, although with a few corrections
 # https://phenopacket-schema.readthedocs.io/en/latest/interpretation.html
 # note that these are chosen at random, so may not match what's actually in a vcf
@@ -15,7 +14,7 @@ def interpretations(rng, id):
             "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
-                    "id": "OMIM:263750",
+                    "id": "SNOMED:66038001",
                     "label": "Miller syndrome"
                 },
                 "genomic_interpretations": [
@@ -35,7 +34,7 @@ def interpretations(rng, id):
             "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
-                    "id": "OMIM:154700",
+                    "id": "SNOMED:19346006",
                     "label": "Marfan syndrome"
                 },
                 "genomic_interpretations": [
@@ -69,7 +68,7 @@ def interpretations(rng, id):
             "progress_status": "SOLVED",
             "diagnosis": {
                 "disease": {
-                    "id": "OMIM:219700",
+                    "id": "SNOMED:190905008",
                     "label": "Cystic fibrosis"
                 },
                 "genomic_interpretations": [
