@@ -3,7 +3,8 @@ from config.constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE)
-from experiments.experiment_metadata import one_thousand_genomes_experiment, random_synthetic_experiment
+from experiments.experiment_metadata import (
+    one_thousand_genomes_experiment, random_synthetic_experiment, SYNTHETIC_EXPERIMENT_TYPES)
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
 from phenopackets.interpretations import interpretations
@@ -33,19 +34,31 @@ from random_generator.generator import RandomGenerator
 # - real cancer data can have cancer mentioned in the metadata
 
 
-class Individual:
-    def __init__(self, rng, individual):
+class IndividualGenerator:
+    def __init__(self, rng):
         self.rng: RandomGenerator = rng
-        self.individual = individual
-        self.experiments = individual.get("experiments", [])
-        self.phenopacket = self.generate_phenopacket()
+        self.phenopackets = []
+        self.experiments = []
 
-    def generate_phenopacket(self):
+        # fix some probability weightings over the whole dataset
+        self.choice_weights = {
+            "covid_severity": rng.gaussian_weights(len(COVID_SEVERITY)),
+            "diseases": rng.gaussian_weights(len(DISEASES)),
+            "interpretations": rng.gaussian_weights(len(interpretations(rng, ""))),
+            "medical_actions_procedures": rng.gaussian_weights(len(PROCEDURES)),
+            "medical_actions_treatments": rng.gaussian_weights(len(treatments(rng))),
+            "mobility": rng.gaussian_weights(len(MOBILITY)),
+            "phenotypic_features": rng.gaussian_weights(len(phenotypic_features())),
+            "smoking_status": rng.gaussian_weights(len(SMOKING_STATUS)),
+            "synthetic_experiments": rng.gaussian_weights(len(SYNTHETIC_EXPERIMENT_TYPES))
+        }
+
+    def generate_data(self, individual):
         p = {
             "id": self.rng.uuid4(),
             # "alternate_ids": []  # ...why are alternate subject ids CURIEs?
-            "subject": self.subject(),
-            "biosamples": self.biosamples(),
+            "subject": self.subject(individual),
+            "biosamples": self.biosamples(individual),
             "phenotypic_features": self.phenotypic_features()
         }
 
@@ -56,26 +69,26 @@ class Individual:
         if ma := self.medical_actions():
             p["medical_actions"] = ma
 
-        if intp := self.interpretations():
+        if intp := self.interpretations(individual):
             p["interpretations"] = intp
         # --------------------------------------------
 
         # random diseases, plus diseases mentioned elsewhere in this phenopacket
-        p["diseases"] = self.diseases(intp, p["subject"]["extra_properties"]["covid_severity"])
+        p["diseases"] = self.diseases(individual, intp, p["subject"]["extra_properties"]["covid_severity"])
 
         p["meta_data"] = self.metadata()
 
-        return p
+        self.phenopackets.append(p)
 
     def add_experiment(self, e):
         self.experiments.append(e)
 
-    def subject(self):
+    def subject(self, individual):
         age = self.rng.int_from_gaussian_range(AGE_MIN, AGE_MAX, AGE_MEAN, AGE_SD)
         age_iso = f"P{age}Y"
         s = {
-            "id": self.individual["id"],
-            "sex": self.individual["sex"],
+            "id": individual["id"],
+            "sex": individual["sex"],
             "time_at_last_encounter": {
                 "age": {
                     "iso8601duration": age_iso
@@ -85,10 +98,10 @@ class Individual:
                 "id": "NCBITaxon:9606",
                 "label": "Homo sapiens"
             },
-            "karyotypic_sex": {"MALE": "XY", "FEMALE": "XX"}[self.individual["sex"]],
+            "karyotypic_sex": {"MALE": "XY", "FEMALE": "XX"}[individual["sex"]],
             "extra_properties": {
-                "mobility": self.rng.gaussian_choice(MOBILITY),
-                "covid_severity": self.rng.gaussian_choice(COVID_SEVERITY),
+                "mobility": self.rng.weighted_choice(MOBILITY, self.choice_weights["mobility"]),
+                "covid_severity": self.rng.weighted_choice(COVID_SEVERITY, self.choice_weights["covid_severity"]),
                 "date_of_consent": self.rng.recent_date_string(),
                 "lab_test_result_value": self.lab_value()
             }
@@ -96,22 +109,23 @@ class Individual:
 
         # conditionally add smoking status extra property
         if self.has_smoking_status():
-            s["extra_properties"]["smoking_status"] = self.rng.gaussian_choice(SMOKING_STATUS)
+            s["extra_properties"]["smoking_status"] = self.rng.weighted_choice(
+                SMOKING_STATUS, self.choice_weights["smoking_status"])
 
         return s
 
     # creates experiments associated with a biosample as a side effect
-    def biosamples(self):
-        indiv_id = self.individual["id"]
+    def biosamples(self, individual):
+        indiv_id = individual["id"]
 
         # return any real stuff from config
-        if bs := self.individual.get("biosamples"):
+        if bs := individual.get("biosamples"):
             return bs
 
         b = []
 
         # add an experiment with vcf for all 1000 genomes ids, whether vcf exists or not
-        if self.has_1000_genomes_sample():
+        if self.is_1000_genomes_id(individual["id"]):
             one_k_biosample_id = indiv_id[len("ind-"):]
             b.append({
                 "id": one_k_biosample_id,
@@ -125,12 +139,25 @@ class Individual:
         # randomly add more biosamples...
         extra_biosamples = self.rng.zero_or_more_choices(
             [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
-            EXTRA_BIOSAMPLES_MASS_DISTRIBUTION)
+            EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
+            self.rng.gaussian_weights(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))
+            )
 
         # ... then typically give them experiments
         for eb_id in extra_biosamples:
+            b.append({
+                "id": eb_id,
+                "sampled_tissue": {
+                    "id": "UBERON:0000178",
+                    "label": "blood"
+                },
+            })
             if self.should_add_experiment_to_biosample():
-                self.add_experiment(random_synthetic_experiment(self.rng, eb_id))
+                self.add_experiment(random_synthetic_experiment(
+                    self.rng, eb_id, self.choice_weights["synthetic_experiments"]))
+
+        # refactor here to have sampled_tissue make sense 
+
 
         # TODO?
         # could have more top-level biosample properties (procedure, etc)
@@ -138,9 +165,9 @@ class Individual:
 
         return b
 
-    def diseases(self, intp, covid_severity):
+    def diseases(self, individual, intp, covid_severity):
         # randomly choose some diseases
-        ds = self.rng.zero_or_more_choices(DISEASES, DISEASE_MASS_DISTRIBUTION)
+        ds = self.rng.zero_or_more_choices(DISEASES, DISEASE_MASS_DISTRIBUTION, self.choice_weights["diseases"])
 
         # very rarely, mark a disease as excluded
         ds_ex = [
@@ -148,7 +175,7 @@ class Individual:
             if self.should_exclude() and "disease_stage" not in d else d for d in ds]
 
         # add anything in config
-        if config_ds := self.individual.get("diseases"):
+        if config_ds := individual.get("diseases"):
             ds_ex.extend(config_ds)
 
         # add any diseases mentioned in "interpretations"
@@ -162,7 +189,10 @@ class Individual:
 
     def phenotypic_features(self):
         # randomly choose some phenotypic features
-        pfs = self.rng.zero_or_more_choices(phenotypic_features(), PHENOTYPIC_FEATURE_MASS_DISTRIBUTION)
+        pfs = self.rng.zero_or_more_choices(
+            phenotypic_features(),
+            PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
+            self.choice_weights["phenotypic_features"])
 
         # very rarely, mark as excluded
         pfs_ex = [{**p, "excluded": True} if self.should_exclude() else p for p in pfs]
@@ -178,14 +208,23 @@ class Individual:
 
         return ms
 
-    def interpretations(self):
+    def interpretations(self, individual):
         return self.rng.zero_or_more_choices(
-            interpretations(self.rng, self.individual["id"]),
-            INTERPRETATION_MASS_DISTRIBUTION)
+            interpretations(self.rng, individual["id"]),
+            INTERPRETATION_MASS_DISTRIBUTION,
+            self.choice_weights["interpretations"]
+        )
 
     def medical_actions(self):
-        action_procedures = self.rng.zero_or_more_choices(PROCEDURES, MEDICAL_ACTION_MASS_DISTRIBUTION)
-        action_treatments = self.rng.zero_or_more_choices(treatments(self.rng), MEDICAL_ACTION_MASS_DISTRIBUTION)
+        action_procedures = self.rng.zero_or_more_choices(
+            PROCEDURES, MEDICAL_ACTION_MASS_DISTRIBUTION,
+            self.choice_weights["medical_actions_procedures"])
+        
+        action_treatments = self.rng.zero_or_more_choices(
+            treatments(self.rng),
+            MEDICAL_ACTION_MASS_DISTRIBUTION,
+            self.choice_weights["medical_actions_treatments"])
+        
         # could add top-level values here (treatment_target, etc)
         return action_procedures + action_treatments
 
@@ -197,9 +236,10 @@ class Individual:
         return metadata()
 
 # utils ------------------------
-
-    def has_1000_genomes_sample(self) -> bool:
-        return self.individual["id"].startswith(("ind-HG", "ind-NA"))
+    
+    @staticmethod
+    def is_1000_genomes_id(individual_id) -> bool:
+        return individual_id.startswith(("ind-HG", "ind-NA"))
 
     def lab_value(self) -> int:
         return self.rng.int_from_exponential_range(LAB_MIN, LAB_MAX, LAB_MEAN)

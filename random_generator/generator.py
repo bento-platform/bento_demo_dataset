@@ -15,24 +15,27 @@ class RandomGenerator():
         self.fake = Faker()
         Faker.seed(RANDOM_SEED)
 
-    def zero_or_more_choices(self, elements: list[T], mass_distribution: list[float]) -> list[T]:
+    def zero_or_more_choices(
+            self, elements: list[T],
+            mass_distribution: list[float],
+            weights: list[np.float64]) -> list[T]:
         """
         Randomly choose between zero and n items from the "elements" list
         mass_distribution is a list of weights: [P(return zero choices), P(return one choice), P(return 2 choices), etc]
         length is arbitrary, but weights should sum to one
-        each individual choice is made using a normal distribution
+        each individual choice is made using the weights array (one weight for each element, weights sum to one)
         """
         num_choices = self.biased_die_roll(mass_distribution)
         if num_choices == 0:
             return []
-        weights_for_elements = self.gaussian_weights(len(elements))
-        return list(self.rng.choice(elements, size=num_choices, replace=False, p=weights_for_elements))
+        # weights_for_elements = self.gaussian_weights(len(elements))
+        return list(self.rng.choice(elements, size=num_choices, replace=False, p=weights))
 
-    def gaussian_choice(self, elements: list[T]) -> T:
+    def weighted_choice(self, elements: list[T], weights: list[np.float64]) -> T:
         """
-        Choose one element from "elements" using randomly assigned gaussian weights
+        Choose one element from "elements", according to weights
         """
-        return self.rng.choice(elements, p=self.gaussian_weights(len(elements)), shuffle=False)
+        return self.rng.choice(elements, p=weights, shuffle=False)
 
     def biased_die_roll(self, weights: list[float]) -> int:
         """
@@ -77,7 +80,6 @@ class RandomGenerator():
 
     def gaussian_weights(self, size: int) -> list[np.float64]:
         """
-        weights for choice methods
         These are only quasi-gaussian since we take the absolute value and normalize so they sum to one
         """
         g = self.rng.normal(size=size)
