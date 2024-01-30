@@ -141,7 +141,7 @@ class IndividualGenerator:
             [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
             self.rng.gaussian_weights(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))
-            )
+        )
 
         # ... then typically give them experiments
         for eb_id in extra_biosamples:
@@ -156,8 +156,7 @@ class IndividualGenerator:
                 self.add_experiment(random_synthetic_experiment(
                     self.rng, eb_id, self.choice_weights["synthetic_experiments"]))
 
-        # refactor here to have sampled_tissue make sense 
-
+        # refactor here to have sampled_tissue make sense
 
         # TODO?
         # could have more top-level biosample properties (procedure, etc)
@@ -219,12 +218,12 @@ class IndividualGenerator:
         action_procedures = self.rng.zero_or_more_choices(
             PROCEDURES, MEDICAL_ACTION_MASS_DISTRIBUTION,
             self.choice_weights["medical_actions_procedures"])
-        
+
         action_treatments = self.rng.zero_or_more_choices(
             treatments(self.rng),
             MEDICAL_ACTION_MASS_DISTRIBUTION,
             self.choice_weights["medical_actions_treatments"])
-        
+
         # could add top-level values here (treatment_target, etc)
         return action_procedures + action_treatments
 
@@ -236,7 +235,7 @@ class IndividualGenerator:
         return metadata()
 
 # utils ------------------------
-    
+
     @staticmethod
     def is_1000_genomes_id(individual_id) -> bool:
         return individual_id.startswith(("ind-HG", "ind-NA"))
@@ -246,9 +245,9 @@ class IndividualGenerator:
 
     def has_smoking_status(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT))
-    
+
     def should_add_experiment_to_biosample(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_ADD_EXPERIMENT_TO_BIOSAMPLE))
-    
+
     def should_exclude(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_EXCLUDED))

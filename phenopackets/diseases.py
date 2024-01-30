@@ -31,8 +31,8 @@ DISEASES = [
     },
     {
         "term": {
-            "id": "SNOMED:13645005",
-            "label": "Chronic obstructive lung disease"
+            "id": "SNOMED:441541008",
+            "label": "Takotsubo cardiomyopathy"
         }
     },
     {

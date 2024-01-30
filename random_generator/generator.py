@@ -28,12 +28,11 @@ class RandomGenerator():
         num_choices = self.biased_die_roll(mass_distribution)
         if num_choices == 0:
             return []
-        # weights_for_elements = self.gaussian_weights(len(elements))
         return list(self.rng.choice(elements, size=num_choices, replace=False, p=weights))
 
     def weighted_choice(self, elements: list[T], weights: list[np.float64]) -> T:
         """
-        Choose one element from "elements", according to weights
+        Choose one element from "elements", according to weights (one for each element)
         """
         return self.rng.choice(elements, p=weights, shuffle=False)
 
@@ -80,6 +79,7 @@ class RandomGenerator():
 
     def gaussian_weights(self, size: int) -> list[np.float64]:
         """
+        weights for choice methods
         These are only quasi-gaussian since we take the absolute value and normalize so they sum to one
         """
         g = self.rng.normal(size=size)
