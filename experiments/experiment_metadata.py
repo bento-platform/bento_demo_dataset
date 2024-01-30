@@ -66,7 +66,7 @@ def synthetic_experiment_wrapper(rng, biosample_id, experiment_type):
         **experiment_type
     }
     if randomly_add_example_file(rng):
-        e["experiment_results"] = random_generic_file_metadata(rng)
+        e["experiment_results"] = [random_generic_file_metadata(rng)]
     return e
 
 
