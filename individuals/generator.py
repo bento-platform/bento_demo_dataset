@@ -100,8 +100,8 @@ class IndividualGenerator:
             },
             "karyotypic_sex": {"MALE": "XY", "FEMALE": "XX"}[individual["sex"]],
             "extra_properties": {
-                "mobility": self.rng.weighted_choice(MOBILITY, self.choice_weights["mobility"]),
-                "covid_severity": self.rng.weighted_choice(COVID_SEVERITY, self.choice_weights["covid_severity"]),
+                "mobility": self.mobility(),
+                "covid_severity": self.covid_severity(),
                 "date_of_consent": self.rng.recent_date_string(),
                 "lab_test_result_value": self.lab_value()
             }
@@ -109,8 +109,7 @@ class IndividualGenerator:
 
         # conditionally add smoking status extra property
         if self.has_smoking_status():
-            s["extra_properties"]["smoking_status"] = self.rng.weighted_choice(
-                SMOKING_STATUS, self.choice_weights["smoking_status"])
+            s["extra_properties"]["smoking_status"] = self.smoking_status()
 
         return s
 
@@ -138,11 +137,7 @@ class IndividualGenerator:
             self.add_experiment(one_thousand_genomes_experiment(self.rng, one_k_biosample_id))
 
         # randomly add more biosamples...
-        extra_biosamples = self.rng.zero_or_more_choices(
-            [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
-            EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
-            self.rng.gaussian_weights(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))
-        )
+        extra_biosamples = self.extra_biosamples(indiv_id)
 
         # ... then typically give them experiments
         for eb_id in extra_biosamples:
@@ -244,8 +239,24 @@ class IndividualGenerator:
     def lab_value(self) -> int:
         return self.rng.int_from_exponential_range(LAB_MIN, LAB_MAX, LAB_MEAN)
 
+    def mobility(self) -> str:
+        return self.rng.weighted_choice(MOBILITY, self.choice_weights["mobility"])
+
+    def covid_severity(self) -> str:
+        return self.rng.weighted_choice(COVID_SEVERITY, self.choice_weights["covid_severity"])
+
     def has_smoking_status(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT))
+
+    def smoking_status(self):
+        return self.rng.weighted_choice(SMOKING_STATUS, self.choice_weights["smoking_status"])
+
+    def extra_biosamples(self, indiv_id):
+        return self.rng.zero_or_more_choices(
+            [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
+            EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
+            self.rng.gaussian_weights(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))
+        )
 
     def should_add_experiment_to_biosample(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_ADD_EXPERIMENT_TO_BIOSAMPLE))

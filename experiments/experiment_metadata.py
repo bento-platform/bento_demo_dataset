@@ -50,9 +50,10 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
     }
 
 
-def random_synthetic_experiment(rng, biosample_id):
-    return rng.gaussian_choice([synthetic_experiment_wrapper(rng, biosample_id, exp)
-                                for exp in SYNTHETIC_EXPERIMENT_TYPES])
+def random_synthetic_experiment(rng, biosample_id, weights):
+    return rng.weighted_choice([synthetic_experiment_wrapper(rng, biosample_id, exp)
+                                for exp in SYNTHETIC_EXPERIMENT_TYPES],
+                               weights)
 
 
 def randomly_add_example_file(rng):
@@ -71,7 +72,8 @@ def synthetic_experiment_wrapper(rng, biosample_id, experiment_type):
 
 
 def random_generic_file_metadata(rng):
-    filename, file_type = rng.gaussian_choice(GENERIC_EXPERIMENT_FILES).values()
+    filename, file_type = rng.weighted_choice(GENERIC_EXPERIMENT_FILES, rng.gaussian_weights(
+        len(GENERIC_EXPERIMENT_FILES))).values()
     return generic_file_metadata(rng, filename, file_type)
 
 

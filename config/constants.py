@@ -1,4 +1,4 @@
-RANDOM_SEED = 123456
+RANDOM_SEED = 1234
 
 # expected assembly for 1000 genomes vcfs
 DEFAULT_ASSEMBLY = "GRCh38"
