@@ -5,6 +5,10 @@ PROCEDURES = [
                 "id": "NCIT:C28743",
                 "label": "Punch Biopsy"
             }
+        },
+        "treatment_intent": {
+            "id": "NCIT:C15220",
+            "label": "Diagnosis"
         }
     },
     {
@@ -29,6 +33,24 @@ PROCEDURES = [
                 "id": "NCIT:C17007",
                 "label": "Positron Emission Tomography"
             }
+        },
+        "treatment_intent": {
+            "id": "NCIT:C15220",
+            "label": "Diagnosis"
+        },
+        "adverse_events": [
+            {
+                "id": "NCIT:C3258",
+                "label": "Nausea"
+            },
+            {
+                "id": "NCIT:C39594",
+                "label": "Skin Rash"
+            },
+        ],
+        "treatment_target": {
+            "id": "NCIT:C34660",
+            "label": "Head Injury"
         }
     },
     {
@@ -50,43 +72,60 @@ PROCEDURES = [
 def treatments(rng):
     interval = rng.recent_interval_start_and_end_datetime_strings(max_days=14)
     return [
-        {"treatment": {
-            "agent": {
-                "id": "Ondansetron",
-                "label": "NCIT:C1119"
-            }
-        }
-        },
-        {"treatment": {
-            "agent": {
-                "id": "NCIT:C198",
-                "label": "Acetaminophen"
+        {
+            "treatment": {
+                "agent": {
+                    "id": "Ondansetron",
+                    "label": "NCIT:C1119"
+                }
             },
-            "route_of_administration": {
-                "id": "NCIT:C38288",
-                "label": "Oral Route of Administration"
+            "treatment_target": {
+                "id": "NCIT:C3258",
+                "label": "Nausea"
             },
-            "dose_intervals": [
+            "adverse_events": [
                 {
-                    "quantity": {
-                        "unit": {
-                            "id": "UO:0000022",
-                            "label": "milligram"
-                        },
-                        "value": 500
-                    },
-                    "schedule_frequency": {
-                        "id": "NCIT:C64496",
-                        "label": "Twice Daily"
-                    },
-                    "interval": {
-                        "start": interval["start"],
-                        "end": interval["end"]
-                    }
+                    "id": "NCIT:C3038",
+                    "label": "Fever"
                 }
             ],
-            "drug_type": "PRESCRIPTION"
-        }},
+        },
+        {
+            "treatment": {
+                "agent": {
+                    "id": "NCIT:C198",
+                    "label": "Acetaminophen"
+                },
+                "route_of_administration": {
+                    "id": "NCIT:C38288",
+                    "label": "Oral Route of Administration"
+                },
+                "dose_intervals": [
+                    {
+                        "quantity": {
+                            "unit": {
+                                "id": "UO:0000022",
+                                "label": "milligram"
+                            },
+                            "value": 500
+                        },
+                        "schedule_frequency": {
+                            "id": "NCIT:C64496",
+                            "label": "Twice Daily"
+                        },
+                        "interval": {
+                            "start": interval["start"],
+                            "end": interval["end"]
+                        }
+                    }
+                ],
+                "drug_type": "PRESCRIPTION"
+            },
+            "treatment_target": {
+                "id": "NCIT:C34661",
+                "label": "Headache"
+            }
+        },
         {"treatment": {
             "agent": {
                 "id": "NCIT:C561",
