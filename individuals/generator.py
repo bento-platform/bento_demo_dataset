@@ -117,12 +117,13 @@ class IndividualGenerator:
     # creates experiments associated with a biosample as a side effect
     def biosamples(self, individual):
         indiv_id = individual["id"]
-
-        # return any real stuff from config
-        if bs := individual.get("biosamples"):
-            return bs
-
         b = []
+
+        # add any real stuff from config
+        if bs := individual.get("biosamples"):
+            b.extend(bs)
+        if es := individual.get("experiments"):
+            self.experiments.extend(es)
 
         # add an experiment with vcf for all 1000 genomes ids, whether vcf exists or not
         if self.is_1000_genomes_id(individual["id"]):
@@ -148,8 +149,8 @@ class IndividualGenerator:
             b.append({
                 "id": eb_id,
                 "sampled_tissue": {
-                    "id": "UBERON:0000178",
-                    "label": "blood"
+                    "id": "UBERON:0000178",     # noooooooooooooo
+                    "label": "blood"            # ###############
                 },
             })
             if self.should_add_experiment_to_biosample():
