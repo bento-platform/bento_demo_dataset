@@ -4,11 +4,11 @@
             "section_title": "Demographics",
             "charts": [
                 {"field": "age", "chart_type": "bar"},
+                {"field": "covid_severity", "chart_type": "pie"},
                 {"field": "sex", "chart_type": "pie"},
                 {"field": "date_of_consent", "chart_type": "bar"},
                 {"field": "mobility", "chart_type": "bar"},
                 {"field": "smoking_status", "chart_type": "bar"},
-                {"field": "covid_severity", "chart_type": "bar"},
                 {"field": "lab_test_result_value", "chart_type": "bar"}
             ]
         },
@@ -68,13 +68,7 @@
             "description": "Mobility",
             "datatype": "string",
             "config": {
-                "enum": [
-                    "I have no problems in walking about",
-                    "I have slight problems in walking about",
-                    "I have moderate problems in walking about",
-                    "I have severe problems in walking about",
-                    "I am unable to walk about"
-                ]
+                "enum": null
             }
         },
         "smoking_status": {
@@ -83,13 +77,7 @@
             "description": "Smoking status",
             "datatype": "string",
             "config": {
-                "enum": [
-                    "Non-smoker",
-                    "Smoker",
-                    "Former smoker",
-                    "Passive smoker",
-                    "Not specified"
-                ]
+                "enum": null
             }
         },
         "covid_severity": {
@@ -98,13 +86,7 @@
             "description": "Covid severity",
             "datatype": "string",
             "config": {
-                "enum": [
-                    "Uninfected",
-                    "Mild",
-                    "Moderate",
-                    "Severe",
-                    "Dead"
-                ]
+                "enum": null
             }
         },
         "lab_test_result_value": {
@@ -125,7 +107,7 @@
             "description": "Types of experiments performed on a sample",
             "datatype": "string",
             "config": {
-                "enum": ["DNA Methylation", "mRNA-Seq", "smRNA-Seq", "RNA-Seq", "WES", "WGS", "Other"]
+                "enum": null
             }
         }
     },
