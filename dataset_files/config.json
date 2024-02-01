@@ -4,8 +4,8 @@
             "section_title": "Demographics",
             "charts": [
                 {"field": "age", "chart_type": "bar"},
-                {"field": "covid_severity", "chart_type": "pie"},
                 {"field": "sex", "chart_type": "pie"},
+                {"field": "covid_severity", "chart_type": "pie"},
                 {"field": "date_of_consent", "chart_type": "bar"},
                 {"field": "mobility", "chart_type": "bar"},
                 {"field": "smoking_status", "chart_type": "bar"},
