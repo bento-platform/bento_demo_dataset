@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "mobility": {
+            "type": "string"
+        },
+        "covid_severity": {
+            "type": "string"
+        },
+        "date_of_consent": {
+            "type": "string"
+        },
+        "lab_test_result_value": {
+            "type": "number"
+        },
+        "smoking": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "mobility",
+        "covid_severity",
+        "date_of_consent",
+        "lab_test_result_value"
+    ]
+}
