@@ -1,56 +1,90 @@
-# experiments without real data files
-SYNTHETIC_EXPERIMENT_TYPES = [
+# synthetic experiments with a few sensible sampled_tissue values
+TISSUES_WITH_EXPERIMENTS = [
     {
-        "study_type": "Transcriptomics",
-        "experiment_type": "RNA-Seq",
-        "experiment_ontology": [
-            {
-                "id": "OBI:0001177",
-                "label": "RNA sequencing assay"
-            }
-        ]
+        "sampled_tissue": None,
+        "experiment": {
+            "study_type": "Transcriptomics",
+            "experiment_type": "RNA-Seq",
+            "experiment_ontology": [
+                {
+                    "id": "OBI:0001177",
+                    "label": "RNA sequencing assay"
+                }
+            ],
+            "library_strategy": "RNA-Seq",
+            "library_selection": "Random PCR",
+            "molecule": "total RNA",
+            "molecule_ontology": [
+                {
+                        "id": "EFO:0004964",
+                        "label": "total RNA"
+                }
+            ],
+        }
     },
     {
-        "study_type": "Metabolomics",
-        "experiment_type": "Metabolite profiling",
-        "experiment_ontology": [
-            {
-                "id": "OBI:0000366",
-                "label": "metabolite profiling assay"
-            }
-        ]
+        "sampled_tissue": {
+            "id": "NCIT:C13356",
+            "label": "Plasma"
+        },
+        "experiment": {
+            "study_type": "Metabolomics",
+            "experiment_type": "Metabolite profiling",
+            "experiment_ontology": [
+                {
+                    "id": "OBI:0000366",
+                    "label": "metabolite profiling assay"
+                }
+            ]
+        }
     },
     {
-        "study_type": "Proteomics",
-        "experiment_type": "Proteomic profiling",
-        "experiment_ontology": [
-            {
-                "id": "OBI:0001318",
-                "label": "proteomic profiling by array assay"
-            }
-        ],
+        "sampled_tissue": {
+            "id": "NCIT:C13356",
+            "label": "Plasma"
+        },
+        "experiment": {
+            "study_type": "Proteomics",
+            "experiment_type": "Proteomic profiling",
+            "experiment_ontology": [
+                {
+                    "id": "OBI:0001318",
+                    "label": "proteomic profiling by array assay"
+                }
+            ],
+        }
     },
     {
-        "study_type": "Serology",
-        "experiment_type": "Neutralizing antibody titers",
-        "experiment_ontology": [
-            {
-                "id": "EFO:0004556",
-                "label": "antibody measurement"
-            }
-        ],
+        "sampled_tissue": {
+            "id": "NCIT:C13325",
+            "label": "Serum"
+        },
+        "experiment": {
+            "study_type": "Serology",
+            "experiment_type": "Neutralizing antibody titers",
+            "experiment_ontology": [
+                {
+                    "id": "EFO:0004556",
+                    "label": "antibody measurement"
+                }
+            ],
+        }
     },
     {
-        "study_type": "Other",
-        "experiment_type": "Other",
-        "experiment_ontology": [
-            {
-                "id": "OBI:0000537",
-                "label": "copy number variation profiling assay"
-            }
-        ]
+        "sampled_tissue": None,
+        "experiment": {
+            "study_type": "Other",
+            "experiment_type": "Other",
+            "experiment_ontology": [
+                {
+                    "id": "OBI:0000537",
+                    "label": "copy number variation profiling assay"
+                }
+            ]
+        }
     }
 ]
+
 
 # references to files in "dataset_files/example_experiments" directory
 GENERIC_EXPERIMENT_FILES = [

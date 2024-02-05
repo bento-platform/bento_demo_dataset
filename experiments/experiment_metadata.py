@@ -1,5 +1,5 @@
 from config.constants import DEFAULT_ASSEMBLY, P_ADD_FAKE_CRAM_TO_1K_VCF, P_ADD_EXAMPLE_FILE_TO_EXPERIMENT
-from experiments.experiment_details import SYNTHETIC_EXPERIMENT_TYPES, GENERIC_EXPERIMENT_FILES
+from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS, GENERIC_EXPERIMENT_FILES
 
 
 def one_thousand_genomes_experiment(rng, biosample_id):
@@ -48,6 +48,28 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
         "library_selection": "PCR",
         "experiment_results": [vcf_file_metadata(rng, filename, assembly_id)]
     }
+
+
+# produce biosample and experiment togther
+# allows us to have sensible values for sampled_tissue for a particular experiment
+def random_biosample_with_experiment(rng, biosample_id, weights):
+    tissue_with_experiment = rng.weighted_choice(TISSUES_WITH_EXPERIMENTS, weights)
+
+    biosample = {
+        "id": biosample_id,
+    }
+    if ts := tissue_with_experiment["sampled_tissue"]:
+        biosample["sampled_tissue"] = ts
+
+    experiment = {
+        "id": rng.uuid4(),
+        "biosample": biosample_id,
+        **tissue_with_experiment["experiment"]
+    }
+    if randomly_add_example_file(rng):
+        experiment["experiment_results"] = [random_generic_file_metadata(rng)]
+
+    return biosample, experiment
 
 
 def random_synthetic_experiment(rng, biosample_id, weights):

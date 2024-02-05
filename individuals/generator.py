@@ -3,8 +3,8 @@ from config.constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE)
-from experiments.experiment_metadata import (
-    one_thousand_genomes_experiment, random_synthetic_experiment, SYNTHETIC_EXPERIMENT_TYPES)
+from experiments.experiment_metadata import one_thousand_genomes_experiment, random_biosample_with_experiment
+from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
 from phenopackets.interpretations import interpretations
@@ -50,7 +50,7 @@ class IndividualGenerator:
             "mobility": rng.gaussian_weights(len(MOBILITY)),
             "phenotypic_features": rng.gaussian_weights(len(phenotypic_features())),
             "smoking_status": rng.gaussian_weights(len(SMOKING_STATUS)),
-            "synthetic_experiments": rng.gaussian_weights(len(SYNTHETIC_EXPERIMENT_TYPES))
+            "synthetic_experiments": rng.gaussian_weights(len(TISSUES_WITH_EXPERIMENTS))
         }
 
     def generate_data(self, individual):
@@ -141,22 +141,12 @@ class IndividualGenerator:
 
         # ... then typically give them experiments
         for eb_id in extra_biosamples:
-            b.append({
-                "id": eb_id,
-                "sampled_tissue": {
-                    "id": "UBERON:0000178",     # noooooooooooooo
-                    "label": "blood"            # ###############
-                },
-            })
+            synthetic_biosample, synthetic_experiment = random_biosample_with_experiment(
+                self.rng, eb_id, self.choice_weights["synthetic_experiments"])
+
+            b.append(synthetic_biosample)
             if self.should_add_experiment_to_biosample():
-                self.add_experiment(random_synthetic_experiment(
-                    self.rng, eb_id, self.choice_weights["synthetic_experiments"]))
-
-        # refactor here to have sampled_tissue make sense
-
-        # TODO?
-        # could have more top-level biosample properties (procedure, etc)
-        # but some properties only make sense with particular experiments
+                self.add_experiment(synthetic_experiment)
 
         return b
 
