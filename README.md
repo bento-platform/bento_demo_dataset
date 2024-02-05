@@ -2,8 +2,10 @@
 
 Partially synthetic demo dataset for the Bento platform. Requires Python 3.10+
 
-Portions are courtesy of the 1000 Genomes project, &copy; EMBL-EBI.
-<!-- IHEC? -->
+Based partly on data from:
+
+- [The 1000 Genomes project](https://www.internationalgenome.org/), &copy; EMBL-EBI
+- [The International Human Epigenome Consortium](https://ihec-epigenomes.org/)
 
 #### Requirements:
 
@@ -37,12 +39,18 @@ This will write phenopackets to `synthetic_phenopackets.json` and experiments to
 Other useful files are available in the `/dataset_files` directory:
 - `config.json`: a [Katsu](https://github.com/bento-platform/katsu) config file matching the dataset
 - `dats.json`: an example [DATS](https://github.com/datatagsuite) file
+- `extra_properties_typing.json`: to configure typed extra properties
 - mock experiment files in `.csv`, `.jpg`, `.md`, `.mp4`, `.pdf`, and `.xlsx` format
 
 
 
 #### Optional Configuration:
 
-The dataset is a mix of fixed and randomly generated values, random values will be the same across different runs of generate_dataset.py. For different output, modify any of the values in [config/constants.py](config/constants.py).
+The dataset is a mix of fixed and randomly generated values, random values will be the same across different runs of generate_dataset.py. To change the output, modify any of the values in [config/constants.py](config/constants.py).
 
-The dataset is generated based on the input file [config/individuals.json](config/individuals.json). You can add (or remove) individuals for different output. Individuals with "id" and "sex" fields only will get fully synthetic metadata, while any values in the "biosamples", "experiments" or "diseases" fields will be copied over unmodified. This allows, for example, to generate appropriate metadata for real data files (which may involve, e.g. a particular disease).
+The dataset is generated based on the input file [config/individuals.json](config/individuals.json). You can add (or remove) individuals for different output. Individuals with "id" and "sex" fields only will get fully synthetic metadata, while any values in the "biosamples", "experiments" or "diseases" fields will be copied over unmodified. This allows, for example, to generate appropriate metadata for real data files (which may involve, e.g., a particular disease).
+
+
+#### Optional Data Files:
+
+The dataset is meant for use with genomic data from the 1000 Genomes Project, and transcriptomics data from the International Human Epigenome Consortium. See [here](./dataset_files/README.md) for more details on data files. 
