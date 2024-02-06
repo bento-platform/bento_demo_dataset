@@ -93,6 +93,10 @@ GENERIC_EXPERIMENT_FILES = [
         "file_type": "CSV"
     },
     {
+        "filename": "example.docx",
+        "file_type": "DOCX"
+    },
+    {
         "filename": "example.jpg",
         "file_type": "JPEG"
     },
