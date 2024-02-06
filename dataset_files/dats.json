@@ -1,57 +1,71 @@
 {
-    "creators": [
+  "creators": [
       {
-        "name": "Canadian Centre for Computational Genomics",
-        "abbreviation": "C3G",
-        "roles": [
-          {
-            "value": "creator"
+          "name": "Canadian Centre for Computational Genomics",
+          "abbreviation": "C3G",
+          "roles": [
+              {
+                  "value": "creator"
+              }
+          ]
+      }
+  ],
+  "description": "Bento synthetic dataset",
+  "distributions": [
+      {
+          "formats": [
+              "JSON",
+              "VCF",
+              "bigwig"
+          ],
+          "size": 22,
+          "unit": {
+              "value": "MB"
+          },
+          "access": {
+              "landingPage": "https://bento-platform.github.io/",
+              "authorizations": [
+                  {
+                      "value": "public"
+                  }
+              ]
           }
-        ]
       }
-    ],
-    "description": "Bento synthetic dataset",
-    "distributions": [
+  ],
+  "isAbout": [
       {
-        "access": {
-          "landingPage": "https://bento-platform.github.io/"
-        }
+          "identifier": {
+              "identifier": "https://www.ncbi.nlm.nih.gov/taxonomy/9606",
+              "identifierSource": "NCBI Taxonomy Database"
+          },
+          "name": "Homo sapiens"
       }
-    ],
-    "isAbout": [
+  ],
+  "keywords": [
       {
-        "identifier": {
-          "identifier": "https://www.ncbi.nlm.nih.gov/taxonomy/9606",
-          "identifierSource": "NCBI Taxonomy Database"
-        },
-        "name": "Homo sapiens"
+          "value": "synthetic data"
       }
-    ],
-    "keywords": [
+  ],
+  "primaryPublications": [
       {
-        "value": "synthetic data"
+          "authors": [],
+          "dates": [],
+          "identifier": {
+              "identifier": "10.1093/nar/gkz836",
+              "identifierSource": ""
+          },
+          "publicationVenue": "Nucleid Acids Research",
+          "title": "The International Genome Sample Resource (IGSR) collection of open human genomic variation resources"
       }
-    ],
-    "primaryPublications": [
+  ],
+  "privacy": "partially synthetic anonymized data",
+  "title": "Bento Synthetic Dataset",
+  "types": [
       {
-        "authors": [],
-        "dates": [],
-        "identifier": {
-          "identifier": "10.1093/nar/gkz836",
-          "identifierSource": ""
-        },
-        "publicationVenue": "Nucleid Acids Research",
-        "title": "The International Genome Sample Resource (IGSR) collection of open human genomic variation resources"
+          "information": {
+              "value": "Genomics"
+          }
       }
- ],
-    "privacy": "partially synthetic anonymized data",
-    "title": "Bento Synthetic Dataset",
-    "types": [
-      {
-        "information": {
-          "value": "Genomics"
-        }
-      }
-    ],
-    "version": "1.0"
-  }
+  ],
+  "version": "1.0"
+}
