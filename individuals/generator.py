@@ -116,6 +116,7 @@ class IndividualGenerator:
     # creates experiments associated with a biosample as a side effect
     def biosamples(self, individual):
         indiv_id = individual["id"]
+        base_biosample_id = indiv_id[len("ind-"):] if indiv_id.startswith("ind-") else indiv_id
         b = []
 
         # add any real stuff from config
@@ -126,20 +127,19 @@ class IndividualGenerator:
 
         # add an experiment with vcf for all 1000 genomes ids, whether vcf exists or not
         if self.is_1000_genomes_id(individual["id"]):
-            one_k_biosample_id = indiv_id[len("ind-"):]
             b.append({
-                "id": one_k_biosample_id,
+                "id": base_biosample_id,
                 "sampled_tissue": {
                     "id": "UBERON:0000178",
                     "label": "blood"
                 },
             })
-            self.add_experiment(one_thousand_genomes_experiment(self.rng, one_k_biosample_id))
+            self.add_experiment(one_thousand_genomes_experiment(self.rng, base_biosample_id))
 
         # randomly add more biosamples, typically with experiments
         synth_exps = self.synthetic_experiments_with_sampled_tissue()
         for index, tissue_and_exp in enumerate(synth_exps):
-            b_id = f"{indiv_id}-{index}"
+            b_id = f"{base_biosample_id}-{index}"
             extra_biosample = self.synthetic_biosample_wrapper(tissue_and_exp, b_id)
             b.append(extra_biosample)
 
