@@ -3,7 +3,7 @@ from config.constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE)
-from experiments.experiment_metadata import one_thousand_genomes_experiment, random_biosample_with_experiment
+from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
@@ -136,17 +136,15 @@ class IndividualGenerator:
             })
             self.add_experiment(one_thousand_genomes_experiment(self.rng, one_k_biosample_id))
 
-        # randomly add more biosamples...
-        extra_biosamples = self.extra_biosamples(indiv_id)
+        # randomly add more biosamples, typically with experiments
+        synth_exps = self.synthetic_experiments_with_sampled_tissue()
+        for index, tissue_and_exp in enumerate(synth_exps):
+            b_id = f"{indiv_id}-{index}"
+            extra_biosample = self.synthetic_biosample_wrapper(tissue_and_exp, b_id)
+            b.append(extra_biosample)
 
-        # ... then typically give them experiments
-        for eb_id in extra_biosamples:
-            synthetic_biosample, synthetic_experiment = random_biosample_with_experiment(
-                self.rng, eb_id, self.choice_weights["synthetic_experiments"])
-
-            b.append(synthetic_biosample)
             if self.should_add_experiment_to_biosample():
-                self.add_experiment(synthetic_experiment)
+                self.add_experiment(synthetic_experiment_wrapper(self.rng, tissue_and_exp, b_id))
 
         return b
 
@@ -241,12 +239,21 @@ class IndividualGenerator:
     def smoking_status(self):
         return self.rng.weighted_choice(SMOKING_STATUS, self.choice_weights["smoking_status"])
 
-    def extra_biosamples(self, indiv_id):
+    def synthetic_experiments_with_sampled_tissue(self):
         return self.rng.zero_or_more_choices(
-            [f"{indiv_id}-{n}" for n in range(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))],
+            TISSUES_WITH_EXPERIMENTS,
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
-            self.rng.gaussian_weights(len(EXTRA_BIOSAMPLES_MASS_DISTRIBUTION))
+            self.choice_weights["synthetic_experiments"]
         )
+
+    def synthetic_biosample_wrapper(self, experiment, sb_id):
+        sb = {
+            "id": sb_id
+        }
+        if tissue := experiment["sampled_tissue"]:
+            sb["sampled_tissue"] = tissue
+
+        return sb
 
     def should_add_experiment_to_biosample(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_ADD_EXPERIMENT_TO_BIOSAMPLE))

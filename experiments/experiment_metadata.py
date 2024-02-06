@@ -1,5 +1,5 @@
 from config.constants import DEFAULT_ASSEMBLY, P_ADD_FAKE_CRAM_TO_1K_VCF, P_ADD_EXAMPLE_FILE_TO_EXPERIMENT
-from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS, GENERIC_EXPERIMENT_FILES
+from experiments.experiment_details import GENERIC_EXPERIMENT_FILES
 
 
 def one_thousand_genomes_experiment(rng, biosample_id):
@@ -50,43 +50,15 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
     }
 
 
-# produce biosample and experiment togther
-# allows us to have sensible values for sampled_tissue for a particular experiment
-def random_biosample_with_experiment(rng, biosample_id, weights):
-    tissue_with_experiment = rng.weighted_choice(TISSUES_WITH_EXPERIMENTS, weights)
-
-    biosample = {
-        "id": biosample_id,
-    }
-    if ts := tissue_with_experiment["sampled_tissue"]:
-        biosample["sampled_tissue"] = ts
-
-    experiment = {
-        "id": rng.uuid4(),
-        "biosample": biosample_id,
-        **tissue_with_experiment["experiment"]
-    }
-    if randomly_add_example_file(rng):
-        experiment["experiment_results"] = [random_generic_file_metadata(rng)]
-
-    return biosample, experiment
-
-
-def random_synthetic_experiment(rng, biosample_id, weights):
-    return rng.weighted_choice([synthetic_experiment_wrapper(rng, biosample_id, exp)
-                                for exp in SYNTHETIC_EXPERIMENT_TYPES],
-                               weights)
-
-
 def randomly_add_example_file(rng):
     return bool(rng.biased_coin_toss(P_ADD_EXAMPLE_FILE_TO_EXPERIMENT))
 
 
-def synthetic_experiment_wrapper(rng, biosample_id, experiment_type):
+def synthetic_experiment_wrapper(rng, tissue_and_exp, biosample_id):
     e = {
         "id": rng.uuid4(),
         "biosample": biosample_id,
-        **experiment_type
+        **tissue_and_exp["experiment"]
     }
     if randomly_add_example_file(rng):
         e["experiment_results"] = [random_generic_file_metadata(rng)]
