@@ -236,17 +236,17 @@ class IndividualGenerator:
     def has_smoking_status(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_SMOKING_STATUS_PRESENT))
 
-    def smoking_status(self):
+    def smoking_status(self) -> str:
         return self.rng.weighted_choice(SMOKING_STATUS, self.choice_weights["smoking_status"])
 
-    def synthetic_experiments_with_sampled_tissue(self):
+    def synthetic_experiments_with_sampled_tissue(self) -> list:
         return self.rng.zero_or_more_choices(
             TISSUES_WITH_EXPERIMENTS,
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
             self.choice_weights["synthetic_experiments"]
         )
 
-    def synthetic_biosample_wrapper(self, experiment, sb_id):
+    def synthetic_biosample_wrapper(self, experiment, sb_id) -> list:
         sb = {
             "id": sb_id
         }
