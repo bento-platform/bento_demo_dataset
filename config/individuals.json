@@ -6,7 +6,7 @@
             {
                 "id": "MS002001",
                 "sampled_tissue": {
-                    "id": "UB:0000955",
+                    "id": "UBERON:0000955",
                     "label": "Brodmann (1909) area 11"
                 },
                 "procedure": {
