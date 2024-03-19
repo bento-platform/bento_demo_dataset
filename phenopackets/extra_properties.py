@@ -1,8 +1,4 @@
-# Extra-properties on individuals
-
-import random
-from datetime import datetime
-
+# values for catgegorical extra properties
 SMOKING_STATUS = [
     "Non-smoker",
     "Smoker",
@@ -26,9 +22,3 @@ COVID_SEVERITY = [
     "Severe",
     "Dead"
 ]
-
-def date_of_consent():
-    year = f"202{random.choice([0, 1, 2])}"
-    d = random.choice(range(1, 365))
-    month_day = datetime.strptime(f"{d}", "%j").strftime("%m-%d")
-    return year + "-" + month_day

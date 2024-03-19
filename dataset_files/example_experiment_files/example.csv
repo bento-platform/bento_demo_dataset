@@ -1,0 +1,101 @@
+Id,Study type,Experiment type,Molecule,Library strategy,Library source,Library selection,Library layout,Created,Updated
+004eab0d-d4d5-4493-ab46-cb1e49d78456,Other,RNA-Seq,polyA RNA,RNA-Seq,Transcriptomic Single Cell,MF,Single,2023-12-11T20:38:12.266224Z,2023-12-11T20:38:12.266234Z
+006d2c11-7005-4d8a-90c8-39584278bbb5,Metagenomics,RNA-Seq,protein,Bisulfite-Seq,Metatranscriptomic,Other,Single,2023-12-11T20:38:01.038462Z,2023-12-11T20:38:01.038472Z
+00961e79-e427-43dc-b891-d0d88b485edb,Epigenomics,RNA-Seq,polyA RNA,ChIP-Seq,Viral RNA,RT-PCR,Single,2023-12-11T20:38:10.188840Z,2023-12-11T20:38:10.188849Z
+019784d8-8bba-4517-a9c8-1b315c119184,Genomics,mRNA-Seq,polyA RNA,Bisulfite-Seq,Metagenomic,PCR,Paired,2023-12-11T20:38:14.220296Z,2023-12-11T20:38:14.220305Z
+02103b30-5486-4ea3-a5c7-4d69115d833a,Epigenomics,DNA Methylation,polyA RNA,RNA-Seq,Metatranscriptomic,Exome capture,Single,2023-12-11T20:38:12.076278Z,2023-12-11T20:38:12.076287Z
+0265f12c-cb2f-4aa8-b16c-ca2243186f36,Metagenomics,RNA-Seq,polyA RNA,RNA-Seq,Genomic Single Cell,MF,Single,2023-12-11T20:38:05.305905Z,2023-12-11T20:38:05.305915Z
+0282d4c7-c618-43aa-824f-d4ee0b62bc6c,Metagenomics,smRNA-Seq,polyA RNA,Bisulfite-Seq,Genomic Single Cell,PCR,Single,2023-12-11T20:38:10.146313Z,2023-12-11T20:38:10.146322Z
+032d7af5-a95c-4146-9a52-b1b3d90b9a1a,Other,smRNA-Seq,small RNA,RNA-Seq,Other,Other,Single,2023-12-11T20:38:02.910084Z,2023-12-11T20:38:02.910093Z
+03a696ff-6808-4094-9bb6-6bf9f75d4f88,Genomics,Other,polyA RNA,Bisulfite-Seq,Other,Random,Single,2023-12-11T20:38:09.728507Z,2023-12-11T20:38:09.728517Z
+04ab2f67-1b22-4dd4-b029-43f990c82e19,Transcriptomics,DNA Methylation,polyA RNA,ChIP-Seq,Other,RT-PCR,Paired,2023-12-11T20:38:08.706798Z,2023-12-11T20:38:08.706809Z
+05780286-2f90-4302-814e-a2b242b9c814,Genomics,RNA-Seq,polyA RNA,ChIP-Seq,Genomic Single Cell,Exome capture,Single,2023-12-11T20:38:14.049458Z,2023-12-11T20:38:14.049468Z
+06c2fab7-bbb6-4041-b57b-9557a29a7584,Genomics,Other,Other,ChIP-Seq,Synthetic,MF,Paired,2023-12-11T20:38:08.912124Z,2023-12-11T20:38:08.912133Z
+0805b0d2-8ef7-4953-bb6c-7e0565b03ba2,Other,DNA Methylation,polyA RNA,Bisulfite-Seq,Synthetic,RT-PCR,Paired,2023-12-11T20:38:03.043678Z,2023-12-11T20:38:03.043690Z
+08d26977-e04f-4cc0-bd1b-570dd26cefb8,Epigenomics,mRNA-Seq,small RNA,Bisulfite-Seq,Synthetic,Exome capture,Paired,2023-12-11T20:38:00.930198Z,2023-12-11T20:38:00.930207Z
+08fd96a3-816c-4f4e-a253-0bca9fc86817,Other,Other,total RNA,ChIP-Seq,Genomic,Random,Single,2023-12-11T20:38:10.686931Z,2023-12-11T20:38:10.686940Z
+099566d4-67d6-4d7a-8452-1acf74d3b954,Genomics,WES,genomic DNA,RNA-Seq,Genomic Single Cell,RT-PCR,Single,2023-12-11T20:38:02.661650Z,2023-12-11T20:38:02.661659Z
+09b12df1-8c3b-4e80-b7ab-b1c0e2681edb,Other,smRNA-Seq,polyA RNA,ChIP-Seq,Synthetic,MF,Single,2023-12-11T20:38:02.604975Z,2023-12-11T20:38:02.604984Z
+09e5a9c1-b720-475b-8a23-dfb36de105c6,Epigenomics,smRNA-Seq,polyA RNA,ChIP-Seq,Transcriptomic,Other,Single,2023-12-11T20:38:13.673474Z,2023-12-11T20:38:13.673483Z
+0c6c9084-e768-467f-841e-0dc57c707404,Genomics,RNA-Seq,polyA RNA,ChIP-Seq,Metagenomic,RT-PCR,Paired,2023-12-11T20:38:11.714913Z,2023-12-11T20:38:11.714922Z
+0cf63904-c31b-40e9-af0c-bb78b2cd6881,Metagenomics,WES,polyA RNA,RNA-Seq,Viral RNA,Other,Paired,2023-12-11T20:38:15.256237Z,2023-12-11T20:38:15.256246Z
+0d620383-fb17-4ce1-a101-ff31d00394b9,Other,smRNA-Seq,polyA RNA,ChIP-Seq,Transcriptomic Single Cell,RT-PCR,Single,2023-12-11T20:38:02.977156Z,2023-12-11T20:38:02.977165Z
+0d9f1986-ba86-41f3-a43d-fb6479d9dc9d,Other,DNA Methylation,Other,Bisulfite-Seq,Metagenomic,MF,Single,2023-12-11T20:38:11.325572Z,2023-12-11T20:38:11.325581Z
+0e5ccb2d-0173-4b52-910c-0672b1652493,Transcriptomics,WES,polyA RNA,ChIP-Seq,Other,RT-PCR,Single,2023-12-11T20:38:06.888765Z,2023-12-11T20:38:06.888774Z
+0f02ca58-50a8-4145-a6cf-6db296abcd72,Epigenomics,WES,nuclear RNA,ChIP-Seq,Metatranscriptomic,MF,Single,2023-12-11T20:38:15.240099Z,2023-12-11T20:38:15.240108Z
+0f82dc4d-598c-4e6b-a39e-6c51f63ed31e,Metagenomics,smRNA-Seq,polyA RNA,ChIP-Seq,Viral RNA,Exome capture,Single,2023-12-11T20:38:03.143474Z,2023-12-11T20:38:03.143499Z
+0fea63d7-8390-4e48-a8e2-2381b70ad867,Transcriptomics,smRNA-Seq,polyA RNA,RNA-Seq,Synthetic,Random PCR,Paired,2023-12-11T20:38:07.349527Z,2023-12-11T20:38:07.349537Z
+1150ad92-17ce-4b89-8e91-c2aafb906660,Transcriptomics,mRNA-Seq,polyA RNA,RNA-Seq,Metatranscriptomic,RT-PCR,Paired,2023-12-11T20:38:16.270705Z,2023-12-11T20:38:16.270714Z
+117f90f3-126c-4dd7-9aca-b5266c39a9b5,Genomics,Other,cytoplasmic RNA,Bisulfite-Seq,Viral RNA,PCR,Single,2023-12-11T20:38:12.446497Z,2023-12-11T20:38:12.446510Z
+1259ccb4-c16f-4318-a4ca-02f43b6b0cd1,Other,Other,protein,ChIP-Seq,Genomic,MF,Single,2023-12-11T20:38:12.098686Z,2023-12-11T20:38:12.098696Z
+1287e614-3973-43d9-ad4a-2b00b061fed1,Genomics,Other,polyA RNA,Bisulfite-Seq,Viral RNA,Random,Paired,2023-12-11T20:38:10.486818Z,2023-12-11T20:38:10.486835Z
+12db91b6-422a-482f-8f16-7ea160045cf3,Epigenomics,mRNA-Seq,polyA RNA,RNA-Seq,Genomic Single Cell,Exome capture,Paired,2023-12-11T20:38:02.525474Z,2023-12-11T20:38:02.525498Z
+1568e110-f415-42fa-9049-f006ee2403c6,Other,WES,polyA RNA,ChIP-Seq,Viral RNA,Random PCR,Single,2023-12-11T20:38:08.496628Z,2023-12-11T20:38:08.496640Z
+177ecb03-742a-4f80-bec0-4870984e73c6,Genomics,DNA Methylation,cytoplasmic RNA,RNA-Seq,Other,RT-PCR,Paired,2023-12-11T20:38:15.261746Z,2023-12-11T20:38:15.261756Z
+17a6dd94-f8b8-4315-a2fa-bfbe205f4a1d,Transcriptomics,DNA Methylation,polyA RNA,ChIP-Seq,Metagenomic,Random,Single,2023-12-11T20:38:06.419178Z,2023-12-11T20:38:06.419187Z
+17dfa494-2437-4112-9c76-6ef2eeb721f7,Metagenomics,smRNA-Seq,total RNA,Bisulfite-Seq,Other,Other,Paired,2023-12-11T20:38:11.972455Z,2023-12-11T20:38:11.972465Z
+1924b328-7769-4744-80e2-1aa8dbc3b2c8,Metagenomics,mRNA-Seq,polyA RNA,ChIP-Seq,Viral RNA,Random,Single,2023-12-11T20:38:12.828424Z,2023-12-11T20:38:12.828433Z
+19865ac1-7f01-4738-97f3-f2ab36c15799,Epigenomics,Other,polyA RNA,ChIP-Seq,Genomic,Other,Paired,2023-12-11T20:38:12.452728Z,2023-12-11T20:38:12.452737Z
+19cba5b1-7b8e-4a5e-a8ac-b5df5501ac06,Epigenomics,mRNA-Seq,polyA RNA,RNA-Seq,Viral RNA,Exome capture,Single,2023-12-11T20:38:12.632827Z,2023-12-11T20:38:12.632837Z
+1aab0197-bafa-4314-94ed-7fea908579ba,Other,Other,nuclear RNA,RNA-Seq,Genomic,Random PCR,Single,2023-12-11T20:38:14.751258Z,2023-12-11T20:38:14.751267Z
+1ab9c9f6-7c9c-4898-ad96-0c2c9db29030,Epigenomics,DNA Methylation,polyA RNA,ChIP-Seq,Metatranscriptomic,Random PCR,Paired,2023-12-11T20:38:02.351475Z,2023-12-11T20:38:02.351501Z
+1b333bec-b21f-4267-9cc8-900f68a4bb7b,Metagenomics,smRNA-Seq,protein,ChIP-Seq,Synthetic,RT-PCR,Paired,2023-12-11T20:38:06.629437Z,2023-12-11T20:38:06.629446Z
+1bc7b22a-e10f-4cac-91cb-a78f85659693,Transcriptomics,mRNA-Seq,total RNA,ChIP-Seq,Synthetic,PCR,Single,2023-12-11T20:38:10.833793Z,2023-12-11T20:38:10.833803Z
+1ca87d2e-50a3-4c2d-9bc9-d48a580d76f3,Transcriptomics,DNA Methylation,polyA RNA,ChIP-Seq,Transcriptomic,Random,Single,2023-12-11T20:38:14.010524Z,2023-12-11T20:38:14.010535Z
+1d304379-d655-4e3d-abd0-13f4ef71fff8,Other,RNA-Seq,total RNA,RNA-Seq,Transcriptomic Single Cell,Random,Single,2023-12-11T20:38:01.816557Z,2023-12-11T20:38:01.816567Z
+1e433297-a10f-4e8f-949e-23e2911e2431,Epigenomics,WES,genomic DNA,Bisulfite-Seq,Genomic,PCR,Single,2023-12-11T20:38:09.986645Z,2023-12-11T20:38:09.986654Z
+1e9638ed-7d96-4dd9-8919-9693455193d8,Other,WES,total RNA,Bisulfite-Seq,Transcriptomic Single Cell,Random,Single,2023-12-11T20:38:11.773106Z,2023-12-11T20:38:11.773115Z
+1ea65543-650a-442a-bdea-7b00264ff003,Transcriptomics,smRNA-Seq,Other,ChIP-Seq,Transcriptomic,RT-PCR,Paired,2023-12-11T20:38:04.684660Z,2023-12-11T20:38:04.684670Z
+1ec220ea-d25a-4ff9-a285-d6aff2dbd1cd,Metagenomics,WES,polyA RNA,RNA-Seq,Transcriptomic,PCR,Paired,2023-12-11T20:38:02.939430Z,2023-12-11T20:38:02.939440Z
+1f0e01ce-4feb-4471-93e0-c4fca996aa77,Other,RNA-Seq,cytoplasmic RNA,RNA-Seq,Genomic,Random PCR,Single,2023-12-11T20:38:03.226724Z,2023-12-11T20:38:03.226734Z
+1fb6f223-0ff7-439a-8763-6820d7bcd705,Metagenomics,mRNA-Seq,polyA RNA,RNA-Seq,Transcriptomic Single Cell,RT-PCR,Single,2023-12-11T20:38:15.578058Z,2023-12-11T20:38:15.578068Z
+20588b5b-21d9-479f-9d21-0ef3d4b6978e,Genomics,smRNA-Seq,polyA RNA,RNA-Seq,Other,Other,Paired,2023-12-11T20:38:02.580990Z,2023-12-11T20:38:02.581000Z
+20fd9ede-4b93-4bdb-a6d0-7e9efd29bef4,Other,smRNA-Seq,total RNA,Bisulfite-Seq,Other,Other,Single,2023-12-11T20:38:05.897134Z,2023-12-11T20:38:05.897145Z
+222aa0e7-44bb-4f57-a967-bbf67546b04b,Transcriptomics,mRNA-Seq,polyA RNA,RNA-Seq,Transcriptomic Single Cell,Exome capture,Paired,2023-12-11T20:38:10.588731Z,2023-12-11T20:38:10.588741Z
+227a7c22-01b9-40ca-aec3-56c25ea5d904,Transcriptomics,mRNA-Seq,Other,Bisulfite-Seq,Transcriptomic,Random,Paired,2023-12-11T20:38:14.253279Z,2023-12-11T20:38:14.253289Z
+23b7e226-74b6-4078-a1ae-f5199647fd74,Metagenomics,WES,total RNA,RNA-Seq,Metagenomic,Random,Paired,2023-12-11T20:38:12.274047Z,2023-12-11T20:38:12.274057Z
+23bca97f-0a1e-45d1-a890-db4fb81b7aed,Metagenomics,WES,total RNA,RNA-Seq,Transcriptomic Single Cell,Random PCR,Single,2023-12-11T20:38:09.085819Z,2023-12-11T20:38:09.085829Z
+23fce2fd-bd4f-49e7-970a-c4a21cf374c7,Transcriptomics,smRNA-Seq,polyA RNA,Bisulfite-Seq,Genomic Single Cell,Random PCR,Single,2023-12-11T20:38:08.530217Z,2023-12-11T20:38:08.530226Z
+24ab8094-1f48-4322-824c-9e4cfbdff5e6,Epigenomics,RNA-Seq,cytoplasmic RNA,ChIP-Seq,Transcriptomic Single Cell,MF,Single,2023-12-11T20:38:12.103307Z,2023-12-11T20:38:12.103317Z
+24c06c6e-8dc0-494a-a9d0-de192cb246f6,Epigenomics,smRNA-Seq,polyA RNA,Bisulfite-Seq,Synthetic,RT-PCR,Paired,2023-12-11T20:38:04.188676Z,2023-12-11T20:38:04.188686Z
+24e59d17-6cf6-476b-8407-c22b74f76c96,Genomics,Other,nuclear RNA,Bisulfite-Seq,Transcriptomic,Exome capture,Paired,2023-12-11T20:38:05.311741Z,2023-12-11T20:38:05.311751Z
+25558d86-6cff-487c-a548-801b06a6be24,Genomics,DNA Methylation,polyA RNA,RNA-Seq,Transcriptomic Single Cell,Random,Single,2023-12-11T20:38:04.160579Z,2023-12-11T20:38:04.160589Z
+25bba452-f7d7-4f5c-a132-037b25a83389,Metagenomics,Other,polyA RNA,Bisulfite-Seq,Genomic,Other,Paired,2023-12-11T20:38:03.990950Z,2023-12-11T20:38:03.990960Z
+26136e0a-8de0-4af7-9280-fe4a690860b4,Metagenomics,WES,polyA RNA,Bisulfite-Seq,Transcriptomic Single Cell,MF,Single,2023-12-11T20:38:13.833806Z,2023-12-11T20:38:13.833815Z
+26565d88-85d3-4856-81f4-382475d779c9,Other,mRNA-Seq,polyA RNA,RNA-Seq,Viral RNA,MF,Single,2023-12-11T20:38:10.274793Z,2023-12-11T20:38:10.274802Z
+2658c720-257e-475b-aedd-ee668c4b3013,Transcriptomics,smRNA-Seq,nuclear RNA,Bisulfite-Seq,Viral RNA,Exome capture,Paired,2023-12-11T20:38:01.917746Z,2023-12-11T20:38:01.917755Z
+26e3cc1c-c405-476c-90fa-f721f1df9123,Genomics,Other,genomic DNA,Bisulfite-Seq,Genomic,MF,Single,2023-12-11T20:38:15.953210Z,2023-12-11T20:38:15.953219Z
+26ef67ff-86b0-4707-8268-d3a308d02636,Metagenomics,WES,polyA RNA,RNA-Seq,Other,Exome capture,Paired,2023-12-11T20:38:08.109380Z,2023-12-11T20:38:08.109389Z
+2770e361-39a1-4aad-b328-1bfb6fb03e2f,Genomics,DNA Methylation,polyA RNA,ChIP-Seq,Transcriptomic,Other,Paired,2023-12-11T20:38:01.905279Z,2023-12-11T20:38:01.905287Z
+27877c93-b248-42a2-b741-295110160b40,Epigenomics,DNA Methylation,Other,Bisulfite-Seq,Genomic Single Cell,Other,Single,2023-12-11T20:38:10.603974Z,2023-12-11T20:38:10.603984Z
+2a21f533-c8d0-42f7-8d72-0005e41b3cb0,Epigenomics,WES,nuclear RNA,RNA-Seq,Transcriptomic Single Cell,Random,Single,2023-12-11T20:38:04.574576Z,2023-12-11T20:38:04.574587Z
+2bd85bfa-a2b5-47c4-9a74-9cb2eae7910e,Epigenomics,DNA Methylation,polyA RNA,ChIP-Seq,Transcriptomic,Random,Single,2023-12-11T20:38:04.726974Z,2023-12-11T20:38:04.726987Z
+2c9331f2-1a5c-476b-a61d-534e50d35124,Genomics,DNA Methylation,polyA RNA,RNA-Seq,Genomic Single Cell,Random,Single,2023-12-11T20:38:10.866921Z,2023-12-11T20:38:10.866931Z
+2cf282b1-4f1c-43bb-832f-b3918160c35d,Metagenomics,Other,total RNA,RNA-Seq,Metatranscriptomic,MF,Single,2023-12-11T20:38:02.294078Z,2023-12-11T20:38:02.294087Z
+2cfdd219-81a9-48d4-9909-19bae4161618,Other,Other,polyA RNA,ChIP-Seq,Metagenomic,PCR,Paired,2023-12-11T20:38:10.946204Z,2023-12-11T20:38:10.946213Z
+2d078442-20e1-4d01-97ea-32d35f484fdd,Genomics,mRNA-Seq,polyA RNA,RNA-Seq,Transcriptomic Single Cell,Random,Single,2023-12-11T20:38:10.698552Z,2023-12-11T20:38:10.698561Z
+2e74b54e-2a0f-477c-aff6-19d744c241de,Epigenomics,Other,protein,RNA-Seq,Other,Other,Single,2023-12-11T20:38:05.451800Z,2023-12-11T20:38:05.451809Z
+2eb96c36-561d-4d9d-bfac-c756462f507c,Other,RNA-Seq,polyA RNA,ChIP-Seq,Synthetic,RT-PCR,Paired,2023-12-11T20:38:13.848287Z,2023-12-11T20:38:13.848295Z
+2f1f5c57-20f2-419c-86ea-9ac4957a4a7f,Other,DNA Methylation,Other,Bisulfite-Seq,Metagenomic,Exome capture,Single,2023-12-11T20:38:01.911160Z,2023-12-11T20:38:01.911169Z
+2f481391-df75-4ef7-9700-eb9ac6977efd,Transcriptomics,DNA Methylation,total RNA,ChIP-Seq,Genomic Single Cell,Exome capture,Paired,2023-12-11T20:38:08.257848Z,2023-12-11T20:38:08.257858Z
+2f98f777-fdff-4e4b-a1c4-876af076772b,Transcriptomics,Other,small RNA,ChIP-Seq,Synthetic,Other,Paired,2023-12-11T20:38:14.092767Z,2023-12-11T20:38:14.092776Z
+30261ce0-9e23-42bd-9cee-dbf5f83dc04e,Transcriptomics,mRNA-Seq,nuclear RNA,RNA-Seq,Genomic Single Cell,Random PCR,Single,2023-12-11T20:38:10.692638Z,2023-12-11T20:38:10.692647Z
+3159e8c7-6525-4e5a-b683-91cb5f825bf1,Genomics,RNA-Seq,polyA RNA,RNA-Seq,Metagenomic,Random PCR,Single,2023-12-11T20:38:13.156378Z,2023-12-11T20:38:13.156388Z
+317991e0-7f0f-43ca-8cb9-0e4750a27ca7,Genomics,DNA Methylation,genomic DNA,ChIP-Seq,Transcriptomic Single Cell,Exome capture,Paired,2023-12-11T20:38:10.816590Z,2023-12-11T20:38:10.816599Z
+3377fac7-ddd6-4c05-900b-0c7452ad3846,Epigenomics,DNA Methylation,Other,ChIP-Seq,Viral RNA,PCR,Paired,2023-12-11T20:38:14.213758Z,2023-12-11T20:38:14.213768Z
+33806642-77d2-4a1e-9250-94d6da870957,Epigenomics,smRNA-Seq,polyA RNA,ChIP-Seq,Transcriptomic Single Cell,MF,Paired,2023-12-11T20:38:15.449608Z,2023-12-11T20:38:15.449617Z
+34d13c8f-2f2b-4ae9-8a72-115b158d915b,Metagenomics,smRNA-Seq,Other,RNA-Seq,Metatranscriptomic,PCR,Paired,2023-12-11T20:38:02.044422Z,2023-12-11T20:38:02.044431Z
+3528e73d-3fc4-49f4-9aaa-4df3f5b52e7c,Genomics,mRNA-Seq,polyA RNA,RNA-Seq,Metatranscriptomic,MF,Single,2023-12-11T20:38:02.543920Z,2023-12-11T20:38:02.543929Z
+358368ea-6b8d-4bcb-9302-12a846e1e57a,Genomics,WES,cytoplasmic RNA,ChIP-Seq,Metatranscriptomic,Random,Single,2023-12-11T20:38:09.739078Z,2023-12-11T20:38:09.739088Z
+358f2886-1150-4091-87da-053337b41410,Genomics,mRNA-Seq,polyA RNA,ChIP-Seq,Other,PCR,Single,2023-12-11T20:38:03.842995Z,2023-12-11T20:38:03.843004Z
+35d09fa4-4b74-4590-b081-65c12a8e71a6,Other,mRNA-Seq,polyA RNA,ChIP-Seq,Genomic,RT-PCR,Paired,2023-12-11T20:38:00.983809Z,2023-12-11T20:38:00.983818Z
+35d36a3a-6587-4301-b452-2ba6f059d0ab,Metagenomics,RNA-Seq,polyA RNA,ChIP-Seq,Transcriptomic,RT-PCR,Paired,2023-12-11T20:38:02.039745Z,2023-12-11T20:38:02.039754Z
+35f2efea-b3b3-4548-ac75-75597d7df736,Metagenomics,DNA Methylation,polyA RNA,ChIP-Seq,Metagenomic,Other,Paired,2023-12-11T20:38:02.915910Z,2023-12-11T20:38:02.915919Z
+367623c2-c129-421d-b935-4c11011e2786,Transcriptomics,WES,polyA RNA,RNA-Seq,Synthetic,PCR,Single,2023-12-11T20:38:14.613181Z,2023-12-11T20:38:14.613190Z
+376149fa-b361-49b8-b58b-10788b849845,Metagenomics,RNA-Seq,polyA RNA,RNA-Seq,Other,Random,Single,2023-12-11T20:38:03.328564Z,2023-12-11T20:38:03.328576Z
+37e833de-34f7-4c8a-a99e-05b2b51b0154,Metagenomics,Other,polyA RNA,Bisulfite-Seq,Genomic,Other,Paired,2023-12-11T20:38:05.497401Z,2023-12-11T20:38:05.497410Z
+37e8639c-9051-4439-bccd-7a30e7de5024,Metagenomics,Other,small RNA,Bisulfite-Seq,Viral RNA,Exome capture,Single,2023-12-11T20:38:07.948813Z,2023-12-11T20:38:07.948822Z
+3815b9a4-a8c6-477b-ac91-d9486d5b48ee,Other,WES,nuclear RNA,ChIP-Seq,Metagenomic,Random,Paired,2023-12-11T20:38:04.365237Z,2023-12-11T20:38:04.365246Z
+382b6ce5-09df-4506-9bff-efde5d181fc1,Metagenomics,RNA-Seq,nuclear RNA,RNA-Seq,Synthetic,PCR,Paired,2023-12-11T20:38:14.061229Z,2023-12-11T20:38:14.061238Z
+386ee684-5b90-42b0-b37c-6feeba8cda61,Transcriptomics,DNA Methylation,polyA RNA,ChIP-Seq,Other,Other,Single,2023-12-11T20:38:13.364034Z,2023-12-11T20:38:13.364044Z
+39c3f446-c2a7-41ca-8c6d-00976607376a,Genomics,smRNA-Seq,cytoplasmic RNA,RNA-Seq,Metagenomic,Random,Paired,2023-12-11T20:38:08.263452Z,2023-12-11T20:38:08.263461Z
