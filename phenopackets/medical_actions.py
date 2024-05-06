@@ -75,8 +75,8 @@ def treatments(rng):
         {
             "treatment": {
                 "agent": {
-                    "id": "Ondansetron",
-                    "label": "NCIT:C1119"
+                    "id": "NCIT:C1119",
+                    "label": "Ondansetron"
                 }
             },
             "treatment_target": {
