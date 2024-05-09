@@ -58,11 +58,13 @@ class IndividualGenerator:
             "id": self.rng.uuid4(),
             # "alternate_ids": []  # ...why are alternate subject ids CURIEs?
             "subject": self.subject(individual),
-            "biosamples": self.biosamples(individual),
             "phenotypic_features": self.phenotypic_features()
         }
 
         # --------- conditional additions ------------
+        if bs := self.biosamples(individual):
+            p["biosamples"] = bs
+
         if ms := self.measurements():
             p["measurements"] = ms
 
@@ -136,15 +138,16 @@ class IndividualGenerator:
             })
             self.add_experiment(one_thousand_genomes_experiment(self.rng, base_biosample_id))
 
-        # randomly add more biosamples, typically with experiments
-        synth_exps = self.synthetic_experiments_with_sampled_tissue()
-        for index, tissue_and_exp in enumerate(synth_exps):
-            b_id = f"{base_biosample_id}-{index}"
-            extra_biosample = self.synthetic_biosample_wrapper(tissue_and_exp, b_id)
-            b.append(extra_biosample)
+        # randomly add more biosamples, with zero or more experiments
+        synth_biosamples = self.synthetic_biosamples_with_experiments()
 
-            if self.should_add_experiment_to_biosample():
-                self.add_experiment(synthetic_experiment_wrapper(self.rng, tissue_and_exp, b_id))
+        for index, sb in enumerate(synth_biosamples):
+            b_id = f"{base_biosample_id}-{index}"
+            extra_biosample = self.synthetic_biosample_wrapper(sb, b_id)
+            b.append(extra_biosample)
+            for e in sb["experiments"]:
+                if self.should_add_experiment_to_biosample():
+                    self.add_experiment(synthetic_experiment_wrapper(self.rng, e, b_id))
 
         return b
 
@@ -239,7 +242,7 @@ class IndividualGenerator:
     def smoking_status(self) -> str:
         return self.rng.weighted_choice(SMOKING_STATUS, self.choice_weights["smoking_status"])
 
-    def synthetic_experiments_with_sampled_tissue(self) -> list:
+    def synthetic_biosamples_with_experiments(self) -> list:
         return self.rng.zero_or_more_choices(
             TISSUES_WITH_EXPERIMENTS,
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,

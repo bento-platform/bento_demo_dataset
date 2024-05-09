@@ -54,11 +54,11 @@ def randomly_add_example_file(rng):
     return bool(rng.biased_coin_toss(P_ADD_EXAMPLE_FILE_TO_EXPERIMENT))
 
 
-def synthetic_experiment_wrapper(rng, tissue_and_exp, biosample_id):
+def synthetic_experiment_wrapper(rng, exp, biosample_id):
     e = {
         "id": rng.uuid4(),
         "biosample": biosample_id,
-        **tissue_and_exp["experiment"]
+        **exp
     }
     if randomly_add_example_file(rng):
         e["experiment_results"] = [random_generic_file_metadata(rng)]
