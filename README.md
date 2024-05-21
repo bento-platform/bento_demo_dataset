@@ -48,7 +48,7 @@ Other useful files are available in the `/dataset_files` directory:
 
 The dataset is a mix of fixed and randomly generated values, random values will be the same across different runs of generate_dataset.py. To change the output, modify any of the values in [config/constants.py](config/constants.py).
 
-The dataset is generated based on the input file [config/individuals.json](config/individuals.json). You can add (or remove) individuals for different output. Individuals with "id" and "sex" fields only will get fully synthetic metadata, while any values in the "biosamples", "experiments" or "diseases" fields will be copied over unmodified. This allows, for example, to generate appropriate metadata for real data files (which may involve, e.g., a particular disease).
+The dataset is generated based on the input file [config/individuals.json](config/individuals.json). You can add (or remove) individuals for different output. Individuals with "id" and "sex" fields only will get fully synthetic metadata, while any values in the "biosamples", "experiments" or "diseases" fields will be copied over unmodified. This allows, for example, generating appropriate metadata for real data files (which may involve, e.g., a particular disease).
 
 
 #### Optional Data Files:
