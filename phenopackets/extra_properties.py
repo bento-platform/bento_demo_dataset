@@ -19,6 +19,5 @@ COVID_SEVERITY = [
     "Uninfected",
     "Mild",
     "Moderate",
-    "Severe",
-    "Dead"
+    "Severe"
 ]

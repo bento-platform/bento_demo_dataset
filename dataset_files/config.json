@@ -135,8 +135,7 @@
                     "Uninfected",
                     "Mild",
                     "Moderate",
-                    "Severe",
-                    "Dead"
+                    "Severe"
                 ]
             }
         },
