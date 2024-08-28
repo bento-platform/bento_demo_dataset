@@ -43,17 +43,18 @@ class TranscriptomicMatrixGenerator:
             self.treatments = [item['Treatment'] for item in sample_info]
             self.experiment_id = [item['ExperimentID'] for item in sample_info]
 
-    def download_gff(self, url, file_path):
+    def download_gff(self, url, file_path):   
         if not os.path.exists(file_path):
             subprocess.run(['wget', '-O', file_path, url], check=True)
         with gzip.open(file_path, 'rt') as file:
             gff_data = pd.read_csv(file, sep='\t', comment='#', header=None, names=[
                 'seqname', 'source', 'feature', 'start', 'end', 'score', 'strand', 'frame', 'attribute'
             ], dtype=str)
-        genes = gff_data[gff_data['feature'] == 'gene']
+        genes = gff_data[gff_data['feature'] == 'gene'].copy()
         genes.loc[:, 'GeneName'] = genes['attribute'].str.extract('Name=([^;]+)')
         genes.loc[:, 'length'] = genes['end'].astype(int) - genes['start'].astype(int) + 1
-        return genes['GeneName'].tolist()
+        genes = genes['GeneName'].dropna().tolist()
+        return genes
 
     def generate_gene_names(self, url):
         file_name = os.path.basename(urlparse(url).path)
