@@ -61,7 +61,6 @@ class IndividualGenerator:
     def generate_and_assign_matrices(self, biosamples_rna_seq):
         groups = self.transcriptomic_matrix_generator.split_into_groups(biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)
 
-        print("gropups", groups)
         for idx, group in enumerate(groups):
             matrix_filename = f"counts_matrix_group_{idx + 1}.csv"
             # Set biosamples for the current group
