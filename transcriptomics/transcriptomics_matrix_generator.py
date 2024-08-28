@@ -55,10 +55,11 @@ class TranscriptomicMatrixGenerator:
         genes.loc[:, 'length'] = genes['end'].astype(int) - genes['start'].astype(int) + 1
         return genes['GeneName'].tolist()
 
-    def generate_gene_names(self):
-        url = 'ftp://ftp.ensembl.org/pub/release-112/gff3/homo_sapiens/Homo_sapiens.GRCh38.112.gff3.gz'
-        file_path = 'Homo_sapiens.GRCh38.112.gff3.gz'
-        return self.download_gff(url, file_path)
+    def generate_gene_names(self, url):
+        file_name = os.path.basename(urlparse(url).path)
+        self.gene_names = self.download_gff(url, file_name)
+        self.num_genes = len(self.gene_names)
+        return self.gene_names
 
     def split_into_groups(self, biosamples, num_groups, max_size=None):
         if len(biosamples) < num_groups:

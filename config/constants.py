@@ -57,3 +57,4 @@ GENERATE_EXPERIMENT_INFO_MATRIX = True
 GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX = True
 NUMBER_OF_GROUPS = 3
 NUMBER_OF_SAMPLES = 9
+GFF3_URL = "ftp://ftp.ensembl.org/pub/release-112/gff3/homo_sapiens/Homo_sapiens.GRCh38.112.gff3.gz"

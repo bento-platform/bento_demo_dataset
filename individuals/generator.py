@@ -4,7 +4,7 @@ from config.constants import (
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE,
     GENERATE_EXPERIMENT_INFO_MATRIX, GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX,
-    NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)
+    NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES, GFF3_URL)
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
@@ -65,6 +65,7 @@ class IndividualGenerator:
         for idx, group in enumerate(groups):
             matrix_filename = f"counts_matrix_group_{idx + 1}.csv"
             # Set biosamples for the current group
+            self.transcriptomic_matrix_generator.generate_gene_names(GFF3_URL)
             self.transcriptomic_matrix_generator.set_samples(group, NUMBER_OF_SAMPLES)
             counts_matrix = self.transcriptomic_matrix_generator.generate_counts_matrix()
             self.transcriptomic_matrix_generator.write_to_csv(counts_matrix, matrix_filename)
