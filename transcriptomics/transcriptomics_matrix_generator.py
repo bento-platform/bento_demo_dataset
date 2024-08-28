@@ -9,6 +9,8 @@ import gzip
 import subprocess
 import os
 import json
+import warnings
+from urllib.parse import urlparse
 
 class TranscriptomicMatrixGenerator:
     def __init__(self):
@@ -17,14 +19,14 @@ class TranscriptomicMatrixGenerator:
         self.sample_ids = []
         self.sample_names = []
         self.treatments = []
-        self.gene_names = self.generate_gene_names()
+        self.gene_names = []
         self.num_genes = len(self.gene_names)
 
     def set_samples(self, biosample_ids, num_samples):
         min_samples = 4
         max_samples = min(9, len(biosample_ids))
         self.num_samples = random.randint(min_samples, max_samples)
-        self.num_samples = num_samples
+        self.num_samples = num_samples if num_samples is not None else self.num_samples
         selected_samples = random.sample(biosample_ids, self.num_samples)
 
         num_control = random.randint(1, self.num_samples - 1)
@@ -90,35 +92,46 @@ class TranscriptomicMatrixGenerator:
 
     def generate_counts_matrix(self, differential_expr_percentage=10, differential_factor=2.5, dispersion=0.2, outlier_percentage=5, outlier_factor=10):
         expression_levels = np.random.choice([2, 50, 100, 223, 800], size=self.num_genes, p=[0.1, 0.3, 0.3, 0.2, 0.1])
-        matrix = np.zeros((self.num_genes, self.num_samples), dtype=np.float64)
+        matrix = np.zeros((self.num_genes, self.num_samples), dtype=np.int32)
         for i in range(self.num_genes):
             mean_expression = expression_levels[i]
             size = (mean_expression**2) / (mean_expression * dispersion - mean_expression**2) if mean_expression * dispersion > mean_expression else 10
-            matrix[i, :] = np.random.negative_binomial(n=size, p=size / (size + mean_expression), size=self.num_samples)
+            matrix[i, :] = np.random.negative_binomial(n=size, p=size / (size + mean_expression), size=self.num_samples).astype(int)
         self.apply_modifications(matrix, differential_expr_percentage, differential_factor, outlier_percentage, outlier_factor)
-        return pd.DataFrame(matrix, columns=self.sample_ids, index=self.gene_names)
+        df = pd.DataFrame(matrix, columns=self.sample_ids, index=self.gene_names)
+        df.index.name = 'GeneID'
+        return df
 
     def apply_modifications(self, matrix, differential_expr_percentage, differential_factor, outlier_percentage, outlier_factor, p_value_threshold=0.05):
         num_differential_genes = int(self.num_genes * (differential_expr_percentage / 100))
         differential_indices = np.random.choice(self.num_genes, num_differential_genes, replace=False)
+
         for idx in differential_indices:
-            matrix[idx, :] *= differential_factor
-            
+            matrix[idx, :] = (matrix[idx, :] * differential_factor).astype(int)
+
             # Splitting samples based on treatment labels
             control_samples = matrix[idx, [i for i, x in enumerate(self.treatments) if x == 'Control']]
             treatment_samples = matrix[idx, [i for i, x in enumerate(self.treatments) if x == 'Treatment']]
-            
+
             if len(control_samples) > 0 and len(treatment_samples) > 0:
-                t_stat, p_value = stats.ttest_ind(treatment_samples, control_samples, equal_var=False)
-                if p_value < p_value_threshold:
-                    self.differentially_expressed_genes_info.append({
-                        'Gene': self.gene_names[idx],
-                        'Control Mean': np.mean(control_samples),
-                        'Treatment Mean': np.mean(treatment_samples),
-                        'Fold Change': differential_factor,
-                        'T-statistic': t_stat,
-                        'P-value': p_value
-                    })
+                with warnings.catch_warnings():
+                    warnings.simplefilter("ignore", category=RuntimeWarning)
+                    t_stat, p_value = stats.ttest_ind(treatment_samples, control_samples, equal_var=False)
+                    if p_value < p_value_threshold:
+                        self.differentially_expressed_genes_info.append({
+                            'Gene': self.gene_names[idx],
+                            'Control Mean': np.mean(control_samples),
+                            'Treatment Mean': np.mean(treatment_samples),
+                            'Fold Change': differential_factor,
+                            'T-statistic': t_stat,
+                            'P-value': p_value
+                        })
+
+        # Apply outlier modifications
+        num_outlier_genes = int(self.num_genes * (outlier_percentage / 100))
+        outlier_indices = np.random.choice(self.num_genes, num_outlier_genes, replace=False)
+        for idx in outlier_indices:
+            matrix[idx, :] = (matrix[idx, :] * outlier_factor).astype(int)
 
     def write_differentially_expressed_genes_to_csv(self, filename):
         df = pd.DataFrame(self.differentially_expressed_genes_info)
