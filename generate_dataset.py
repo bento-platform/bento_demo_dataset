@@ -2,6 +2,7 @@ import json
 from random_generator.generator import RandomGenerator
 from individuals.generator import IndividualGenerator
 from experiments.experiment_details import EXPERIMENT_RESOURCES
+from config.constants import (GENERATE_TRANSCRIPTOMICS_MATRIX)
 
 
 def main():
@@ -16,6 +17,11 @@ def main():
 
     phenopackets = individual_generator.phenopackets
     experiments = individual_generator.experiments
+
+    if GENERATE_TRANSCRIPTOMICS_MATRIX:
+        biosamples_rna_seq = [e["biosample"] for e in individual_generator.experiments if e["experiment_type"] == "RNA-Seq"]
+        individual_generator.generate_and_assign_matrices(biosamples_rna_seq)
+
     experiments_dict = {
         "experiments": experiments,
         "resources": EXPERIMENT_RESOURCES
