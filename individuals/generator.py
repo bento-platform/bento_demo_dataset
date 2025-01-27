@@ -1,4 +1,6 @@
 import numpy as np
+from urllib.parse import urlparse
+import os
 from config.constants import (
     AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
@@ -44,6 +46,7 @@ class IndividualGenerator:
         self.phenopackets = []
         self.experiments = []
         self.transcriptomic_matrix_generator = TranscriptomicMatrixGenerator()
+        self.file_path = self.get_gff_filename(GFF3_URL) 
 
         # fix some probability weightings over the whole dataset
         self.choice_weights = {
@@ -58,26 +61,35 @@ class IndividualGenerator:
             "synthetic_experiments": rng.gaussian_weights(len(TISSUES_WITH_EXPERIMENTS))
         }
 
-    def generate_and_assign_matrices(self, biosamples_rna_seq):
-        groups = self.transcriptomic_matrix_generator.split_into_groups(biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)
+    def get_gff_filename(self, url):
+        """
+        Extracts and returns the filename from a URL.
+        """
+        parsed_url = urlparse(url)
+        return os.path.basename(parsed_url.path)
 
+    def generate_and_assign_matrices(self, biosamples_rna_seq):
+        # Download and process the GFF file
+        self.transcriptomic_matrix_generator.download_and_process_gff(GFF3_URL, self.file_path)
+
+        # Split the biosamples into groups and generate matrices
+        groups = self.transcriptomic_matrix_generator.split_into_groups(biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)
         for idx, group in enumerate(groups):
             matrix_filename = f"counts_matrix_group_{idx + 1}.csv"
-            # Set biosamples for the current group
-            self.transcriptomic_matrix_generator.generate_gene_names(GFF3_URL)
             self.transcriptomic_matrix_generator.set_samples(group, NUMBER_OF_SAMPLES)
             counts_matrix = self.transcriptomic_matrix_generator.generate_counts_matrix()
             self.transcriptomic_matrix_generator.write_to_csv(counts_matrix, matrix_filename)
+            print(f"Counts matrix generated for group {idx + 1}")
+
             if GENERATE_EXPERIMENT_INFO_MATRIX:
                 experiment_info_matrix = self.transcriptomic_matrix_generator.generate_experiment_info_matrix()
                 self.transcriptomic_matrix_generator.write_to_csv(experiment_info_matrix, f"experiment_info_matrix_group_{idx + 1}.csv")
             if GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX:
                 self.transcriptomic_matrix_generator.write_differentially_expressed_genes_to_csv(f"differentially_expressed_genes_group_{idx + 1}.csv")
 
-            # Assign matrix filename to experiments metadata for each biosample in group
             for biosample_id in group:
                 self.add_experiment_to_biosample(biosample_id, matrix_filename)
-            
+
     def add_experiment_to_biosample(self, biosample_id, matrix_filename):
         # Create experiment metadata for RNA-Seq count matrix
         experiment_id = self.rng.uuid4()
