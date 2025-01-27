@@ -70,7 +70,7 @@ class IndividualGenerator:
 
     def generate_and_assign_matrices(self, biosamples_rna_seq):
         # Download and process the GFF file
-        self.transcriptomic_matrix_generator.download_gff(GFF3_URL, self.file_path)
+        self.transcriptomic_matrix_generator.download_and_process_gff(GFF3_URL, self.file_path)
 
         # Split the biosamples into groups and generate matrices
         groups = self.transcriptomic_matrix_generator.split_into_groups(biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)

@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import scipy.stats as stats
 import string
-import uuid
 from datetime import datetime, timedelta
 import random
 import gzip
@@ -10,7 +9,6 @@ import subprocess
 import os
 import json
 import warnings
-from urllib.parse import urlparse
 
 class TranscriptomicMatrixGenerator:
     def __init__(self):
@@ -20,7 +18,6 @@ class TranscriptomicMatrixGenerator:
         self.sample_names = []
         self.treatments = []
         self.gene_names = []
-        self.num_genes = len(self.gene_names)
 
     def set_samples(self, biosample_ids, num_samples):
         min_samples = 4
@@ -45,33 +42,25 @@ class TranscriptomicMatrixGenerator:
             self.treatments = [item['Treatment'] for item in sample_info]
             self.experiment_id = [item['ExperimentID'] for item in sample_info]
 
-    def download_gff(self, url, file_path):
+    def download_and_process_gff(self, url, file_path):
         if not os.path.exists(file_path):
             subprocess.run(['wget', '-O', file_path, url], check=True)
-        self.process_gff(file_path)
+        self.extract_gff_genes_info(file_path)
 
-    def process_gff(self, file_path):
+    def extract_gff_genes_info(self, file_path):
         with gzip.open(file_path, 'rt') as file:
             gff_data = pd.read_csv(file, sep='\t', comment='#', header=None, names=[
                 'seqname', 'source', 'feature', 'start', 'end', 'score', 'strand', 'frame', 'attribute'
             ], dtype=str)
         genes = gff_data[gff_data['feature'] == 'gene'].copy()
-        genes.loc[:, 'GeneName'] = genes['attribute'].str.extract('Name=([^;]+)', expand=False)
-        genes.loc[:, 'length'] = genes['end'].astype(int) - genes['start'].astype(int) + 1
-        gene_info = genes[['GeneName', 'length']].dropna().drop_duplicates(subset='GeneName')
+        genes.loc[:, 'GeneID'] = genes['attribute'].str.extract('Name=([^;]+)', expand=False)
+        genes.loc[:, 'GeneLength'] = genes['end'].astype(int) - genes['start'].astype(int) + 1
+        gene_info = genes[['GeneID', 'GeneLength']].dropna().drop_duplicates(subset='GeneID')
         output_file_csv = 'gene_lengths.csv'
         gene_info.to_csv(output_file_csv, index=False)
         print(f"Gene lengths have been saved to {output_file_csv}.")
 
-        self.gene_names = gene_info['GeneName'].tolist()
-        self.num_genes = len(self.gene_names)
-        return output_file_csv, file_path
-
-    def generate_gene_names(self, url):
-        file_name = os.path.basename(urlparse(url).path)
-        if not hasattr(self, 'gene_names') or not self.gene_names:
-            self.download_gff(url, file_name)
-        return self.gene_names
+        self.gene_names = gene_info['GeneID'].tolist()
 
     def split_into_groups(self, biosamples, num_groups, max_size=None):
         if len(biosamples) < num_groups:
@@ -106,23 +95,24 @@ class TranscriptomicMatrixGenerator:
         unique_gene_names = list(filter(None, set(self.gene_names)))
         if not unique_gene_names:
             raise ValueError("No valid gene names available after filtering duplicates and empty entries.")
+        self.gene_names = unique_gene_names
 
-        self.num_genes = len(unique_gene_names)
-
-        expression_levels = np.random.choice([2, 50, 100, 223, 800], size=self.num_genes, p=[0.1, 0.3, 0.3, 0.2, 0.1])
-        matrix = np.zeros((self.num_genes, self.num_samples), dtype=np.int32)
-        for i in range(self.num_genes):
+        genes_count = len(unique_gene_names)
+        expression_levels = np.random.choice([2, 50, 100, 223, 800], size=genes_count, p=[0.1, 0.3, 0.3, 0.2, 0.1])
+        matrix = np.zeros((genes_count, self.num_samples), dtype=np.int32)
+        for i in range(genes_count):
             mean_expression = expression_levels[i]
             size = (mean_expression**2) / (mean_expression * dispersion - mean_expression**2) if mean_expression * dispersion > mean_expression else 10
             matrix[i, :] = np.random.negative_binomial(n=size, p=size / (size + mean_expression), size=self.num_samples).astype(int)
-        self.apply_modifications(matrix, differential_expr_percentage, differential_factor, outlier_percentage, outlier_factor)
+        self.apply_modifications(matrix, differential_expr_percentage, differential_factor, outlier_percentage, outlier_factor, genes_count)
         df = pd.DataFrame(matrix, columns=self.sample_ids, index=unique_gene_names)
         df.index.name = 'GeneID'
         return df
 
     def apply_modifications(self, matrix, differential_expr_percentage, differential_factor, outlier_percentage, outlier_factor, p_value_threshold=0.05):
-        num_differential_genes = int(self.num_genes * (differential_expr_percentage / 100))
-        differential_indices = np.random.choice(self.num_genes, num_differential_genes, replace=False)
+        genes_count = len(self.gene_names)
+        num_differential_genes = int(genes_count * (differential_expr_percentage / 100))
+        differential_indices = np.random.choice(genes_count, num_differential_genes, replace=False)
 
         for idx in differential_indices:
             matrix[idx, :] = (matrix[idx, :] * differential_factor).astype(int)
@@ -146,8 +136,8 @@ class TranscriptomicMatrixGenerator:
                         })
 
         # Apply outlier modifications
-        num_outlier_genes = int(self.num_genes * (outlier_percentage / 100))
-        outlier_indices = np.random.choice(self.num_genes, num_outlier_genes, replace=False)
+        num_outlier_genes = int(genes_count * (outlier_percentage / 100))
+        outlier_indices = np.random.choice(genes_count, num_outlier_genes, replace=False)
         for idx in outlier_indices:
             matrix[idx, :] = (matrix[idx, :] * outlier_factor).astype(int)
 

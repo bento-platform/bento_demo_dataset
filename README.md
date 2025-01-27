@@ -36,6 +36,16 @@ python generate_dataset.py
 
 This will write phenopackets to `synthetic_phenopackets.json` and experiments to `synthetic_experiments.json`.
 
+It also generates transcriptomics files matching the Phenopackets:
+- counts_matrix_group_{num}.csv
+  - Raw count matrices
+  - Sample ID columns
+    - Corresponds to biosample IDs in `synthetic_phenopackets.json`
+  - Gene ID rows
+  - Cells represent the raw count for a gene-sample pair
+- gene_lenghts.csv
+  - Stores the gene IDs and the genes lengths for normalization
+
 Other useful files are available in the `/dataset_files` directory:
 - `config.json`: a [Katsu](https://github.com/bento-platform/katsu) config file matching the dataset
 - `dats.json`: an example [DATS](https://github.com/datatagsuite) file
