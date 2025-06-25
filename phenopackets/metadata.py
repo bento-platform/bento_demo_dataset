@@ -61,7 +61,7 @@ RESOURCES = [
         "iri_prefix": "http://purl.bioontology.org/ontology/SNOMEDCT/",
         "url": "http://purl.bioontology.org/ontology/SNOMEDCT"
     },
-        {
+    {
         "name": "Mondo Disease Ontology",
         "version": "2025-06-03",
         "namespace_prefix": "MONDO",
