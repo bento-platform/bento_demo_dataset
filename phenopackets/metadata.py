@@ -60,5 +60,13 @@ RESOURCES = [
         "id": "SNOMED:2019-04-11",
         "iri_prefix": "http://purl.bioontology.org/ontology/SNOMEDCT/",
         "url": "http://purl.bioontology.org/ontology/SNOMEDCT"
+    },
+    {
+        "name": "Mondo Disease Ontology",
+        "version": "2025-06-03",
+        "namespace_prefix": "MONDO",
+        "id": "MONDO:2025-06-03",
+        "iri_prefix": "http://purl.obolibrary.org/obo/MONDO_",
+        "url": "http://purl.obolibrary.org/obo/mondo/releases/2025-06-03/mondo-international.owl"
     }
 ]
