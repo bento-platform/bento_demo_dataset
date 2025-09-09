@@ -5,7 +5,7 @@
             "charts": [
                 {
                     "field": "age",
-                    "chart_type": "bar"
+                    "chart_type": "histogram"
                 },
                 {
                     "field": "sex",
@@ -17,11 +17,11 @@
                 },
                 {
                     "field": "date_of_consent",
-                    "chart_type": "bar"
+                    "chart_type": "histogram"
                 },
                 {
                     "field": "mobility",
-                    "chart_type": "bar"
+                    "chart_type": "histogram"
                 },
                 {
                     "field": "smoking_status",
@@ -29,7 +29,7 @@
                 },
                 {
                     "field": "lab_test_result_value",
-                    "chart_type": "bar"
+                    "chart_type": "histogram"
                 }
             ]
         },
