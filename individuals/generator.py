@@ -6,9 +6,10 @@ from config.constants import (
     LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE,
     GENERATE_EXPERIMENT_INFO_MATRIX, GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX,
-    NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES, GFF3_URL)
+    NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES, GFF3_URL, P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE)
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
+from phenopackets.biosample_collection_locations import BIOSAMPLE_LOCATIONS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
 from phenopackets.interpretations import interpretations
@@ -58,7 +59,8 @@ class IndividualGenerator:
             "mobility": rng.gaussian_weights(len(MOBILITY)),
             "phenotypic_features": rng.gaussian_weights(len(phenotypic_features())),
             "smoking_status": rng.gaussian_weights(len(SMOKING_STATUS)),
-            "synthetic_experiments": rng.gaussian_weights(len(TISSUES_WITH_EXPERIMENTS))
+            "synthetic_experiments": rng.gaussian_weights(len(TISSUES_WITH_EXPERIMENTS)),
+            "biosample_locations": rng.gaussian_weights(len(BIOSAMPLE_LOCATIONS)),
         }
 
     def get_gff_filename(self, url):
@@ -316,6 +318,9 @@ class IndividualGenerator:
             self.choice_weights["synthetic_experiments"]
         )
 
+    def biosample_location_collected(self):
+        return self.rng.weighted_choice(BIOSAMPLE_LOCATIONS, self.choice_weights["biosample_locations"])
+
     def synthetic_biosample_wrapper(self, experiment, sb_id) -> list:
         sb = {
             "id": sb_id
@@ -323,10 +328,16 @@ class IndividualGenerator:
         if tissue := experiment["sampled_tissue"]:
             sb["sampled_tissue"] = tissue
 
+        if self.should_add_location_collected_to_biosample():
+            sb["location_collected"] = self.biosample_location_collected()
+
         return sb
 
     def should_add_experiment_to_biosample(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_ADD_EXPERIMENT_TO_BIOSAMPLE))
+
+    def should_add_location_collected_to_biosample(self):
+        return bool(self.rng.biased_coin_toss(P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE))
 
     def should_exclude(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_EXCLUDED))
