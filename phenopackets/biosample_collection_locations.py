@@ -3,7 +3,7 @@
 BIOSAMPLE_LOCATIONS = [
     {
         "type": "Feature",
-        "geometry": {"type": "Point", "coordinates": [-73.6034936, 45.4732202, 47]},
+        "geometry": {"type": "Point", "coordinates": [-73.6034936, 45.4732202]},
         "properties": {"label": "MUHC"},
     },
     {
