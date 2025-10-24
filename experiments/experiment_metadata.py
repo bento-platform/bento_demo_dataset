@@ -39,9 +39,12 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
             }
         ],
         "instrument": {
-            "platform": "Illumina",
-            "model": "Illumina Genome Analyzer II",
-            "identifier": "Illumina Genome Analyzer II"
+            "device": "Illumina Genome Analyzer II",
+            "device_ontology": {
+                "id": "OBI:0000703",
+                "label": "Illumina Genome Analyzer II"
+            },
+            "identifier": "instrument123"
         },
         "library_source": "Genomic",
         "library_strategy": "WGS",
