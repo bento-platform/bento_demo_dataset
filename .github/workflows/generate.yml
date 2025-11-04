@@ -26,5 +26,9 @@ jobs:
         run: python ./generate_dataset.py
       - uses: actions/upload-artifact@v4
         with:
-          name: Synthetic dataset
-          path: synthetic_*.json
+          name: Synthetic phenopackets and experiments
+          path: 'synthetic_*.json'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Synthetic transcriptomics data
+          path: '*.csv'

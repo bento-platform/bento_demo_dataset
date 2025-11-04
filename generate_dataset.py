@@ -2,7 +2,7 @@ import json
 from random_generator.generator import RandomGenerator
 from individuals.generator import IndividualGenerator
 from experiments.experiment_details import EXPERIMENT_RESOURCES
-from config.constants import (GENERATE_TRANSCRIPTOMICS_MATRIX)
+from config.constants import GENERATE_TRANSCRIPTOMICS_MATRIX
 
 
 def main():
