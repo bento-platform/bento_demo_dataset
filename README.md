@@ -37,7 +37,7 @@ python generate_dataset.py
 This will write phenopackets to `synthetic_phenopackets.json` and experiments to `synthetic_experiments.json`.
 
 It also generates transcriptomics files matching the Phenopackets:
-- counts_matrix_group_{num}.csv
+- `counts_matrix_group_{num}.csv`
   - Raw count matrices
   - Sample ID columns
     - Corresponds to biosample IDs in `synthetic_phenopackets.json`
@@ -52,6 +52,14 @@ Other useful files are available in the `/dataset_files` directory:
 - `extra_properties_typing.json`: to configure typed extra properties
 - mock experiment files in `.csv`, `.jpg`, `.md`, `.mp4`, `.pdf`, and `.xlsx` format
 
+
+#### Automatic Generation:
+
+Any commit pushed to master (or in an open pull request) will have a GitHub Actions workflow automatically generate (and
+attach to the workflow run as artifacts) the following files:
+
+* `synthetic_phenopackets.json`
+* `synthetic_experiments.json`
 
 
 #### Optional Configuration:

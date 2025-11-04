@@ -1,0 +1,30 @@
+name: Generate JSON files
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Generate dataset
+        run: python ./generate_dataset.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Synthetic dataset
+          path: synthetic_*.json
