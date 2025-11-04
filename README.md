@@ -60,6 +60,9 @@ attach to the workflow run as artifacts) the following files:
 
 * `synthetic_phenopackets.json`
 * `synthetic_experiments.json`
+* Synthetic transcriptomics data matrices
+
+Links to these artifacts will be available in the detail page for the workflow run in GitHub's Actions tab.
 
 
 #### Optional Configuration:
