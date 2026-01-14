@@ -1,4 +1,3 @@
-import numpy as np
 from urllib.parse import urlparse
 import os
 from config.constants import (
