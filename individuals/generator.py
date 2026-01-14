@@ -12,6 +12,9 @@ from config.constants import (
     LAB_MEAN,
     P_EXCLUDED,
     P_SMOKING_STATUS_PRESENT,
+    P_VITAL_STATUS_PRESENT,
+    P_VITAL_STATUS_DISTRIBUTION,
+    P_VITAL_STATUS_CAUSES_OF_DEATH_DISTRIBUTION,
     MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION,
     EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
@@ -25,6 +28,7 @@ from config.constants import (
 )
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
+from individuals.vital_status import VITAL_STATUS_ENUM, VITAL_STATUS_CAUSES_OF_DEATH
 from phenopackets.biosample_collection_locations import BIOSAMPLE_LOCATIONS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
@@ -181,6 +185,9 @@ class IndividualGenerator:
     def subject(self, individual):
         age = self.rng.int_from_gaussian_range(AGE_MIN, AGE_MAX, AGE_MEAN, AGE_SD)
         age_iso = f"P{age}Y"
+
+        date_of_consent = self.rng.recent_datetime().date()
+
         s = {
             "id": individual["id"],
             "sex": individual["sex"],
@@ -197,16 +204,40 @@ class IndividualGenerator:
             "extra_properties": {
                 "mobility": self.mobility(),
                 "covid_severity": self.covid_severity(),
-                "date_of_consent": self.rng.recent_date_string(),
+                "date_of_consent": date_of_consent.isoformat(),
                 "lab_test_result_value": self.lab_value(),
             },
         }
+
+        # conditionally add vital status
+        if vital_status := self.vital_status(min_date_of_death=date_of_consent):
+            s["vital_status"] = vital_status
 
         # conditionally add smoking status extra property
         if self.has_smoking_status():
             s["extra_properties"]["smoking_status"] = self.smoking_status()
 
         return s
+
+    def vital_status(self, min_date_of_death) -> dict | None:
+        if not self.rng.biased_coin_toss(P_VITAL_STATUS_PRESENT):
+            return None
+
+        status = self.rng.weighted_choice(VITAL_STATUS_ENUM, P_VITAL_STATUS_DISTRIBUTION)
+
+        vital_status = {
+            "status": status,
+        }
+
+        if status == "DECEASED":
+            vital_status["time_of_death"] = {
+                "timestamp": self.rng.recent_datetime_string(min_date=min_date_of_death),
+            }
+            vital_status["cause_of_death"] = self.rng.weighted_choice(
+                VITAL_STATUS_CAUSES_OF_DEATH, P_VITAL_STATUS_CAUSES_OF_DEATH_DISTRIBUTION
+            )
+
+        return vital_status
 
     # creates experiments associated with a biosample as a side effect
     def biosamples(self, individual):

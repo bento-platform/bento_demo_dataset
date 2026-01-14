@@ -12,6 +12,10 @@
                     "chart_type": "pie"
                 },
                 {
+                    "field": "vital_status",
+                    "chart_type": "bar"
+                },
+                {
                     "field": "covid_severity",
                     "chart_type": "pie"
                 },
@@ -49,6 +53,7 @@
             "fields": [
                 "age",
                 "sex",
+                "vital_status",
                 "date_of_consent",
                 "mobility",
                 "covid_severity",
@@ -84,6 +89,15 @@
             "datatype": "string",
             "config": {
                 "enum": null
+            }
+        },
+        "vital_status": {
+            "mapping": "individual/vital_status/status",
+            "title": "Vital Status",
+            "description": "Vital status of the individual (alive/deceased/unknown)",
+            "datatype": "string",
+            "config": {
+                "enum": ["ALIVE", "DECEASED", "UNKNOWN_STATUS"]
             }
         },
         "date_of_consent": {

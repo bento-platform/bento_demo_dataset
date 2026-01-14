@@ -66,13 +66,17 @@ class RandomGenerator:
     def uuid4(self) -> str:
         return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
 
-    def recent_datetime(self) -> datetime.time:
-        twenty_twenty = datetime.date(2020, 1, 1)
+    def recent_datetime(self, min_date: datetime.date | None = None) -> datetime.datetime:
+        min_year, min_month, min_day = min_date.timetuple()[:3] if min_date else (2020, 1, 1)
+        twenty_twenty = datetime.date(min_year, min_month, min_day)
         twenty_twenty_four = datetime.date(2024, 1, 1)
         return self.fake.date_time_between(twenty_twenty, twenty_twenty_four, tzinfo=datetime.timezone.utc)
 
-    def recent_date_string(self) -> str:
-        return self.recent_datetime().date().isoformat()
+    def recent_date_string(self, min_date: datetime.date | None = None) -> str:
+        return self.recent_datetime(min_date=min_date).date().isoformat()
+
+    def recent_datetime_string(self, min_date: datetime.date | None = None) -> str:
+        return self.recent_datetime(min_date=min_date).isoformat()
 
     def recent_interval_start_and_end_datetime_strings(self, max_days) -> dict[str, str]:
         start = self.recent_datetime()
