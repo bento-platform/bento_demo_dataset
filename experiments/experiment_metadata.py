@@ -58,7 +58,11 @@ def randomly_add_example_file(rng):
 
 
 def synthetic_experiment_wrapper(rng, exp, biosample_id):
-    e = {"id": rng.uuid4(), "biosample": biosample_id, **exp}
+    e = {
+        "id": rng.uuid4(),
+        "biosample": biosample_id,
+        **exp,
+    }
     if randomly_add_example_file(rng):
         e["experiment_results"] = [random_generic_file_metadata(rng)]
     return e
