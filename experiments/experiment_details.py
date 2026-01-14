@@ -35,7 +35,9 @@ TISSUES_WITH_EXPERIMENTS = [
             {
                 "study_type": "Other",
                 "experiment_type": "Other",
-                "experiment_ontology": [{"id": "OBI:0003172", "label": "thyroid stimulating hormone concentration assay"}],
+                "experiment_ontology": [
+                    {"id": "OBI:0003172", "label": "thyroid stimulating hormone concentration assay"}
+                ],
             },
         ],
     },

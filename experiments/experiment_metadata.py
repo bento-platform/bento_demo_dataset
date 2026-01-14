@@ -29,27 +29,27 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
         "molecule_ontology": [
             {
                 "id": "EFO:0008479",
-                "label": "genomic DNA"
-            }
+                "label": "genomic DNA",
+            },
         ],
         "experiment_ontology": [
             {
                 "id": "OBI:0002117",
-                "label": "whole genome sequencing assay"
-            }
+                "label": "whole genome sequencing assay",
+            },
         ],
         "instrument": {
             "device": "Illumina Genome Analyzer II",
             "device_ontology": {
                 "id": "OBI:0000703",
-                "label": "Illumina Genome Analyzer II"
+                "label": "Illumina Genome Analyzer II",
             },
-            "identifier": "instrument123"
+            "identifier": "instrument123",
         },
         "library_source": "Genomic",
         "library_strategy": "WGS",
         "library_selection": "PCR",
-        "experiment_results": [vcf_file_metadata(rng, filename, assembly_id)]
+        "experiment_results": [vcf_file_metadata(rng, filename, assembly_id)],
     }
 
 
@@ -58,23 +58,21 @@ def randomly_add_example_file(rng):
 
 
 def synthetic_experiment_wrapper(rng, exp, biosample_id):
-    e = {
-        "id": rng.uuid4(),
-        "biosample": biosample_id,
-        **exp
-    }
+    e = {"id": rng.uuid4(), "biosample": biosample_id, **exp}
     if randomly_add_example_file(rng):
         e["experiment_results"] = [random_generic_file_metadata(rng)]
     return e
 
 
 def random_generic_file_metadata(rng):
-    filename, file_type = rng.weighted_choice(GENERIC_EXPERIMENT_FILES, rng.gaussian_weights(
-        len(GENERIC_EXPERIMENT_FILES))).values()
+    filename, file_type = rng.weighted_choice(
+        GENERIC_EXPERIMENT_FILES, rng.gaussian_weights(len(GENERIC_EXPERIMENT_FILES))
+    ).values()
     return generic_file_metadata(rng, filename, file_type)
 
 
 # files ---------------------------
+
 
 def vcf_file_metadata(rng, filename, assembly_id=DEFAULT_ASSEMBLY):
     return {
@@ -86,7 +84,7 @@ def vcf_file_metadata(rng, filename, assembly_id=DEFAULT_ASSEMBLY):
         "description": "VCF file",
         "filename": filename,
         "file_format": "VCF",
-        "genome_assembly_id": assembly_id
+        "genome_assembly_id": assembly_id,
     }
 
 
@@ -99,7 +97,7 @@ def cram_file_metadata(rng, filename, assembly_id=DEFAULT_ASSEMBLY):
         "description": "Alignment File",
         "filename": filename,
         "file_format": "CRAM",
-        "genome_assembly_id": assembly_id
+        "genome_assembly_id": assembly_id,
     }
 
 
@@ -113,7 +111,7 @@ def bigwig_file_metadata(rng, filename, assembly_id=DEFAULT_ASSEMBLY):
         "description": "RNAseq coverage",
         "filename": filename,
         "file_format": "BigWig",
-        "genome_assembly_id": assembly_id
+        "genome_assembly_id": assembly_id,
     }
 
 

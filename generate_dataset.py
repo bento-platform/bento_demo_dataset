@@ -19,12 +19,14 @@ def main():
     experiments = individual_generator.experiments
 
     if GENERATE_TRANSCRIPTOMICS_MATRIX:
-        biosamples_rna_seq = [e["biosample"] for e in individual_generator.experiments if e["experiment_type"] == "RNA-Seq"]
+        biosamples_rna_seq = [
+            e["biosample"] for e in individual_generator.experiments if e["experiment_type"] == "RNA-Seq"
+        ]
         individual_generator.generate_and_assign_matrices(biosamples_rna_seq)
 
     experiments_dict = {
         "experiments": experiments,
-        "resources": EXPERIMENT_RESOURCES
+        "resources": EXPERIMENT_RESOURCES,
     }
 
     with open("./synthetic_phenopackets_v2.json", "w") as pxf:

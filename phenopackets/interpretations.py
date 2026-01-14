@@ -2,12 +2,19 @@
 # https://phenopacket-schema.readthedocs.io/en/latest/interpretation.html
 # note that these are chosen at random, so may not match what's actually in a vcf
 
+
+ALLELIC_STATE_HETEROZYGOUS = {
+    "id": "GENO:0000135",
+    "label": "heterozygous",
+}
+
+
 def interpretations(rng, id):
     return [
         {
             "id": f"{id}-interpretation-000",
             "progress_status": "UNKNOWN_PROGRESS",
-            "summary": "diagnosis in progress"
+            "summary": "diagnosis in progress",
         },
         {
             "id": f"{id}-interpretation:001",
@@ -15,7 +22,7 @@ def interpretations(rng, id):
             "diagnosis": {
                 "disease": {
                     "id": "SNOMED:66038001",
-                    "label": "Miller syndrome"
+                    "label": "Miller syndrome",
                 },
                 "genomic_interpretations": [
                     {
@@ -23,11 +30,11 @@ def interpretations(rng, id):
                         "interpretation_status": "CONTRIBUTORY",
                         "gene_descriptor": {
                             "value_id": "HGNC:2867",
-                            "symbol": "DHODH"
-                        }
+                            "symbol": "DHODH",
+                        },
                     }
-                ]
-            }
+                ],
+            },
         },
         {
             "id": f"{id}-interpretation-002",
@@ -35,7 +42,7 @@ def interpretations(rng, id):
             "diagnosis": {
                 "disease": {
                     "id": "SNOMED:19346006",
-                    "label": "Marfan syndrome"
+                    "label": "Marfan syndrome",
                 },
                 "genomic_interpretations": [
                     {
@@ -50,18 +57,15 @@ def interpretations(rng, id):
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
-                                        "value": "NM_000138.4(FBN1):c.6751T>A"
-                                    }
+                                        "value": "NM_000138.4(FBN1):c.6751T>A",
+                                    },
                                 ],
-                                "allelic_state": {
-                                    "id": "GENO:0000135",
-                                    "label": "heterozygous"
-                                }
-                            }
-                        }
+                                "allelic_state": ALLELIC_STATE_HETEROZYGOUS,
+                            },
+                        },
                     }
-                ]
-            }
+                ],
+            },
         },
         {
             "id": f"{id}-interpretation-003",
@@ -69,7 +73,7 @@ def interpretations(rng, id):
             "diagnosis": {
                 "disease": {
                     "id": "SNOMED:190905008",
-                    "label": "Cystic fibrosis"
+                    "label": "Cystic fibrosis",
                 },
                 "genomic_interpretations": [
                     {
@@ -84,15 +88,12 @@ def interpretations(rng, id):
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
-                                        "value": "NM_000492.3(CFTR):c.1477C>T (p.Gln493Ter)"
-                                    }
+                                        "value": "NM_000492.3(CFTR):c.1477C>T (p.Gln493Ter)",
+                                    },
                                 ],
-                                "allelic_state": {
-                                    "id": "GENO:0000135",
-                                    "label": "heterozygous"
-                                }
-                            }
-                        }
+                                "allelic_state": ALLELIC_STATE_HETEROZYGOUS,
+                            },
+                        },
                     },
                     {
                         "subject_or_biosample_id": id,
@@ -106,27 +107,21 @@ def interpretations(rng, id):
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
-                                        "value": "NM_000492.3(CFTR):c.1521_1523delCTT (p.Phe508delPhe)"
+                                        "value": "NM_000492.3(CFTR):c.1521_1523delCTT (p.Phe508delPhe)",
                                     }
                                 ],
-                                "allelic_state": {
-                                    "id": "GENO:0000135",
-                                    "label": "heterozygous"
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
+                                "allelic_state": ALLELIC_STATE_HETEROZYGOUS,
+                            },
+                        },
+                    },
+                ],
+            },
         },
         {
             "id": f"{id}-interpretation-004",
             "progress_status": "COMPLETED",
             "diagnosis": {
-                "disease": {
-                    "id": "NCIT:C3224",
-                    "label": "Melanoma"
-                },
+                "disease": {"id": "NCIT:C3224", "label": "Melanoma"},
                 "genomic_interpretations": [
                     {
                         "subject_or_biosample_id": id,
@@ -140,17 +135,14 @@ def interpretations(rng, id):
                                 "expressions": [
                                     {
                                         "syntax": "hgvs",
-                                        "value": "NM_001374258.1(BRAF):c.1919T>A (p.Val640Glu)"
-                                    }
+                                        "value": "NM_001374258.1(BRAF):c.1919T>A (p.Val640Glu)",
+                                    },
                                 ],
-                                "allelic_state": {
-                                    "id": "GENO:0000135",
-                                    "label": "heterozygous"
-                                }
-                            }
-                        }
+                                "allelic_state": ALLELIC_STATE_HETEROZYGOUS,
+                            },
+                        },
                     }
-                ]
-            }
-        }
+                ],
+            },
+        },
     ]
