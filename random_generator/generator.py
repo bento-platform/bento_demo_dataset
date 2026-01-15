@@ -76,7 +76,7 @@ class RandomGenerator:
         return self.recent_datetime(min_date=min_date).date().isoformat()
 
     def recent_datetime_string(self, min_date: datetime.date | None = None) -> str:
-        return self.recent_datetime(min_date=min_date).isoformat()
+        return self.recent_datetime(min_date=min_date).isoformat(timespec="seconds")
 
     def recent_interval_start_and_end_datetime_strings(self, max_days) -> dict[str, str]:
         start = self.recent_datetime()
