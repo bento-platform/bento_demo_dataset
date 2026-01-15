@@ -75,3 +75,16 @@ The dataset is generated based on the input file [config/individuals.json](confi
 #### Optional Data Files:
 
 The dataset is meant for use with genomic data from the 1000 Genomes Project, and transcriptomics data from the International Human Epigenome Consortium. See [here](./dataset_files/README.md) for more details on data files. 
+
+
+## Development
+
+### Code formatting
+
+This repository uses the [`ruff`](https://github.com/astral-sh/ruff) code linter/formatter tool. To lint and format the
+Python code, run the following commands:
+
+```bash
+ruff check
+ruff format
+```

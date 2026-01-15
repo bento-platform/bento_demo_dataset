@@ -1,12 +1,28 @@
-import numpy as np
 from urllib.parse import urlparse
 import os
 from config.constants import (
-    AGE_MEAN, AGE_SD, AGE_MIN, AGE_MAX, DISEASE_MASS_DISTRIBUTION, PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
-    LAB_MIN, LAB_MAX, LAB_MEAN, P_EXCLUDED, P_SMOKING_STATUS_PRESENT, MEDICAL_ACTION_MASS_DISTRIBUTION,
-    INTERPRETATION_MASS_DISTRIBUTION, EXTRA_BIOSAMPLES_MASS_DISTRIBUTION, P_ADD_EXPERIMENT_TO_BIOSAMPLE,
-    GENERATE_EXPERIMENT_INFO_MATRIX, GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX,
-    NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES, GFF3_URL, P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE)
+    AGE_MEAN,
+    AGE_SD,
+    AGE_MIN,
+    AGE_MAX,
+    DISEASE_MASS_DISTRIBUTION,
+    PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
+    LAB_MIN,
+    LAB_MAX,
+    LAB_MEAN,
+    P_EXCLUDED,
+    P_SMOKING_STATUS_PRESENT,
+    MEDICAL_ACTION_MASS_DISTRIBUTION,
+    INTERPRETATION_MASS_DISTRIBUTION,
+    EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
+    P_ADD_EXPERIMENT_TO_BIOSAMPLE,
+    GENERATE_EXPERIMENT_INFO_MATRIX,
+    GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX,
+    NUMBER_OF_GROUPS,
+    NUMBER_OF_SAMPLES,
+    GFF3_URL,
+    P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE,
+)
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
 from phenopackets.biosample_collection_locations import BIOSAMPLE_LOCATIONS
@@ -47,7 +63,7 @@ class IndividualGenerator:
         self.phenopackets = []
         self.experiments = []
         self.transcriptomic_matrix_generator = TranscriptomicMatrixGenerator()
-        self.file_path = self.get_gff_filename(GFF3_URL) 
+        self.file_path = self.get_gff_filename(GFF3_URL)
 
         # fix some probability weightings over the whole dataset
         self.choice_weights = {
@@ -75,7 +91,9 @@ class IndividualGenerator:
         self.transcriptomic_matrix_generator.download_and_process_gff(GFF3_URL, self.file_path)
 
         # Split the biosamples into groups and generate matrices
-        groups = self.transcriptomic_matrix_generator.split_into_groups(biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES)
+        groups = self.transcriptomic_matrix_generator.split_into_groups(
+            biosamples_rna_seq, NUMBER_OF_GROUPS, NUMBER_OF_SAMPLES
+        )
         for idx, group in enumerate(groups):
             matrix_filename = f"counts_matrix_group_{idx + 1}.csv"
             self.transcriptomic_matrix_generator.set_samples(group, NUMBER_OF_SAMPLES)
@@ -85,9 +103,13 @@ class IndividualGenerator:
 
             if GENERATE_EXPERIMENT_INFO_MATRIX:
                 experiment_info_matrix = self.transcriptomic_matrix_generator.generate_experiment_info_matrix()
-                self.transcriptomic_matrix_generator.write_to_csv(experiment_info_matrix, f"experiment_info_matrix_group_{idx + 1}.csv")
+                self.transcriptomic_matrix_generator.write_to_csv(
+                    experiment_info_matrix, f"experiment_info_matrix_group_{idx + 1}.csv"
+                )
             if GENERATE_DIFFERENTIAL_EXPERIMENT_INFO_MATRIX:
-                self.transcriptomic_matrix_generator.write_differentially_expressed_genes_to_csv(f"differentially_expressed_genes_group_{idx + 1}.csv")
+                self.transcriptomic_matrix_generator.write_differentially_expressed_genes_to_csv(
+                    f"differentially_expressed_genes_group_{idx + 1}.csv"
+                )
 
             for biosample_id in group:
                 self.add_experiment_to_biosample(biosample_id, matrix_filename)
@@ -95,30 +117,32 @@ class IndividualGenerator:
     def add_experiment_to_biosample(self, biosample_id, matrix_filename):
         # Create experiment metadata for RNA-Seq count matrix
         experiment_id = self.rng.uuid4()
-        creation_date = str(datetime.now().date())  
+        creation_date = str(datetime.now().date())
         experiment_data = {
-        "id": experiment_id,
-        "biosample": biosample_id,
-        "experiment_type": "RNA-Seq",
-        "study_type": "Transcriptomics",
-        "molecule": "total RNA",
-        "molecule_ontology": [{"id": "EFO:0001457", "label": "total RNA"}],
-        "experiment_ontology": [{"id": "OBI:0001271", "label": "RNA sequencing"}],
-        "library_source": "Transcriptomic",
-        "library_strategy": "RNA-Seq",
-        "library_selection": "PCR",
-        "experiment_results": [{
-            "identifier": self.rng.uuid4(),
-            "creation_date": creation_date,
-            "data_output_type": "Derived data",
-            "usage": "Downloaded",
-            "created_by": "C3G_synthetic_data",
-            "description": "Gene expression count matrix",
-            "filename": matrix_filename,
-            "file_format": "CSV",
-            "genome_assembly_id": "GRCh38"
-        }]
-    }
+            "id": experiment_id,
+            "biosample": biosample_id,
+            "experiment_type": "RNA-Seq",
+            "study_type": "Transcriptomics",
+            "molecule": "total RNA",
+            "molecule_ontology": [{"id": "EFO:0001457", "label": "total RNA"}],
+            "experiment_ontology": [{"id": "OBI:0001271", "label": "RNA sequencing"}],
+            "library_source": "Transcriptomic",
+            "library_strategy": "RNA-Seq",
+            "library_selection": "PCR",
+            "experiment_results": [
+                {
+                    "identifier": self.rng.uuid4(),
+                    "creation_date": creation_date,
+                    "data_output_type": "Derived data",
+                    "usage": "Downloaded",
+                    "created_by": "C3G_synthetic_data",
+                    "description": "Gene expression count matrix",
+                    "filename": matrix_filename,
+                    "file_format": "CSV",
+                    "genome_assembly_id": "GRCh38",
+                }
+            ],
+        }
 
         self.experiments.append(experiment_data)
 
@@ -127,7 +151,7 @@ class IndividualGenerator:
             "id": self.rng.uuid4(),
             # "alternate_ids": []  # ...why are alternate subject ids CURIEs?
             "subject": self.subject(individual),
-            "phenotypic_features": self.phenotypic_features()
+            "phenotypic_features": self.phenotypic_features(),
         }
 
         # --------- conditional additions ------------
@@ -162,20 +186,20 @@ class IndividualGenerator:
             "sex": individual["sex"],
             "time_at_last_encounter": {
                 "age": {
-                    "iso8601duration": age_iso
-                }
+                    "iso8601duration": age_iso,
+                },
             },
             "taxonomy": {
                 "id": "NCBITaxon:9606",
-                "label": "Homo sapiens"
+                "label": "Homo sapiens",
             },
             "karyotypic_sex": {"MALE": "XY", "FEMALE": "XX"}[individual["sex"]],
             "extra_properties": {
                 "mobility": self.mobility(),
                 "covid_severity": self.covid_severity(),
                 "date_of_consent": self.rng.recent_date_string(),
-                "lab_test_result_value": self.lab_value()
-            }
+                "lab_test_result_value": self.lab_value(),
+            },
         }
 
         # conditionally add smoking status extra property
@@ -187,7 +211,7 @@ class IndividualGenerator:
     # creates experiments associated with a biosample as a side effect
     def biosamples(self, individual):
         indiv_id = individual["id"]
-        base_biosample_id = indiv_id[len("ind-"):] if indiv_id.startswith("ind-") else indiv_id
+        base_biosample_id = indiv_id[len("ind-") :] if indiv_id.startswith("ind-") else indiv_id
         b = []
 
         # add any real stuff from config
@@ -198,13 +222,12 @@ class IndividualGenerator:
 
         # add an experiment with vcf for all 1000 genomes ids, whether vcf exists or not
         if self.is_1000_genomes_id(individual["id"]):
-            b.append({
-                "id": base_biosample_id,
-                "sampled_tissue": {
-                    "id": "UBERON:0000178",
-                    "label": "blood"
-                },
-            })
+            b.append(
+                {
+                    "id": base_biosample_id,
+                    "sampled_tissue": {"id": "UBERON:0000178", "label": "blood"},
+                }
+            )
             self.add_experiment(one_thousand_genomes_experiment(self.rng, base_biosample_id))
 
         # randomly add more biosamples, with zero or more experiments
@@ -225,9 +248,7 @@ class IndividualGenerator:
         ds = self.rng.zero_or_more_choices(DISEASES, DISEASE_MASS_DISTRIBUTION, self.choice_weights["diseases"])
 
         # very rarely, mark a disease as excluded
-        ds_ex = [
-            {**d, "excluded": True}
-            if self.should_exclude() and "disease_stage" not in d else d for d in ds]
+        ds_ex = [{**d, "excluded": True} if self.should_exclude() and "disease_stage" not in d else d for d in ds]
 
         # add anything in config
         if config_ds := individual.get("diseases"):
@@ -247,7 +268,8 @@ class IndividualGenerator:
         pfs = self.rng.zero_or_more_choices(
             phenotypic_features(),
             PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
-            self.choice_weights["phenotypic_features"])
+            self.choice_weights["phenotypic_features"],
+        )
 
         # very rarely, mark as excluded
         pfs_ex = [{**p, "excluded": True} if self.should_exclude() else p for p in pfs]
@@ -267,20 +289,23 @@ class IndividualGenerator:
         return self.rng.zero_or_more_choices(
             interpretations(self.rng, individual["id"]),
             INTERPRETATION_MASS_DISTRIBUTION,
-            self.choice_weights["interpretations"]
+            self.choice_weights["interpretations"],
         )
 
     def medical_actions(self):
         action_procedures = self.rng.zero_or_more_choices(
-            PROCEDURES, MEDICAL_ACTION_MASS_DISTRIBUTION,
-            self.choice_weights["medical_actions_procedures"])
+            PROCEDURES,
+            MEDICAL_ACTION_MASS_DISTRIBUTION,
+            self.choice_weights["medical_actions_procedures"],
+        )
 
         action_treatments = self.rng.zero_or_more_choices(
             treatments(self.rng),
             MEDICAL_ACTION_MASS_DISTRIBUTION,
-            self.choice_weights["medical_actions_treatments"])
+            self.choice_weights["medical_actions_treatments"],
+        )
 
-        # could add top-level values here (treatment_target, etc)
+        # could add top-level values here (treatment_target, etc.)
         return action_procedures + action_treatments
 
     # possible later TODO, currently we only attach files to experiments, not to phenopackets
@@ -290,7 +315,7 @@ class IndividualGenerator:
     def metadata(self):
         return metadata()
 
-# utils ------------------------
+    # utils ------------------------
 
     @staticmethod
     def is_1000_genomes_id(individual_id) -> bool:
@@ -315,15 +340,15 @@ class IndividualGenerator:
         return self.rng.zero_or_more_choices(
             TISSUES_WITH_EXPERIMENTS,
             EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
-            self.choice_weights["synthetic_experiments"]
+            self.choice_weights["synthetic_experiments"],
         )
 
     def biosample_location_collected(self):
         return self.rng.weighted_choice(BIOSAMPLE_LOCATIONS, self.choice_weights["biosample_locations"])
 
-    def synthetic_biosample_wrapper(self, experiment, sb_id) -> list:
+    def synthetic_biosample_wrapper(self, experiment, sb_id) -> dict:
         sb = {
-            "id": sb_id
+            "id": sb_id,
         }
         if tissue := experiment["sampled_tissue"]:
             sb["sampled_tissue"] = tissue

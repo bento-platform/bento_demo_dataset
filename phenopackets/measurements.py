@@ -1,4 +1,15 @@
-from config.constants import BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD, BP_MIN, BP_MAX, BP_MEAN, BP_SD, P_BMI_PRESENT, P_BP_PRESENT
+from config.constants import (
+    BMI_MIN,
+    BMI_MAX,
+    BMI_MEAN,
+    BMI_SD,
+    BP_MIN,
+    BP_MAX,
+    BP_MEAN,
+    BP_SD,
+    P_BMI_PRESENT,
+    P_BP_PRESENT,
+)
 
 
 def has_bmi(rng) -> bool:
@@ -15,9 +26,9 @@ def bmi(rng) -> dict:
         "value": {
             "quantity": {
                 "unit": {"id": "NCIT:C49671", "label": "Kilogram per Square Meter"},
-                "value": round(rng.float_from_gaussian_range(BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD), 2)
+                "value": round(rng.float_from_gaussian_range(BMI_MIN, BMI_MAX, BMI_MEAN, BMI_SD), 2),
             }
-        }
+        },
     }
 
 
@@ -31,21 +42,19 @@ def blood_pressure(rng) -> dict:
         "complex_value": {
             "typed_quantities": [
                 {
-                    "type": {
-                        "id": "NCIT:C25298", "label": "Systolic Blood Pressure"
-                    },
+                    "type": {"id": "NCIT:C25298", "label": "Systolic Blood Pressure"},
                     "quantity": {
                         "unit": {"id": "NCIT:C49670", "label": "Millimeter of Mercury"},
-                        "value": systolic
-                    }
+                        "value": systolic,
+                    },
                 },
                 {
                     "type": {"id": "NCIT:C25299", "label": "Diastolic Blood Pressure"},
                     "quantity": {
                         "unit": {"id": "NCIT:C49670", "label": "Millimeter of Mercury"},
-                        "value": diastolic
-                    }
-                }
+                        "value": diastolic,
+                    },
+                },
             ]
-        }
+        },
     }

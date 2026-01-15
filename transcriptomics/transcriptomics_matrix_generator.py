@@ -69,15 +69,9 @@ class TranscriptomicMatrixGenerator:
                 dtype=str,
             )
         genes = gff_data[gff_data["feature"] == "gene"].copy()
-        genes.loc[:, "GeneID"] = genes["attribute"].str.extract(
-            "Name=([^;]+)", expand=False
-        )
-        genes.loc[:, "GeneLength"] = (
-            genes["end"].astype(int) - genes["start"].astype(int) + 1
-        )
-        gene_info = (
-            genes[["GeneID", "GeneLength"]].dropna().drop_duplicates(subset="GeneID")
-        )
+        genes.loc[:, "GeneID"] = genes["attribute"].str.extract("Name=([^;]+)", expand=False)
+        genes.loc[:, "GeneLength"] = genes["end"].astype(int) - genes["start"].astype(int) + 1
+        gene_info = genes[["GeneID", "GeneLength"]].dropna().drop_duplicates(subset="GeneID")
         output_file_csv = "gene_lengths.csv"
         gene_info.to_csv(output_file_csv, index=False)
         print(f"Gene lengths have been saved to {output_file_csv}.")
@@ -123,21 +117,20 @@ class TranscriptomicMatrixGenerator:
 
         unique_gene_names = list(filter(None, set(self.gene_names)))
         if not unique_gene_names:
-            raise ValueError(
-                "No valid gene names available after filtering duplicates and empty entries."
-            )
+            raise ValueError("No valid gene names available after filtering duplicates and empty entries.")
         self.gene_names = unique_gene_names
 
         genes_count = len(unique_gene_names)
         expression_levels = np.random.choice(
-            [2, 50, 100, 223, 800], size=genes_count, p=[0.1, 0.3, 0.3, 0.2, 0.1]
+            [2, 50, 100, 223, 800],
+            size=genes_count,
+            p=[0.1, 0.3, 0.3, 0.2, 0.1],
         )
         matrix = np.zeros((genes_count, self.num_samples), dtype=np.int32)
         for i in range(genes_count):
             mean_expression = expression_levels[i]
             size = (
-                (mean_expression**2)
-                / (mean_expression * dispersion - mean_expression**2)
+                (mean_expression**2) / (mean_expression * dispersion - mean_expression**2)
                 if mean_expression * dispersion > mean_expression
                 else 10
             )
@@ -166,27 +159,19 @@ class TranscriptomicMatrixGenerator:
     ):
         genes_count = len(self.gene_names)
         num_differential_genes = int(genes_count * (differential_expr_percentage / 100))
-        differential_indices = np.random.choice(
-            genes_count, num_differential_genes, replace=False
-        )
+        differential_indices = np.random.choice(genes_count, num_differential_genes, replace=False)
 
         for idx in differential_indices:
             matrix[idx, :] = (matrix[idx, :] * differential_factor).astype(int)
 
             # Splitting samples based on treatment labels
-            control_samples = matrix[
-                idx, [i for i, x in enumerate(self.treatments) if x == "Control"]
-            ]
-            treatment_samples = matrix[
-                idx, [i for i, x in enumerate(self.treatments) if x == "Treatment"]
-            ]
+            control_samples = matrix[idx, [i for i, x in enumerate(self.treatments) if x == "Control"]]
+            treatment_samples = matrix[idx, [i for i, x in enumerate(self.treatments) if x == "Treatment"]]
 
             if len(control_samples) > 0 and len(treatment_samples) > 0:
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore", category=RuntimeWarning)
-                    t_stat, p_value = stats.ttest_ind(
-                        treatment_samples, control_samples, equal_var=False
-                    )
+                    t_stat, p_value = stats.ttest_ind(treatment_samples, control_samples, equal_var=False)
                     if p_value < p_value_threshold:
                         self.differentially_expressed_genes_info.append(
                             {
@@ -201,9 +186,7 @@ class TranscriptomicMatrixGenerator:
 
         # Apply outlier modifications
         num_outlier_genes = int(genes_count * (outlier_percentage / 100))
-        outlier_indices = np.random.choice(
-            genes_count, num_outlier_genes, replace=False
-        )
+        outlier_indices = np.random.choice(genes_count, num_outlier_genes, replace=False)
         for idx in outlier_indices:
             matrix[idx, :] = (matrix[idx, :] * outlier_factor).astype(int)
 
@@ -221,9 +204,7 @@ class TranscriptomicMatrixGenerator:
         )
 
     def generate_metadata_matrix(self):
-        fictional_info = [
-            self.generate_fictional_info() for _ in range(self.num_samples)
-        ]
+        fictional_info = [self.generate_fictional_info() for _ in range(self.num_samples)]
         return pd.DataFrame(
             {
                 "ExperimentID": self.experiment_id,
@@ -238,9 +219,7 @@ class TranscriptomicMatrixGenerator:
         time_between_dates = end_date - start_date
         random_number_of_days = random.randrange(time_between_dates.days)
         random_date = start_date + timedelta(days=random_number_of_days)
-        random_text = "".join(
-            random.choices(string.ascii_uppercase + string.digits, k=5)
-        )
+        random_text = "".join(random.choices(string.ascii_uppercase + string.digits, k=5))
         return f"{random_date.date()}_{random_text}"
 
     def write_to_csv(self, dataframe, filename):

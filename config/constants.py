@@ -8,13 +8,15 @@ AGE_SD = 25
 AGE_MIN = 0
 AGE_MAX = 105
 
+# fmt: off
 # must sum to one
 DISEASE_MASS_DISTRIBUTION = [
     0.4,    # probability of having no disease
     0.35,   # probability of having one disease
     0.24,   # probability of having two diseases
-    0.01    # probability of having three diseases
+    0.01,   # probability of having three diseases
 ]
+# fmt: on
 
 # all as above: P(0 items), P(1 item), etc and must sum to one
 PHENOTYPIC_FEATURE_MASS_DISTRIBUTION = [0.1, 0.5, 0.3, 0.1]
