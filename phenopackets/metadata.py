@@ -75,17 +75,18 @@ RESOURCES = [
 
 
 def updates(n: int):
+    ts = str(datetime.now(timezone.utc).isoformat(timespec="seconds"))
     return [
         {
-            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            "timestamp": ts,
             "updated_by": "C3G_synthetic_data",
             "comment": "Fake update for testing",
         },
         {
-            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            "timestamp": ts,
             "comment": "A second fake update",
         },
         {
-            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            "timestamp": ts,
         },
     ][:n]
