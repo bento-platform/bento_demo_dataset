@@ -1,14 +1,16 @@
 from datetime import datetime, timezone
+from typing import Literal
 
 
 # ideally we would only mention resources used in a particular phenopacket
 # rather than including all each time.
-def metadata():
+def metadata(n_updates: Literal[0, 1, 2, 3]):
     return {
         "created": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
         "created_by": "C3G_synthetic_data",
         "phenopacket_schema_version": "2.0",
         "resources": RESOURCES,
+        **({"updates": updates(n_updates)} if n_updates else {}),
     }
 
 
@@ -70,3 +72,20 @@ RESOURCES = [
         "url": "http://purl.obolibrary.org/obo/mondo/releases/2025-06-03/mondo-international.owl",
     },
 ]
+
+
+def updates(n: int):
+    return [
+        {
+            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            "updated_by": "C3G_synthetic_data",
+            "comment": "Fake update for testing",
+        },
+        {
+            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+            "comment": "A second fake update",
+        },
+        {
+            "timestamp": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+        },
+    ][:n]

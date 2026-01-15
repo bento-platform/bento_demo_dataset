@@ -33,7 +33,7 @@ class RandomGenerator:
             return []
         return list(self.rng.choice(elements, size=num_choices, replace=False, p=weights))
 
-    def weighted_choice(self, elements: list[T], weights: list[np.float64]) -> T:
+    def weighted_choice(self, elements: list[T], weights: list[np.float64] | list[float]) -> T:
         """
         Choose one element from "elements", according to weights (one for each element)
         """

@@ -1,3 +1,5 @@
+from datetime import datetime
+from typing import Literal
 from urllib.parse import urlparse
 import os
 from config.constants import (
@@ -35,7 +37,6 @@ from phenopackets.metadata import metadata
 from phenopackets.phenotypic_features import phenotypic_features
 from random_generator.generator import RandomGenerator
 from transcriptomics.transcriptomics_matrix_generator import TranscriptomicMatrixGenerator
-from datetime import datetime
 
 
 ##############################
@@ -313,7 +314,9 @@ class IndividualGenerator:
     #     pass
 
     def metadata(self):
-        return metadata()
+        elements: list[Literal[0, 1, 2, 3]] = [0, 1, 2, 3]  # up to 3 updates per metadata object
+        n_updates = self.rng.weighted_choice(elements, [0.6, 0.2, 0.1, 0.1])
+        return metadata(n_updates)
 
     # utils ------------------------
 
