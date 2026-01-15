@@ -21,6 +21,10 @@ VITAL_STATUS_CAUSES_OF_DEATH = [
         "label": "Bumped into other person (event)",
     },
     {
+        "id": "SNOMED:111942003",
+        "label": "Legal execution by lethal injection (event)",
+    },
+    {
         "id": "NCIT:C36263",
         "label": "Metastatic Malignant Neoplasm",
     },
