@@ -1,16 +1,18 @@
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
+from random_generator.generator import RandomGenerator
 from typing import Literal
 
 
 # ideally we would only mention resources used in a particular phenopacket
 # rather than including all each time.
-def metadata(n_updates: Literal[0, 1, 2, 3]):
+def metadata(rng: RandomGenerator, n_updates: Literal[0, 1, 2, 3], min_update_date: date):
+    created_datetime = datetime.now(timezone.utc)
     return {
-        "created": str(datetime.now(timezone.utc).isoformat(timespec="seconds")),
+        "created": created_datetime.isoformat(timespec="seconds"),
         "created_by": "C3G_synthetic_data",
         "phenopacket_schema_version": "2.0",
         "resources": RESOURCES,
-        **({"updates": updates(n_updates)} if n_updates else {}),
+        **({"updates": updates(rng, n_updates, min_update_date, created_datetime.date())} if n_updates else {}),
     }
 
 
@@ -74,19 +76,21 @@ RESOURCES = [
 ]
 
 
-def updates(n: int):
-    ts = str(datetime.now(timezone.utc).isoformat(timespec="seconds"))
+def updates(rng: RandomGenerator, n: int, min_update_date: date, max_update_date: date):
+    update_timestamps = sorted(
+        rng.recent_datetime_string(min_date=min_update_date, max_date=max_update_date) for _ in range(3)
+    )
     return [
         {
-            "timestamp": ts,
+            "timestamp": update_timestamps[0],
             "updated_by": "C3G_synthetic_data",
             "comment": "Fake update for testing",
         },
         {
-            "timestamp": ts,
+            "timestamp": update_timestamps[1],
             "comment": "A second fake update",
         },
         {
-            "timestamp": ts,
+            "timestamp": update_timestamps[2],
         },
     ][:n]

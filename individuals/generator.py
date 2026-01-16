@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from typing import Literal
 from urllib.parse import urlparse
 import os
@@ -148,10 +148,13 @@ class IndividualGenerator:
         self.experiments.append(experiment_data)
 
     def generate_data(self, individual):
+        date_of_consent = self.rng.recent_date()  # for subject extra properties + constraining various other dates
+
+        # ---------- phenopacket structure -----------
         p = {
             "id": self.rng.uuid4(),
             # "alternate_ids": []  # ...why are alternate subject ids CURIEs?
-            "subject": self.subject(individual),
+            "subject": self.subject(individual, date_of_consent),
             "phenotypic_features": self.phenotypic_features(),
         }
 
@@ -172,14 +175,14 @@ class IndividualGenerator:
         # random diseases, plus diseases mentioned elsewhere in this phenopacket
         p["diseases"] = self.diseases(individual, intp, p["subject"]["extra_properties"]["covid_severity"])
 
-        p["meta_data"] = self.metadata()
+        p["meta_data"] = self.metadata(date_of_consent)
 
         self.phenopackets.append(p)
 
     def add_experiment(self, e):
         self.experiments.append(e)
 
-    def subject(self, individual):
+    def subject(self, individual, date_of_consent: date):
         age = self.rng.int_from_gaussian_range(AGE_MIN, AGE_MAX, AGE_MEAN, AGE_SD)
         age_iso = f"P{age}Y"
         s = {
@@ -198,7 +201,7 @@ class IndividualGenerator:
             "extra_properties": {
                 "mobility": self.mobility(),
                 "covid_severity": self.covid_severity(),
-                "date_of_consent": self.rng.recent_date_string(),
+                "date_of_consent": date_of_consent.isoformat(),
                 "lab_test_result_value": self.lab_value(),
             },
         }
@@ -313,10 +316,10 @@ class IndividualGenerator:
     # def files(self):
     #     pass
 
-    def metadata(self):
+    def metadata(self, date_of_consent: date):
         elements: list[Literal[0, 1, 2, 3]] = [0, 1, 2, 3]  # up to 3 updates per metadata object
         n_updates = self.rng.weighted_choice(elements, [0.6, 0.2, 0.1, 0.1])
-        return metadata(n_updates)
+        return metadata(self.rng, n_updates, date_of_consent)
 
     # utils ------------------------
 
