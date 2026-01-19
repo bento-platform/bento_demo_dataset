@@ -16,6 +16,10 @@
                     "chart_type": "bar"
                 },
                 {
+                    "field": "cause_of_death",
+                    "chart_type": "bar"
+                },
+                {
                     "field": "covid_severity",
                     "chart_type": "pie"
                 },
@@ -54,6 +58,7 @@
                 "age",
                 "sex",
                 "vital_status",
+                "cause_of_death",
                 "date_of_consent",
                 "mobility",
                 "covid_severity",
@@ -99,6 +104,15 @@
             "config": {
                 "enum": ["ALIVE", "DECEASED", "UNKNOWN_STATUS"]
             }
+        },
+        "cause_of_death": {
+          "mapping": "individual/vital_status/cause_of_death/label",
+          "title": "Cause of Death",
+          "description": "Cause of death for individuals who are deceased",
+          "datatype": "string",
+          "config": {
+            "enum": null
+          }
         },
         "date_of_consent": {
             "mapping": "individual/extra_properties/date_of_consent",
