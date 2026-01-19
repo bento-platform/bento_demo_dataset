@@ -260,9 +260,11 @@ class IndividualGenerator:
                 )
 
             if self.rng.biased_coin_toss(P_VITAL_STATUS_DECEASED_HAS_SURVIVAL_TIME):
-                vital_status["survival_time_in_days"] = self.rng.int_from_gaussian_range(
-                    *VITAL_STATUS_SURVIVAL_TIME_DIST
-                ) if "infarction" not in vital_status["cause_of_death"]["label"] else 0  # make heart attacks instant
+                vital_status["survival_time_in_days"] = (
+                    self.rng.int_from_gaussian_range(*VITAL_STATUS_SURVIVAL_TIME_DIST)
+                    if "infarction" not in vital_status["cause_of_death"]["label"]
+                    else 0
+                )  # make heart attacks instant
 
         return vital_status
 
