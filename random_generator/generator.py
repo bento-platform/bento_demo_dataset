@@ -33,7 +33,7 @@ class RandomGenerator:
             return []
         return list(self.rng.choice(elements, size=num_choices, replace=False, p=weights))
 
-    def weighted_choice(self, elements: list[T], weights: list[np.float64]) -> T:
+    def weighted_choice(self, elements: list[T], weights: list[np.float64] | list[float]) -> T:
         """
         Choose one element from "elements", according to weights (one for each element)
         """
@@ -66,13 +66,31 @@ class RandomGenerator:
     def uuid4(self) -> str:
         return str(uuid.UUID(bytes=self.rng.bytes(16), version=4))
 
-    def recent_datetime(self) -> datetime.time:
-        twenty_twenty = datetime.date(2020, 1, 1)
-        twenty_twenty_four = datetime.date(2024, 1, 1)
-        return self.fake.date_time_between(twenty_twenty, twenty_twenty_four, tzinfo=datetime.timezone.utc)
+    def recent_datetime(
+        self, min_date: datetime.date | None = None, max_date: datetime.date | None = None
+    ) -> datetime.datetime:
+        # default minimum date: 2020-01-01
+        min_year, min_month, min_day = min_date.timetuple()[:3] if min_date else (2020, 1, 1)
+        min_date_obj = datetime.date(min_year, min_month, min_day)
 
-    def recent_date_string(self) -> str:
-        return self.recent_datetime().date().isoformat()
+        # default maximum date: 2024-01-01
+        max_year, max_month, max_day = max_date.timetuple()[:3] if max_date else (2024, 1, 1)
+        max_date_obj = datetime.date(max_year, max_month, max_day)
+
+        return self.fake.date_time_between(min_date_obj, max_date_obj, tzinfo=datetime.timezone.utc)
+
+    def recent_date(
+        self, min_date: datetime.date | None = None, max_date: datetime.date | None = None
+    ) -> datetime.date:
+        return self.recent_datetime(min_date=min_date, max_date=max_date).date()
+
+    def recent_date_string(self, min_date: datetime.date | None = None, max_date: datetime.date | None = None) -> str:
+        return self.recent_date(min_date=min_date, max_date=max_date).isoformat()
+
+    def recent_datetime_string(
+        self, min_date: datetime.date | None = None, max_date: datetime.date | None = None
+    ) -> str:
+        return self.recent_datetime(min_date=min_date, max_date=max_date).isoformat(timespec="seconds")
 
     def recent_interval_start_and_end_datetime_strings(self, max_days) -> dict[str, str]:
         start = self.recent_datetime()
