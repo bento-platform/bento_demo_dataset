@@ -14,6 +14,15 @@ from config.constants import (
     LAB_MEAN,
     P_EXCLUDED,
     P_SMOKING_STATUS_PRESENT,
+    # -- Vital status constants ---------------------------
+    P_VITAL_STATUS_PRESENT,
+    P_VITAL_STATUS_DISTRIBUTION,
+    P_VITAL_STATUS_DISTRIBUTION_SEVERE_COVID,
+    P_VITAL_STATUS_CAUSES_OF_DEATH_DISTRIBUTION,
+    P_COVID_CAUSE_OF_DEATH_GIVEN_SEVERE_COVID_AND_DEATH,
+    P_VITAL_STATUS_DECEASED_HAS_SURVIVAL_TIME,
+    VITAL_STATUS_SURVIVAL_TIME_DIST,
+    # -----------------------------------------------------
     MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION,
     EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
@@ -27,6 +36,11 @@ from config.constants import (
 )
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
+from individuals.vital_status import (
+    VITAL_STATUS_ENUM,
+    VITAL_STATUS_CAUSES_OF_DEATH,
+    VITAL_STATUS_CAUSE_OF_DEATH_COVID_19,
+)
 from phenopackets.biosample_collection_locations import BIOSAMPLE_LOCATIONS
 from phenopackets.extra_properties import SMOKING_STATUS, COVID_SEVERITY, MOBILITY
 from phenopackets.diseases import DISEASES, COVID_19
@@ -185,6 +199,9 @@ class IndividualGenerator:
     def subject(self, individual, date_of_consent: date):
         age = self.rng.int_from_gaussian_range(AGE_MIN, AGE_MAX, AGE_MEAN, AGE_SD)
         age_iso = f"P{age}Y"
+
+        date_of_consent = self.rng.recent_datetime().date()
+
         s = {
             "id": individual["id"],
             "sex": individual["sex"],
@@ -206,11 +223,50 @@ class IndividualGenerator:
             },
         }
 
+        # conditionally add vital status
+        if vital_status := self.vital_status(
+            min_date_of_death=date_of_consent, severe_covid=s["extra_properties"]["covid_severity"] == "Severe"
+        ):
+            s["vital_status"] = vital_status
+
         # conditionally add smoking status extra property
         if self.has_smoking_status():
             s["extra_properties"]["smoking_status"] = self.smoking_status()
 
         return s
+
+    def vital_status(self, min_date_of_death, severe_covid: bool) -> dict | None:
+        if not self.rng.biased_coin_toss(P_VITAL_STATUS_PRESENT):
+            return None
+
+        status = self.rng.weighted_choice(
+            VITAL_STATUS_ENUM, P_VITAL_STATUS_DISTRIBUTION_SEVERE_COVID if severe_covid else P_VITAL_STATUS_DISTRIBUTION
+        )
+
+        vital_status = {
+            "status": status,
+        }
+
+        if status == "DECEASED":
+            vital_status["time_of_death"] = {
+                "timestamp": self.rng.recent_datetime_string(min_date=min_date_of_death),
+            }
+
+            if severe_covid and self.rng.biased_coin_toss(P_COVID_CAUSE_OF_DEATH_GIVEN_SEVERE_COVID_AND_DEATH) == 1:
+                vital_status["cause_of_death"] = VITAL_STATUS_CAUSE_OF_DEATH_COVID_19
+            else:
+                vital_status["cause_of_death"] = self.rng.weighted_choice(
+                    VITAL_STATUS_CAUSES_OF_DEATH, P_VITAL_STATUS_CAUSES_OF_DEATH_DISTRIBUTION
+                )
+
+            if self.rng.biased_coin_toss(P_VITAL_STATUS_DECEASED_HAS_SURVIVAL_TIME):
+                vital_status["survival_time_in_days"] = (
+                    self.rng.int_from_gaussian_range(*VITAL_STATUS_SURVIVAL_TIME_DIST)
+                    if "infarction" not in vital_status["cause_of_death"]["label"]
+                    else 0
+                )  # make heart attacks instant
+
+        return vital_status
 
     # creates experiments associated with a biosample as a side effect
     def biosamples(self, individual):
