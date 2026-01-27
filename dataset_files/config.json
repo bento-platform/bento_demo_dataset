@@ -49,6 +49,15 @@
                     "chart_type": "pie"
                 }
             ]
+        },
+        {
+            "section_title": "Other",
+            "charts": [
+                {
+                    "field": "active_record",
+                    "chart_type": "bar"
+                }
+            ]
         }
     ],
     "search": [
@@ -69,6 +78,12 @@
             "section_title": "Experiments",
             "fields": [
                 "experiment_type"
+            ]
+        },
+        {
+            "section_title": "Other",
+            "fields": [
+                "active_record"
             ]
         }
     ],
@@ -192,6 +207,15 @@
             "datatype": "string",
             "config": {
                 "enum": null
+            }
+        },
+        "active_record": {
+            "mapping": "phenopacket/extra_properties/active_record",
+            "title": "Active Record?",
+            "description": "Whether this record is still active in the study",
+            "datatype": "string",
+            "config": {
+                "enum": ["Yes", "No"]
             }
         }
     },

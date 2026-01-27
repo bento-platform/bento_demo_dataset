@@ -2,18 +2,18 @@ import json
 from random_generator.generator import RandomGenerator
 from individuals.generator import IndividualGenerator
 from experiments.experiment_details import EXPERIMENT_RESOURCES
-from config.constants import GENERATE_TRANSCRIPTOMICS_MATRIX
+from config.constants import GENERATE_TRANSCRIPTOMICS_MATRIX, RANDOM_SEED
 
 
 def main():
-    rng = RandomGenerator()
+    rng = RandomGenerator(seed=RANDOM_SEED)
     individual_generator = IndividualGenerator(rng)
 
     with open("./config/individuals.json") as j:
         individuals = json.load(j)
 
-    for i in individuals:
-        individual_generator.generate_data(i)
+    for idx, i in enumerate(individuals):
+        individual_generator.generate_data(i, idx)
 
     phenopackets = individual_generator.phenopackets
     experiments = individual_generator.experiments

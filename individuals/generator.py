@@ -161,7 +161,7 @@ class IndividualGenerator:
 
         self.experiments.append(experiment_data)
 
-    def generate_data(self, individual):
+    def generate_data(self, individual, index):
         date_of_consent = self.rng.recent_date()  # for subject extra properties + constraining various other dates
 
         # ---------- phenopacket structure -----------
@@ -190,6 +190,17 @@ class IndividualGenerator:
         p["diseases"] = self.diseases(individual, intp, p["subject"]["extra_properties"]["covid_severity"])
 
         p["meta_data"] = self.metadata(date_of_consent)
+
+        # --------------------------------------------
+
+        p["extra_properties"] = {
+            # there's not a lot that makes sense to put in top-level extra properties, especially for phenopackets with
+            # subjects (since most properties are conceptually attached to an individual.)
+            #  - generation index (0 means first generated phenopacket, etc.)
+            "generated_index": index,
+            #  - whether the record is an active part of the (pretend) longitudinal study
+            "active_record": self.rng.weighted_choice(["Yes", "No"], [0.8, 0.2]),
+        }
 
         self.phenopackets.append(p)
 
