@@ -5,16 +5,15 @@ from math import floor
 import numpy as np
 from scipy.stats import truncnorm, truncexpon
 from faker import Faker
-from config.constants import RANDOM_SEED
 
 T = TypeVar("T")
 
 
 class RandomGenerator:
-    def __init__(self):
-        self.rng = np.random.default_rng(seed=RANDOM_SEED)
+    def __init__(self, seed: int):
+        self.rng = np.random.default_rng(seed=seed)
         self.fake = Faker()
-        Faker.seed(RANDOM_SEED)
+        Faker.seed(seed)
 
     def zero_or_more_choices(
         self,

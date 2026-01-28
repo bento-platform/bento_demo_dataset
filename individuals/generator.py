@@ -23,6 +23,9 @@ from config.constants import (
     P_VITAL_STATUS_DECEASED_HAS_SURVIVAL_TIME,
     VITAL_STATUS_SURVIVAL_TIME_DIST,
     # -----------------------------------------------------
+    P_ADD_TOP_LEVEL_EXTRA_PROPERTIES,
+    ACTIVE_RECORD_STATUSES,
+    ACTIVE_RECORD_STATUS_DISTRIBUTION,
     MEDICAL_ACTION_MASS_DISTRIBUTION,
     INTERPRETATION_MASS_DISTRIBUTION,
     EXTRA_BIOSAMPLES_MASS_DISTRIBUTION,
@@ -161,7 +164,7 @@ class IndividualGenerator:
 
         self.experiments.append(experiment_data)
 
-    def generate_data(self, individual):
+    def generate_data(self, individual, index):
         date_of_consent = self.rng.recent_date()  # for subject extra properties + constraining various other dates
 
         # ---------- phenopacket structure -----------
@@ -191,7 +194,27 @@ class IndividualGenerator:
 
         p["meta_data"] = self.metadata(date_of_consent)
 
+        # ------------- extra properties -------------
+
+        if self.should_add_top_level_extra_properties():
+            p["extra_properties"] = {
+                # there's not a lot that makes sense to put in top-level extra properties, especially for phenopackets with
+                # subjects (since most properties are conceptually attached to an individual.)
+                #  - generation index (0 means first generated phenopacket, etc.)
+                "generated_index": index,
+            }
+
+            #  - whether the record is an active part of the (pretend) longitudinal study
+            active_record = self.rng.weighted_choice(ACTIVE_RECORD_STATUSES, ACTIVE_RECORD_STATUS_DISTRIBUTION)
+            if active_record is not None:
+                p["extra_properties"]["active_record"] = active_record
+
+        # --------------------------------------------
+
         self.phenopackets.append(p)
+
+    def should_add_top_level_extra_properties(self):
+        return bool(self.rng.biased_coin_toss(P_ADD_TOP_LEVEL_EXTRA_PROPERTIES))
 
     def add_experiment(self, e):
         self.experiments.append(e)

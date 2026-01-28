@@ -34,10 +34,19 @@
                 {
                     "field": "smoking_status",
                     "chart_type": "bar"
-                },
+                }
+            ]
+        },
+        {
+            "section_title": "Lab results and treatments",
+            "charts": [
                 {
                     "field": "lab_test_result_value",
                     "chart_type": "histogram"
+                },
+                {
+                    "field": "treatment_agent",
+                    "chart_type": "bar"
                 }
             ]
         },
@@ -47,6 +56,15 @@
                 {
                     "field": "experiment_type",
                     "chart_type": "pie"
+                }
+            ]
+        },
+        {
+            "section_title": "Other",
+            "charts": [
+                {
+                    "field": "active_record",
+                    "chart_type": "bar"
                 }
             ]
         }
@@ -61,14 +79,26 @@
                 "cause_of_death",
                 "date_of_consent",
                 "mobility",
-                "covid_severity",
-                "lab_test_result_value"
+                "covid_severity"
+            ]
+        },
+        {
+            "section_title": "Lab results and treatments",
+            "fields": [
+                "lab_test_result_value",
+                "treatment_agent"
             ]
         },
         {
             "section_title": "Experiments",
             "fields": [
                 "experiment_type"
+            ]
+        },
+        {
+            "section_title": "Other",
+            "fields": [
+                "active_record"
             ]
         }
     ],
@@ -185,6 +215,16 @@
                 "units": "mg/L"
             }
         },
+        "treatment_agent": {
+            "mapping": "individual/phenopackets/medical_actions",
+            "group_by": "treatment/agent/label",
+            "title": "Medical Treatment Agents",
+            "description": "Treatment with an agent such as a drug",
+            "datatype": "string",
+            "config": {
+                "enum": null
+            }
+        },
         "experiment_type": {
             "mapping": "experiment/experiment_type",
             "title": "Experiment Types",
@@ -192,6 +232,15 @@
             "datatype": "string",
             "config": {
                 "enum": null
+            }
+        },
+        "active_record": {
+            "mapping": "phenopacket/extra_properties/active_record",
+            "title": "Active Record?",
+            "description": "Whether this record is still active in the study",
+            "datatype": "string",
+            "config": {
+                "enum": ["Yes", "No"]
             }
         }
     },
