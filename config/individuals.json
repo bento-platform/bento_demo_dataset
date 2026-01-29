@@ -51,7 +51,10 @@
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
-                        "creation_date": "2022-02-08 00:00:00"
+                        "creation_date": "2022-02-08 00:00:00",
+                        "extra_properties": {
+                            "comment": "External bigWig track from IHEC"
+                        }
                     },
                     {
                         "identifier": "MS002001-01-01",
@@ -61,7 +64,10 @@
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
-                        "creation_date": "2022-02-08 00:00:00"
+                        "creation_date": "2022-02-08 00:00:00",
+                        "extra_properties": {
+                            "comment": "External bigWig track from IHEC"
+                        }
                     }
                 ]
             }
@@ -123,9 +129,15 @@
                         "file_format": "BigWig",
                         "genome_assembly_id": "GRCh37",
                         "data_output_type": "Derived data",
-                        "creation_date": "2022-02-08 00:00:00"
+                        "creation_date": "2022-02-08 00:00:00",
+                        "extra_properties": {
+                            "comment": "External bigWig track from IHEC"
+                        }
                     }
-                ]
+                ],
+                "extra_properties": {
+                    "ega_link": "https://ega-archive.org/datasets/EGAD00001001287"
+                }
             }
         ],
         "diseases": [
