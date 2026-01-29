@@ -36,6 +36,7 @@ from config.constants import (
     NUMBER_OF_SAMPLES,
     GFF3_URL,
     P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE,
+    P_ADD_EXTRA_PROPERTIES_SOURCE_TO_BIOSAMPLE,
 )
 from experiments.experiment_metadata import one_thousand_genomes_experiment, synthetic_experiment_wrapper
 from experiments.experiment_details import TISSUES_WITH_EXPERIMENTS
@@ -309,6 +310,9 @@ class IndividualGenerator:
                 {
                     "id": base_biosample_id,
                     "sampled_tissue": {"id": "UBERON:0000178", "label": "blood"},
+                    "extra_properties": {
+                        "origin": "1000 Genomes",
+                    },
                 }
             )
             self.add_experiment(one_thousand_genomes_experiment(self.rng, base_biosample_id))
@@ -441,6 +445,10 @@ class IndividualGenerator:
         if self.should_add_location_collected_to_biosample():
             sb["location_collected"] = self.biosample_location_collected()
 
+        if self.should_put_synthetic_biosample_origin():
+            sb["extra_properties"] = sb.get("extra_properties") or {}
+            sb["extra_properties"]["origin"] = "Synthetic"
+
         return sb
 
     def should_add_experiment_to_biosample(self) -> bool:
@@ -448,6 +456,9 @@ class IndividualGenerator:
 
     def should_add_location_collected_to_biosample(self):
         return bool(self.rng.biased_coin_toss(P_ADD_LOCATION_COLLECTED_TO_BIOSAMPLE))
+
+    def should_put_synthetic_biosample_origin(self):
+        return bool(self.rng.biased_coin_toss(P_ADD_EXTRA_PROPERTIES_SOURCE_TO_BIOSAMPLE))
 
     def should_exclude(self) -> bool:
         return bool(self.rng.biased_coin_toss(P_EXCLUDED))
