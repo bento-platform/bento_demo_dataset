@@ -26,18 +26,14 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
         "experiment_type": "WGS",
         "study_type": "Genomics",
         "molecule": "genomic DNA",
-        "molecule_ontology": [
-            {
-                "id": "EFO:0008479",
-                "label": "genomic DNA",
-            },
-        ],
-        "experiment_ontology": [
-            {
-                "id": "OBI:0002117",
-                "label": "whole genome sequencing assay",
-            },
-        ],
+        "molecule_ontology": {
+            "id": "EFO:0008479",
+            "label": "genomic DNA",
+        },
+        "experiment_ontology": {
+            "id": "OBI:0002117",
+            "label": "whole genome sequencing assay",
+        },
         "instrument": {
             "device": "Illumina Genome Analyzer II",
             "device_ontology": {
