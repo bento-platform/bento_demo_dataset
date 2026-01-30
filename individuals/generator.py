@@ -52,7 +52,7 @@ from phenopackets.interpretations import interpretations
 from phenopackets.measurements import has_bmi, has_blood_pressure, bmi, blood_pressure
 from phenopackets.medical_actions import PROCEDURES, treatments
 from phenopackets.metadata import metadata
-from phenopackets.phenotypic_features import phenotypic_features
+from phenopackets.phenotypic_features import PHENOTYPIC_FEATURE_TYPES, phenotypic_features
 from random_generator.generator import RandomGenerator
 from transcriptomics.transcriptomics_matrix_generator import TranscriptomicMatrixGenerator
 
@@ -92,7 +92,7 @@ class IndividualGenerator:
             "medical_actions_procedures": rng.gaussian_weights(len(PROCEDURES)),
             "medical_actions_treatments": rng.gaussian_weights(len(treatments(rng))),
             "mobility": rng.gaussian_weights(len(MOBILITY)),
-            "phenotypic_features": rng.gaussian_weights(len(phenotypic_features())),
+            "phenotypic_features": rng.gaussian_weights(len(PHENOTYPIC_FEATURE_TYPES)),
             "smoking_status": rng.gaussian_weights(len(SMOKING_STATUS)),
             "synthetic_experiments": rng.gaussian_weights(len(TISSUES_WITH_EXPERIMENTS)),
             "biosample_locations": rng.gaussian_weights(len(BIOSAMPLE_LOCATIONS)),
@@ -352,15 +352,11 @@ class IndividualGenerator:
 
     def phenotypic_features(self):
         # randomly choose some phenotypic features
-        pfs = self.rng.zero_or_more_choices(
-            phenotypic_features(),
+        return self.rng.zero_or_more_choices(
+            phenotypic_features(self.rng),
             PHENOTYPIC_FEATURE_MASS_DISTRIBUTION,
             self.choice_weights["phenotypic_features"],
         )
-
-        # very rarely, mark as excluded
-        pfs_ex = [{**p, "excluded": True} if self.should_exclude() else p for p in pfs]
-        return pfs_ex
 
     def measurements(self):
         ms = []

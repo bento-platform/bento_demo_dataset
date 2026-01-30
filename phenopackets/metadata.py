@@ -54,7 +54,7 @@ RESOURCES = [
         "version": "2023-09-01",
         "namespace_prefix": "HP",
         "id": "HP:2023-09-01",
-        "iri_prefix": "https://hpo.jax.org/app/browse/term/",
+        "iri_prefix": "http://purl.obolibrary.org/obo/HP_",
         "url": "http://purl.obolibrary.org/obo/hp/releases/2023-09-01/hp.owl",
     },
     {
