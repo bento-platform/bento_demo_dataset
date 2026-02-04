@@ -5,6 +5,7 @@ TISSUES_WITH_EXPERIMENTS = [
         "experiments": [
             {
                 "study_type": "Transcriptomics",
+                "description": "An example RNA-seq (bulk transcriptomic) experiment",
                 "experiment_type": "RNA-Seq",
                 "experiment_ontology": {"id": "OBI:0001177", "label": "RNA sequencing assay"},
                 "library_strategy": "RNA-Seq",
@@ -28,6 +29,7 @@ TISSUES_WITH_EXPERIMENTS = [
                 "experiment_ontology": {"id": "OBI:0000366", "label": "metabolite profiling assay"},
             },
             {
+                "description": "A proteomic profiling experiment.",
                 "study_type": "Proteomics",
                 "experiment_type": "Proteomic profiling",
                 "experiment_ontology": {"id": "OBI:0001318", "label": "proteomic profiling by array assay"},
