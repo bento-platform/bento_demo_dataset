@@ -25,22 +25,18 @@
                 "id": "MS002001-01",
                 "study_type": "Transcriptomics",
                 "experiment_type": "RNA-Seq",
-                "experiment_ontology": [
-                    {
-                        "id": "OBI:0001177",
-                        "label": "RNA sequencing assay"
-                    }
-                ],
+                "experiment_ontology": {
+                    "id": "OBI:0001177",
+                    "label": "RNA sequencing assay"
+                },
                 "library_strategy": "RNA-Seq",
                 "library_source": "Transcriptomic",
                 "library_selection": "Random PCR",
                 "molecule": "total RNA",
-                "molecule_ontology": [
-                    {
-                        "id": "EFO:0004964",
-                        "label": "total RNA"
-                    }
-                ],
+                "molecule_ontology": {
+                    "id": "EFO:0004964",
+                    "label": "total RNA"
+                },
                 "biosample": "MS002001",
                 "experiment_results": [
                     {
@@ -103,22 +99,18 @@
                 "id": "MS002201-01",
                 "study_type": "Transcriptomics",
                 "experiment_type": "RNA-Seq",
-                "experiment_ontology": [
-                    {
-                        "id": "OBI:0001177",
-                        "label": "RNA sequencing assay"
-                    }
-                ],
+                "experiment_ontology": {
+                    "id": "OBI:0001177",
+                    "label": "RNA sequencing assay"
+                },
                 "library_source": "Transcriptomic",
                 "library_strategy": "RNA-Seq",
                 "library_selection": "Random PCR",
                 "molecule": "total RNA",
-                "molecule_ontology": [
-                    {
-                        "id": "EFO:0004964",
-                        "label": "total RNA"
-                    }
-                ],
+                "molecule_ontology": {
+                    "id": "EFO:0004964",
+                    "label": "total RNA"
+                },
                 "biosample": "MS002201",
                 "experiment_results": [
                     {
