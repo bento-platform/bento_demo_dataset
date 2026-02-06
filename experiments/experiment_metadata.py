@@ -1,5 +1,12 @@
-from config.constants import DEFAULT_ASSEMBLY, P_ADD_FAKE_CRAM_TO_1K_VCF, P_ADD_EXAMPLE_FILE_TO_EXPERIMENT
+from config.constants import (
+    DEFAULT_ASSEMBLY,
+    P_ADD_FAKE_CRAM_TO_1K_VCF,
+    P_ADD_EXPERIMENT_LIBRARY_ID,
+    P_ADD_EXPERIMENT_LIBRARY_DESCRIPTION,
+    P_ADD_EXAMPLE_FILE_TO_EXPERIMENT,
+)
 from experiments.experiment_details import GENERIC_EXPERIMENT_FILES
+from random_generator.generator import RandomGenerator
 
 
 def one_thousand_genomes_experiment(rng, biosample_id):
@@ -26,18 +33,14 @@ def vcf_experiment_metadata(rng, biosample_id, filename=None, assembly_id=DEFAUL
         "experiment_type": "WGS",
         "study_type": "Genomics",
         "molecule": "genomic DNA",
-        "molecule_ontology": [
-            {
-                "id": "EFO:0008479",
-                "label": "genomic DNA",
-            },
-        ],
-        "experiment_ontology": [
-            {
-                "id": "OBI:0002117",
-                "label": "whole genome sequencing assay",
-            },
-        ],
+        "molecule_ontology": {
+            "id": "EFO:0008479",
+            "label": "genomic DNA",
+        },
+        "experiment_ontology": {
+            "id": "OBI:0002117",
+            "label": "whole genome sequencing assay",
+        },
         "instrument": {
             "device": "Illumina Genome Analyzer II",
             "device_ontology": {
@@ -57,18 +60,36 @@ def randomly_add_example_file(rng):
     return bool(rng.biased_coin_toss(P_ADD_EXAMPLE_FILE_TO_EXPERIMENT))
 
 
-def synthetic_experiment_wrapper(rng, exp, biosample_id):
+LIBRARY_DESCRIPTIONS = [
+    "Prepped by Dave",
+    "Prepped by Joe",
+    "Prepped by Chloé",
+    "Quality looked iffy",
+    "Prepared using a kit I found underneath the second floor stairwell.",
+]
+LIBRARY_DESCRIPTIONS_DISTRIBUTION = [1 / len(LIBRARY_DESCRIPTIONS)] * len(LIBRARY_DESCRIPTIONS)
+
+
+def synthetic_experiment_wrapper(rng: RandomGenerator, exp, biosample_id):
     e = {
         "id": rng.uuid4(),
         "biosample": biosample_id,
         **exp,
     }
+
+    if rng.biased_coin_toss(P_ADD_EXPERIMENT_LIBRARY_ID):
+        e["library_id"] = f"library-{e['id']}"
+
+    if rng.biased_coin_toss(P_ADD_EXPERIMENT_LIBRARY_DESCRIPTION):
+        e["library_description"] = rng.weighted_choice(LIBRARY_DESCRIPTIONS, LIBRARY_DESCRIPTIONS_DISTRIBUTION)
+
     if randomly_add_example_file(rng):
         e["experiment_results"] = [random_generic_file_metadata(rng)]
+
     return e
 
 
-def random_generic_file_metadata(rng):
+def random_generic_file_metadata(rng: RandomGenerator):
     filename, file_type = rng.weighted_choice(
         GENERIC_EXPERIMENT_FILES, rng.gaussian_weights(len(GENERIC_EXPERIMENT_FILES))
     ).values()

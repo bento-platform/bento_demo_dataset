@@ -5,17 +5,18 @@ TISSUES_WITH_EXPERIMENTS = [
         "experiments": [
             {
                 "study_type": "Transcriptomics",
+                "description": "An example RNA-seq (bulk transcriptomic) experiment",
                 "experiment_type": "RNA-Seq",
-                "experiment_ontology": [{"id": "OBI:0001177", "label": "RNA sequencing assay"}],
+                "experiment_ontology": {"id": "OBI:0001177", "label": "RNA sequencing assay"},
                 "library_strategy": "RNA-Seq",
                 "library_selection": "Random PCR",
                 "molecule": "total RNA",
-                "molecule_ontology": [{"id": "EFO:0004964", "label": "total RNA"}],
+                "molecule_ontology": {"id": "EFO:0004964", "label": "total RNA"},
             },
             {
                 "study_type": "Proteomics",
                 "experiment_type": "Proteomic profiling",
-                "experiment_ontology": [{"id": "OBI:0001318", "label": "proteomic profiling by array assay"}],
+                "experiment_ontology": {"id": "OBI:0001318", "label": "proteomic profiling by array assay"},
             },
         ],
     },
@@ -25,19 +26,21 @@ TISSUES_WITH_EXPERIMENTS = [
             {
                 "study_type": "Metabolomics",
                 "experiment_type": "Metabolite profiling",
-                "experiment_ontology": [{"id": "OBI:0000366", "label": "metabolite profiling assay"}],
+                "experiment_ontology": {"id": "OBI:0000366", "label": "metabolite profiling assay"},
             },
             {
+                "description": "A proteomic profiling experiment.",
                 "study_type": "Proteomics",
                 "experiment_type": "Proteomic profiling",
-                "experiment_ontology": [{"id": "OBI:0001318", "label": "proteomic profiling by array assay"}],
+                "experiment_ontology": {"id": "OBI:0001318", "label": "proteomic profiling by array assay"},
             },
             {
                 "study_type": "Other",
                 "experiment_type": "Other",
-                "experiment_ontology": [
-                    {"id": "OBI:0003172", "label": "thyroid stimulating hormone concentration assay"}
-                ],
+                "experiment_ontology": {
+                    "id": "OBI:0003172",
+                    "label": "thyroid stimulating hormone concentration assay",
+                },
             },
         ],
     },
@@ -47,7 +50,7 @@ TISSUES_WITH_EXPERIMENTS = [
             {
                 "study_type": "Serology",
                 "experiment_type": "Neutralizing antibody titers",
-                "experiment_ontology": [{"id": "EFO:0004556", "label": "antibody measurement"}],
+                "experiment_ontology": {"id": "EFO:0004556", "label": "antibody measurement"},
             }
         ],
     },
@@ -57,7 +60,7 @@ TISSUES_WITH_EXPERIMENTS = [
             {
                 "study_type": "Other",
                 "experiment_type": "Other",
-                "experiment_ontology": [{"id": "OBI:0000537", "label": "copy number variation profiling assay"}],
+                "experiment_ontology": {"id": "OBI:0000537", "label": "copy number variation profiling assay"},
             }
         ],
     },
