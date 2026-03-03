@@ -154,7 +154,7 @@
       },
       "datatype": "string",
       "description": "ACMG Pathogenicity category for a particular variant (BENIGN, PATHOGENIC, etc)",
-      "mapping": "individual/phenopackets/interpretations/diagnosis/genomic_interpretations/variant_interpretation/acmg_pathogenicity_classification",
+      "mapping": "phenopacket/interpretations/diagnosis/genomic_interpretations/variant_interpretation/acmg_pathogenicity_classification",
       "title": "Variant Pathogenicity"
     },
     "active_record": {
@@ -190,7 +190,7 @@
       "description": "Body Mass Index",
       "group_by": "assay/id",
       "group_by_value": "NCIT:C16358",
-      "mapping": "individual/phenopackets/measurements",
+      "mapping": "phenopacket/measurements",
       "title": "BMI",
       "value_mapping": "value/quantity/value"
     },
@@ -227,7 +227,7 @@
       },
       "datatype": "string",
       "description": "Diseases observed as either present or absent",
-      "mapping": "individual/phenopackets/diseases/term/label",
+      "mapping": "phenopacket/diseases/term/label",
       "title": "Diseases"
     },
     "experiment_results_file_type": {
@@ -263,7 +263,7 @@
       },
       "datatype": "string",
       "description": "Interpretation for an individual variant or gene (CANDIDATE, CONTRIBUTORY, etc)",
-      "mapping": "individual/phenopackets/interpretations/diagnosis/genomic_interpretations/interpretation_status",
+      "mapping": "phenopacket/interpretations/diagnosis/genomic_interpretations/interpretation_status",
       "title": "Genomic Interpretations"
     },
     "lab_test_result_value": {
@@ -284,7 +284,7 @@
       "datatype": "string",
       "description": "A clinical procedure performed on a subject",
       "group_by": "procedure/code/label",
-      "mapping": "individual/phenopackets/medical_actions",
+      "mapping": "phenopacket/medical_actions",
       "title": "Medical Procedures"
     },
     "medical_treatments": {
@@ -294,7 +294,7 @@
       "datatype": "string",
       "description": "Treatment with an agent such as a drug",
       "group_by": "treatment/agent/label",
-      "mapping": "individual/phenopackets/medical_actions",
+      "mapping": "phenopacket/medical_actions",
       "title": "Medical Treatments"
     },
     "mobility": {
@@ -318,7 +318,7 @@
       },
       "datatype": "string",
       "description": "Individual phenotypic features, observed as either present or absent",
-      "mapping": "individual/phenopackets/phenotypic_features/pftype/label",
+      "mapping": "phenopacket/phenotypic_features/pftype/label",
       "title": "Phenotypic Features"
     },
     "sex": {
